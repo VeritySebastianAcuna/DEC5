@@ -577,7 +577,52 @@ public class Tests_AdmInstituciones {
 		
 		rut=crearRut.RutPersona();
 		pageInstituciones.DatosAdminDec(cp, rut, datos[8], datos[9]);
-		pageInstituciones.FlagAcepta(cp, "No");
+		pageInstituciones.CodigoColor(cp, "asd");
+		
+		pageInstituciones.BtnCrearInstitucion(cp);
+		
+		try {
+			String mensaje = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div/div/div/h2")).getText();
+			System.out.println(mensaje);
+			if(mensaje.contains("se creó correctamente")) {
+				crearLogyDocumento.CasoNok(cp);
+			}
+		}catch (Exception e) {
+			// TODO: handle exception
+			crearLogyDocumento.CasoOk(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0104() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0104";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.ClickRuedaConfiguracion(cp);
+		pageDec5.OpcionInstituciones(cp);
+		
+		PageInstituciones pageInstituciones = new PageInstituciones(driver);
+		pageInstituciones.CrearInstituciones(cp);
+		
+		CrearRut crearRut = new CrearRut();
+		String rut= crearRut.RutEmpresa();
+		pageInstituciones.DatosNuevaInstitucion(cp, datos[4], datos[5], rut, datos[6], datos[7]);
+		
+		rut=crearRut.RutPersona();
+		pageInstituciones.DatosAdminDec(cp, rut, datos[8], datos[9]);
 		
 		pageInstituciones.BtnCrearInstitucion(cp);
 		

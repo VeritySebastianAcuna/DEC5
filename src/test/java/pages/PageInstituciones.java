@@ -134,4 +134,9 @@ public class PageInstituciones {
 		}while(i==0);
 	}
 	
+	public void CodigoColor (String caso, String codigo) {
+		driver.findElement(By.name("scheme_color")).clear();
+		driver.findElement(By.name("scheme_color")).sendKeys(codigo);
+	}
+	
 }
