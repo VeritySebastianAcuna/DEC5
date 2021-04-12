@@ -3,6 +3,6 @@ Login por Identidad Digital
 Click al botón Autorizar
 Click a Configuraciones
 Click a Instituciones
-Click Editar
+Click a Editar
 Click Boton Guardar
 Caso OK
