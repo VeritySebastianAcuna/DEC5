@@ -3,7 +3,7 @@ Login por Identidad Digital
 Click al botón Autorizar
 Click a Configuraciones
 Click a Instituciones
-Click Editar
+Click a Editar
 Editar Rut
 Click Boton Guardar
 Mensaje OK

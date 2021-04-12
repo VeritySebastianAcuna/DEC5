@@ -17,6 +17,7 @@ import common.CrearRut;
 import common.LeerExcel;
 import evidence.CrearLogyDocumento;
 import pages.PageDec5;
+import pages.PageEditarInstituciones;
 import pages.PageInstituciones;
 import pages.PageLoginAdm;
 
@@ -1463,6 +1464,36 @@ public class Tests_AdmInstituciones {
 			// TODO: handle exception
 			crearLogyDocumento.CasoNok(cp);
 		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0124() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0124";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.ClickRuedaConfiguracion(cp);
+		pageDec5.OpcionInstituciones(cp);
+		
+		PageInstituciones pageInstituciones = new PageInstituciones(driver);
+		pageInstituciones.EditarInstitucion(cp);
+		
+		PageEditarInstituciones pageEditarInstituciones = new PageEditarInstituciones(driver);
+		pageEditarInstituciones.EditarRut(cp, "124-4");
+		pageEditarInstituciones.BtnGuardar(cp);
+		pageEditarInstituciones.ValidarMensajeRut(cp);
 		
 		System.out.println("FLUJO OK");
 	}

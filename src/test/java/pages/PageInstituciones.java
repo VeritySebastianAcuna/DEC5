@@ -325,4 +325,27 @@ public class PageInstituciones {
 		Thread.sleep(2000);
 	}
 	
+	public void EditarInstitucion(String caso) {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"table-institutions\"]/descendant::a[3]")).click();
+				String texto="Click a Editar";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(2000);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible editar Institución");
+					i=1;
+				}
+			}
+		}while(i==0);
+	}
 }
