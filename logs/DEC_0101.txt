@@ -1,0 +1,11 @@
+Log de Caso de Prueba DEC_0101
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click a Instituciones
+Click a Crear Institucion
+Datos Nueva Institución
+Datos Admin DEC
+Color No Ok
+Click a Boton Crear Institucion
+Caso NOK
