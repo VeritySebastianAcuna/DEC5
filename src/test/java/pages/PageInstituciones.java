@@ -134,6 +134,17 @@ public class PageInstituciones {
 		}while(i==0);
 	}
 	
+	public void ColorNoOk (String caso) throws InterruptedException, IOException, InvalidFormatException {
+		driver.findElement(By.name("scheme_color")).clear();
+		driver.findElement(By.name("scheme_color")).sendKeys("asd");
+		String texto = "Color No Ok";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
 	public void CheckNoRegistro (String caso) throws IOException, InvalidFormatException, InterruptedException {
 		driver.findElement(By.name("scheme_no_registro")).click();
 		String texto = "Check No Registro";
@@ -303,4 +314,5 @@ public class PageInstituciones {
 		capturaPantalla.takeScreenShotTest(driver,texto, caso);
 		Thread.sleep(2000);
 	}
+	
 }
