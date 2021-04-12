@@ -134,4 +134,173 @@ public class PageInstituciones {
 		}while(i==0);
 	}
 	
+	public void CheckNoRegistro (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("scheme_no_registro")).click();
+		String texto = "Check No Registro";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckNoHuella (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("scheme_no_finger")).click();
+		String texto = "Check No Huella";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckExtranjeros (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("foreign")).click();
+		String texto = "Check Extranjeros";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckPlantillaColaborativa (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("collaborative")).click();
+		String texto = "Check Plantilla Colaborativa";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckFirmantePorDefinir (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("signer_undefined")).click();
+		String texto = "Check Firmante Por Definir";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckEnvioAdjuntoPendiente (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("pending_attachment")).click();
+		String texto = "Check Envio Adjunto Pendiente";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckDescripcionCargaBatch (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("doc_name")).click();
+		String texto = "Check Descripcion Carga Batch";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckVacacionesRex (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("vacation_request")).click();
+		String texto = "Check Vacaciones REX";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckRelacionEntreInstituciones (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("relations_instit")).click();
+		String texto = "Check Relacion Entre Instituciones";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckModuloReportes (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("reports_module")).click();
+		String texto = "Check Modulo Reportes";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckDescargarVinculados (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("download_related")).click();
+		String texto = "Check Descargar Vinculados";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckReenvioDocumentoAprobado (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("send_approve")).click();
+		String texto = "Check Reenvio Documento Aprobado";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckCasillaDigital (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("digital_inbox")).click();
+		String texto = "Check Casilla Digital";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckMensajes (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("messages")).click();
+		String texto = "Check Mensajes";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckPdfConPassword (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("pdf_password")).click();
+		String texto = "Check PDF con Password";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckCampoImagenPlantillaDec (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("image_template")).click();
+		String texto = "Check Campo Imagen en Plantilla DEC";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckValidadorDocumental (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("validador_firma")).click();
+		String texto = "Check Validador Documental";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
 }

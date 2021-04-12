@@ -1,0 +1,9 @@
+Log de Caso de Prueba DEC_0125
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click a Instituciones
+Click Editar
+Editar Rut
+Click Boton Guardar
+Mensaje OK

@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_0108
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click a Instituciones
+Click a Crear Institucion
+Datos Nueva Institución
+Datos Admin DEC
+Click a Boton Crear Institucion
+Caso OK
