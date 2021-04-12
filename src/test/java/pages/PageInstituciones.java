@@ -235,6 +235,16 @@ public class PageInstituciones {
 		Thread.sleep(2000);
 	}
 	
+	public void CheckTipoDocumentoExterno (String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.name("external_tipo_doc")).click();
+		String texto = "Check Tipo Documento Externo";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(2000);
+	}
+	
 	public void CheckModuloReportes (String caso) throws IOException, InvalidFormatException, InterruptedException {
 		driver.findElement(By.name("reports_module")).click();
 		String texto = "Check Modulo Reportes";
