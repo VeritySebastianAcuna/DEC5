@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="49" total="50" passed="1" failed="0" skipped="0">
+<testng-results ignored="53" total="54" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-12T19:13:45Z" name="Default suite" finished-at="2021-04-12T19:14:42Z" duration-ms="56550">
+  <suite started-at="2021-04-12T19:52:44Z" name="Default suite" finished-at="2021-04-12T19:53:43Z" duration-ms="59333">
     <groups>
     </groups>
-    <test started-at="2021-04-12T19:13:45Z" name="Default test" finished-at="2021-04-12T19:14:42Z" duration-ms="56550">
+    <test started-at="2021-04-12T19:52:44Z" name="Default test" finished-at="2021-04-12T19:53:43Z" duration-ms="59333">
       <class name="test.Tests_AdmInstituciones">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.Tests_AdmInstituciones@6f19ac19]" started-at="2021-04-12T19:13:45Z" name="setUp" finished-at="2021-04-12T19:13:59Z" duration-ms="14247" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.Tests_AdmInstituciones@5454d35e]" started-at="2021-04-12T19:52:44Z" name="setUp" finished-at="2021-04-12T19:52:59Z" duration-ms="15500" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="Script_0145()[pri:0, instance:test.Tests_AdmInstituciones@6f19ac19]" started-at="2021-04-12T19:13:59Z" name="Script_0145" finished-at="2021-04-12T19:14:41Z" duration-ms="41554" status="PASS">
+        <test-method signature="Script_0149()[pri:0, instance:test.Tests_AdmInstituciones@5454d35e]" started-at="2021-04-12T19:52:59Z" name="Script_0149" finished-at="2021-04-12T19:53:42Z" duration-ms="43216" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Script_0145 -->
-        <test-method is-config="true" signature="FinEjecucion()[pri:0, instance:test.Tests_AdmInstituciones@6f19ac19]" started-at="2021-04-12T19:14:41Z" name="FinEjecucion" finished-at="2021-04-12T19:14:42Z" duration-ms="718" status="PASS">
+        </test-method> <!-- Script_0149 -->
+        <test-method is-config="true" signature="FinEjecucion()[pri:0, instance:test.Tests_AdmInstituciones@5454d35e]" started-at="2021-04-12T19:53:42Z" name="FinEjecucion" finished-at="2021-04-12T19:53:43Z" duration-ms="592" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FinEjecucion -->
