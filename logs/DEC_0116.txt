@@ -6,5 +6,6 @@ Click a Instituciones
 Click a Crear Institucion
 Datos Nueva Institución
 Datos Admin DEC
+Check Modulo Reportes
 Click a Boton Crear Institucion
 Caso OK
