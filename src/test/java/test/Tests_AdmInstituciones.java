@@ -1678,6 +1678,156 @@ public class Tests_AdmInstituciones {
 		System.out.println("FLUJO OK");
 	}
 	
+	@Test
+	public void Script_0131() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0131";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.ClickRuedaConfiguracion(cp);
+		pageDec5.OpcionInstituciones(cp);
+		
+		PageInstituciones pageInstituciones = new PageInstituciones(driver);
+		pageInstituciones.EditarInstitucion(cp);
+		
+		PageEditarInstituciones pageEditarInstituciones = new PageEditarInstituciones(driver);
+		pageEditarInstituciones.EditarDescripcion(cp);
+		pageEditarInstituciones.BtnGuardar(cp);
+		pageEditarInstituciones.MensajeEditado(cp);
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0132() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0132";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.ClickRuedaConfiguracion(cp);
+		pageDec5.OpcionInstituciones(cp);
+		
+		PageInstituciones pageInstituciones = new PageInstituciones(driver);
+		pageInstituciones.EditarInstitucion(cp);
+		
+		PageEditarInstituciones pageEditarInstituciones = new PageEditarInstituciones(driver);
+		pageEditarInstituciones.EditarRubro(cp);
+		pageEditarInstituciones.BtnGuardar(cp);
+		pageEditarInstituciones.MensajeEditado(cp);
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0133() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0133";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.ClickRuedaConfiguracion(cp);
+		pageDec5.OpcionInstituciones(cp);
+		
+		PageInstituciones pageInstituciones = new PageInstituciones(driver);
+		pageInstituciones.EditarInstitucion(cp);
+		
+		PageEditarInstituciones pageEditarInstituciones = new PageEditarInstituciones(driver);
+		pageEditarInstituciones.EditarPais(cp);
+		pageEditarInstituciones.BtnGuardar(cp);
+		pageEditarInstituciones.MensajeEditado(cp);
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0134() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0134";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.ClickRuedaConfiguracion(cp);
+		pageDec5.OpcionInstituciones(cp);
+		
+		PageInstituciones pageInstituciones = new PageInstituciones(driver);
+		pageInstituciones.EditarInstitucion(cp);
+		
+		PageEditarInstituciones pageEditarInstituciones = new PageEditarInstituciones(driver);
+		pageEditarInstituciones.EditarComuna(cp);
+		pageEditarInstituciones.BtnGuardar(cp);
+		pageEditarInstituciones.MensajeEditado(cp);
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0135() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0135";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.ClickRuedaConfiguracion(cp);
+		pageDec5.OpcionInstituciones(cp);
+		
+		PageInstituciones pageInstituciones = new PageInstituciones(driver);
+		pageInstituciones.EditarInstitucion(cp);
+		
+		PageEditarInstituciones pageEditarInstituciones = new PageEditarInstituciones(driver);
+		pageEditarInstituciones.EditarDireccion(cp);
+		pageEditarInstituciones.BtnGuardar(cp);
+		pageEditarInstituciones.MensajeEditado(cp);
+		
+		System.out.println("FLUJO OK");
+	}
+	
 	@AfterMethod
 	public void FinEjecucion() {
 		driver.manage().deleteAllCookies();

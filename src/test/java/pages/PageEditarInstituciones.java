@@ -140,9 +140,9 @@ public class PageEditarInstituciones {
 	}
 	
 	public void EditarRubro(String caso) {
-		String mail = driver.findElement(By.name("rubro")).getAttribute("value");
+		String rubro = driver.findElement(By.name("rubro")).getAttribute("value");
 		driver.findElement(By.name("rubro")).clear();
-		driver.findElement(By.name("rubro")).sendKeys(mail);
+		driver.findElement(By.name("rubro")).sendKeys(rubro);
 	}
 	
 	public void EditarPais(String caso) {
