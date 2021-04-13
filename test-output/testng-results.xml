@@ -2,20 +2,20 @@
 <testng-results ignored="53" total="54" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-12T19:52:44Z" name="Default suite" finished-at="2021-04-12T19:53:43Z" duration-ms="59333">
+  <suite started-at="2021-04-12T21:08:31Z" name="Default suite" finished-at="2021-04-12T21:09:33Z" duration-ms="62303">
     <groups>
     </groups>
-    <test started-at="2021-04-12T19:52:44Z" name="Default test" finished-at="2021-04-12T19:53:43Z" duration-ms="59333">
+    <test started-at="2021-04-12T21:08:31Z" name="Default test" finished-at="2021-04-12T21:09:33Z" duration-ms="62303">
       <class name="test.Tests_AdmInstituciones">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.Tests_AdmInstituciones@5454d35e]" started-at="2021-04-12T19:52:44Z" name="setUp" finished-at="2021-04-12T19:52:59Z" duration-ms="15500" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.Tests_AdmInstituciones@5454d35e]" started-at="2021-04-12T21:08:31Z" name="setUp" finished-at="2021-04-12T21:08:48Z" duration-ms="16802" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="Script_0149()[pri:0, instance:test.Tests_AdmInstituciones@5454d35e]" started-at="2021-04-12T19:52:59Z" name="Script_0149" finished-at="2021-04-12T19:53:42Z" duration-ms="43216" status="PASS">
+        <test-method signature="Script_0149()[pri:0, instance:test.Tests_AdmInstituciones@5454d35e]" started-at="2021-04-12T21:08:48Z" name="Script_0149" finished-at="2021-04-12T21:09:32Z" duration-ms="44914" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Script_0149 -->
-        <test-method is-config="true" signature="FinEjecucion()[pri:0, instance:test.Tests_AdmInstituciones@5454d35e]" started-at="2021-04-12T19:53:42Z" name="FinEjecucion" finished-at="2021-04-12T19:53:43Z" duration-ms="592" status="PASS">
+        <test-method is-config="true" signature="FinEjecucion()[pri:0, instance:test.Tests_AdmInstituciones@5454d35e]" started-at="2021-04-12T21:09:33Z" name="FinEjecucion" finished-at="2021-04-12T21:09:33Z" duration-ms="536" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FinEjecucion -->
