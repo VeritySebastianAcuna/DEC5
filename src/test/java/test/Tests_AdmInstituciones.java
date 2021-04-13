@@ -2338,6 +2338,66 @@ public class Tests_AdmInstituciones {
 		System.out.println("FLUJO OK");
 	}
 	
+	@Test
+	public void Script_0156() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0156";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.ClickRuedaConfiguracion(cp);
+		pageDec5.OpcionInstituciones(cp);
+		
+		PageInstituciones pageInstituciones = new PageInstituciones(driver);
+		pageInstituciones.EditarInstitucion(cp);
+		
+		PageEditarInstituciones pageEditarInstituciones = new PageEditarInstituciones(driver);
+		pageEditarInstituciones.CheckCampoImagenPlantillaDec(cp);
+		pageEditarInstituciones.BtnGuardar(cp);
+		pageEditarInstituciones.MensajeEditado(cp);
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0157() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0157";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.ClickRuedaConfiguracion(cp);
+		pageDec5.OpcionInstituciones(cp);
+		
+		PageInstituciones pageInstituciones = new PageInstituciones(driver);
+		pageInstituciones.EditarInstitucion(cp);
+		
+		PageEditarInstituciones pageEditarInstituciones = new PageEditarInstituciones(driver);
+		pageEditarInstituciones.CheckValidadorDocumental(cp);
+		pageEditarInstituciones.BtnGuardar(cp);
+		pageEditarInstituciones.MensajeEditado(cp);
+		
+		System.out.println("FLUJO OK");
+	}
+	
 	@AfterMethod
 	public void FinEjecucion() {
 		driver.manage().deleteAllCookies();
