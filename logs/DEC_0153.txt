@@ -1,0 +1,9 @@
+Log de Caso de Prueba DEC_0153
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click a Instituciones
+Click a Editar
+Check Casilla Digital
+Click Boton Guardar
+Caso OK

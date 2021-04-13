@@ -6,8 +6,8 @@
       <class name="test.Tests_AdmInstituciones">
         <methods>
           <include name="setUp"/>
-          <include name="Script_0147"/>
           <include name="FinEjecucion"/>
+          <include name="Script_0155"/>
         </methods>
       </class> <!-- test.Tests_AdmInstituciones -->
     </classes>
