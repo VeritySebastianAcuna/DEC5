@@ -29,6 +29,7 @@ public class PageInstituciones {
 		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
 		texto=texto.replace(" ","_");
 		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(5000);
 	}
 	
 	public void BusquedaInstituciones (String caso, String busqueda) throws IOException, InvalidFormatException, InterruptedException {
@@ -355,6 +356,7 @@ public class PageInstituciones {
 		int j=0;
 		do {
 			try {
+				Thread.sleep(2000);
 				driver.findElement(By.xpath("//*[@id=\"table-institutions\"]/descendant::a[2]")).click();
 				String texto="Click a Deshabilitar";
 				log.modificarArchivoLog(caso,texto);
@@ -362,7 +364,8 @@ public class PageInstituciones {
 				texto=texto.replace(" ","_");
 				capturaPantalla.takeScreenShotTest(driver,texto, caso);
 				Thread.sleep(2000);
-				pageAlerta.PopUpDeshabilitar();
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[3]/button")).click();
+//				pageAlerta.PopUpDeshabilitar();
 				i=1;
 			}catch (Exception e) {
 				// TODO: handle exception
