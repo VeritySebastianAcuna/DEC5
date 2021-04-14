@@ -104,4 +104,31 @@ public class PageDec5 {
 		capturaPantalla.takeScreenShotTest(driver,texto, caso);
 		Thread.sleep(3000);
 	}
+	
+	public void CambiarEmpresa (String caso) {
+		driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[1]/div/child::button")).click();
+		int hijos= driver.findElements(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[1]/div/descendant::a")).size();
+		String empresa="";
+		for (int h=1;h<=hijos;h++) {
+			empresa = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[1]/div/descendant::a["+h+"]")).getText();
+			System.out.println(empresa);
+			if(empresa.contains("ACEPTA")) {
+				driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[1]/div/descendant::a["+h+"]")).click();
+				h=10;
+			}
+		}
+	}
+	
+	public void OpcionUsuarios(String caso) throws IOException, InvalidFormatException, InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[3]/div/button")).click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[3]/div/ul/li[5]/a")).click();
+		String texto ="Click a Usuarios";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(3000);
+	}
 }

@@ -4,5 +4,3 @@ Click al botón Autorizar
 Click a Configuraciones
 Click a Aplicaciones
 Click a Nueva Aplicación
-Carga de Archivo
-Mensaje de Error Correcto
