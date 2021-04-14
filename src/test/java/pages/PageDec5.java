@@ -102,5 +102,6 @@ public class PageDec5 {
 		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
 		texto=texto.replace(" ","_");
 		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(3000);
 	}
 }

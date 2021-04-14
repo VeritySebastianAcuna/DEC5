@@ -1,6 +1,8 @@
-Log de Caso de Prueba DEC_0163
+Log de Caso de Prueba DEC_0166
 Login por Identidad Digital
 Click al botón Autorizar
 Click a Configuraciones
 Click a Aplicaciones
 Click a Nueva Aplicación
+Carga de Archivo
+Mensaje de Error Correcto
