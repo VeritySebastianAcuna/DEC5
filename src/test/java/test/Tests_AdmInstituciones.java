@@ -16,6 +16,7 @@ import common.Configuration;
 import common.CrearRut;
 import common.LeerExcel;
 import evidence.CrearLogyDocumento;
+import pages.PageAplicaciones;
 import pages.PageDec5;
 import pages.PageEditarInstituciones;
 import pages.PageInstituciones;
@@ -2433,6 +2434,76 @@ public class Tests_AdmInstituciones {
 		{
 			crearLogyDocumento.CasoNok(cp);
 		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0161() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0161";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.ClickRuedaConfiguracion(cp);
+		pageDec5.OpcionInstituciones(cp);
+		
+		PageInstituciones pageInstituciones = new PageInstituciones(driver);
+		pageInstituciones.CheckInstitucionesDeshabilitadas(cp);
+		
+		int hijos = driver.findElements(By.xpath("//*[@id=\"table-institutions_paginate\"]/ul/child::li")).size();
+		hijos=hijos-1;
+		driver.findElement(By.xpath("//*[@id=\"table-institutions_paginate\"]/ul/child::li["+hijos+"]")).click();
+		String nombre = driver.findElement(By.xpath("//*[@id=\"table-institutions\"]/descendant::a[1]")).getText();
+		System.out.println(nombre);
+		pageInstituciones.HabilitarInstitucion(cp);
+		pageDec5.ClickRuedaConfiguracion(cp);
+		pageDec5.OpcionInstituciones(cp);
+		pageDec5.Buscar(cp, nombre);
+		String texto = driver.findElement(By.xpath("//*[@id=\"table-institutions\"]/descendant::a[2]")).getText();
+		
+		System.out.println(texto);
+		if(texto.equals("Deshabilitar")) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else
+		{
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0163() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0163";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.ClickRuedaConfiguracion(cp);
+		pageDec5.OpcionAplicaciones(cp);
+		
+		PageAplicaciones pageAplicaciones = new PageAplicaciones(driver);
+		pageAplicaciones.IconoBusqueda(cp);
 		
 		System.out.println("FLUJO OK");
 	}

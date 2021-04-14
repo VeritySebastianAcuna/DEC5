@@ -20,7 +20,6 @@ public class PageInstituciones {
 	public PageInstituciones(WebDriver driver) {
 		this.driver=driver;
 	}
-	PageAlerta pageAlerta = new PageAlerta(driver);
 	
 	public void CheckInstitucionesDeshabilitadas (String caso) throws IOException, InvalidFormatException, InterruptedException {
 		driver.findElement(By.id("check-inactive")).click();
@@ -365,7 +364,32 @@ public class PageInstituciones {
 				capturaPantalla.takeScreenShotTest(driver,texto, caso);
 				Thread.sleep(2000);
 				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[3]/button")).click();
-//				pageAlerta.PopUpDeshabilitar();
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Deshabilitar Institución");
+					i=1;
+				}
+			}
+		}while(i==0);
+	}
+	
+	public void HabilitarInstitucion(String caso) {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//*[@id=\"table-institutions\"]/descendant::a[2]")).click();
+				String texto="Click a Habilitar";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[3]/button")).click();
 				i=1;
 			}catch (Exception e) {
 				// TODO: handle exception

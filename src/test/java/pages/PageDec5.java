@@ -87,4 +87,20 @@ public class PageDec5 {
 			}
 		}while(i==0);
 	}
+	
+	public void Buscar (String caso, String nombre) {
+		driver.findElement(By.id("searchTerm")).sendKeys(nombre);
+		driver.findElement(By.xpath("//*[@id=\"searchButton\"]/span")).click();
+		
+	}
+	
+	public void OpcionAplicaciones(String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[2]/div/ul/li[3]/a")).click();
+		String texto ="Click a Aplicaciones";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+	}
 }

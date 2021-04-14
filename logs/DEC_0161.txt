@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_0161
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click a Instituciones
+Click a Check Instituciones Deshabilitadas
+Click a Habilitar
+Click a Configuraciones
+Click a Instituciones
+Caso OK
