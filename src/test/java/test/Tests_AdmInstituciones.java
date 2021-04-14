@@ -2733,7 +2733,7 @@ public class Tests_AdmInstituciones {
 		pageUsuarios.SeleccionarRol(cp);
 		pageUsuarios.IngresarRut(cp, rut);
 		pageUsuarios.IngresarMail(cp, "asd");
-		pageUsuarios.BtnAsignar(cp);;
+		pageUsuarios.BtnAsignar(cp);
 		
 		String mensaje = driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div/form/div[2]/div[1]/div/div[2]/div/span")).getText();
 		if(mensaje.equals("El campo Email debe contener un email válido.") || mensaje.equals("El campo Email es obligatorio.")) {
@@ -2744,6 +2744,47 @@ public class Tests_AdmInstituciones {
 		}
 		System.out.println("FLUJO OK");
 	}
+	
+	@Test
+	public void Script_0185() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0185";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.OpcionUsuarios(cp);
+		
+		CrearRut crearRut = new CrearRut();
+		String rut = crearRut.RutPersona();
+		rut=rut.substring(0,rut.length()-1);
+		System.out.println("Rut cortado: "+rut);
+		PageUsuarios pageUsuarios = new PageUsuarios(driver);
+		pageUsuarios.AsignarUsuariosRol(cp);
+		pageUsuarios.SeleccionarRol(cp);
+		pageUsuarios.IngresarRut(cp, rut);
+		pageUsuarios.IngresarMail(cp, "prueba@prueba.cl");
+		pageUsuarios.BtnAsignar(cp);
+		
+		String mensaje = driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div/form/div[2]/div[1]/div/div[1]/div/span")).getText();
+		if(mensaje.equals("RUT no válido")) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		System.out.println("FLUJO OK");
+	}
+	
 	@AfterMethod
 	public void FinEjecucion() {
 		driver.manage().deleteAllCookies();
