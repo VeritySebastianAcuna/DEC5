@@ -91,8 +91,38 @@ public class PageUsuarios {
 		Thread.sleep(2000);
 	}
 	
-	public void BtnAsignar(String caso) throws InterruptedException {
+	public void BtnAsignar(String caso) throws InterruptedException, IOException, InvalidFormatException {
 		driver.findElement(By.name("s_role")).click();
-		Thread.sleep(2000);
+		String texto ="Click Boton Asignar";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(4000);
+	}
+	
+	public void RescatarUsuarioAsociadoRol (String caso, String rut) throws IOException, InvalidFormatException, InterruptedException {
+		int hijos=driver.findElements(By.xpath("//*[@id=\"tbl-users\"]/descendant::div")).size();
+		System.out.println(hijos);
+		System.out.println(rut);
+		for(int i=1;i<=hijos;i++) {
+			System.out.println(driver.findElement(By.xpath("//*[@id=\"tbl-users\"]/descendant::div["+i+"]")).getText());
+			if(driver.findElement(By.xpath("//*[@id=\"tbl-users\"]/descendant::div["+i+"]")).getText().equals(rut)) {
+				String texto ="Usuario Agregado con exito";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(3000);
+			}
+//			else {
+//				String texto ="No se pudo encontrar usuario";
+//				log.modificarArchivoLog(caso,texto);
+//				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+//				texto=texto.replace(" ","_");
+//				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+//				Thread.sleep(3000);
+//			}
+		}
 	}
 }

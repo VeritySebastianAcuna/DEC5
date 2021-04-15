@@ -123,7 +123,15 @@ public class PageDec5 {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[3]/div/button")).click();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[3]/div/ul/li[5]/a")).click();
+		int hijos = driver.findElements(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[3]/div/descendant::a")).size();
+		int i=1;
+		do {
+			if(driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[3]/div/descendant::a["+i+"]")).getText().equals("Usuarios")) {
+				driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[3]/div/descendant::a["+i+"]")).click();
+				i=hijos+1;
+			}
+		}while(i<=hijos);
+//		driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[3]/div/ul/li[5]/a")).click();
 		String texto ="Click a Usuarios";
 		log.modificarArchivoLog(caso,texto);
 		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);

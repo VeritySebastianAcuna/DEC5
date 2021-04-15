@@ -7,7 +7,7 @@
         <methods>
           <include name="setUp"/>
           <include name="FinEjecucion"/>
-          <include name="Script_0185"/>
+          <include name="Script_0197"/>
         </methods>
       </class> <!-- test.Tests_AdmInstituciones -->
     </classes>
