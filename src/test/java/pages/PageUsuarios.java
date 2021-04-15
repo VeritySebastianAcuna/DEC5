@@ -125,4 +125,14 @@ public class PageUsuarios {
 //			}
 		}
 	}
+	
+	public void CerrarPopupAsignarUsuariosRol(String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div/form/div[1]/div[1]/button")).click();
+		String texto ="PopUp Cerrado";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(3000);
+	}
 }
