@@ -399,6 +399,112 @@ public class Tests_Usuarios {
 		System.out.println("FLUJO OK");
 	}
 	
+	@Test
+	public void Script_0207() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0207";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.OpcionUsuarios(cp);
+		
+		PageUsuarios pageUsuarios = new PageUsuarios(driver);
+		pageUsuarios.DeshabilitarUsuariosRol(cp);
+		pageUsuarios.CerrarPopupDeshabilitarUsuariosRol(cp);
+		
+		if(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		else {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0210() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0210";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.OpcionUsuarios(cp);
+		
+		CrearRut crearRut = new CrearRut();
+		String rut=crearRut.RutPersona();
+		rut=rut+","+crearRut.RutPersona();
+		System.out.println(rut);
+		PageUsuarios pageUsuarios = new PageUsuarios(driver);
+		pageUsuarios.DeshabilitarUsuariosRol(cp);
+		pageUsuarios.SeleccionarRol(cp);
+		pageUsuarios.IngresarRutInhabilitar(cp, rut);
+		pageUsuarios.BtnInhabilitar(cp);
+		
+		String mensaje = driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[2]/label")).getText();
+		if(mensaje.equals("Todos los usuarios fueron inhabilitados exitosamente.")) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0211() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0211";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.OpcionUsuarios(cp);
+		
+		PageUsuarios pageUsuarios = new PageUsuarios(driver);
+		pageUsuarios.DeshabilitarUsuariosRol(cp);
+		pageUsuarios.BtnInhabilitar(cp);
+		
+		if(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[1]/div[2]/div/div[1]/div/span")).getText().equals("El campo Rol es obligatorio.") 
+		&& driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[2]/div[1]/div/span")).getText().equals("El campo Lista de Usuarios es obligatorio.")) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		System.out.println("FLUJO OK");
+	}
+	
 	@AfterMethod
 	public void FinEjecucion() {
 		driver.manage().deleteAllCookies();

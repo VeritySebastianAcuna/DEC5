@@ -135,4 +135,45 @@ public class PageUsuarios {
 		capturaPantalla.takeScreenShotTest(driver,texto, caso);
 		Thread.sleep(3000);
 	}
+	
+	public void DeshabilitarUsuariosRol(String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div/div[1]/div[1]/button[3]")).click();
+		String texto ="Click Crear Rol";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(3000);
+	}	
+	
+	public void BtnInhabilitar(String caso) throws InterruptedException, IOException, InvalidFormatException {
+		driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[3]/div/button")).click();
+		String texto ="Click Boton Inhabilitar";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(4000);
+	}
+	
+	public void CerrarPopupDeshabilitarUsuariosRol(String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[1]/div[1]/button")).click();
+		String texto ="PopUp Cerrado";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(3000);
+	}
+	
+	public void IngresarRutInhabilitar(String caso, String ruts) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.id("list_users")).sendKeys(ruts);
+		String texto ="Se Ingresan Ruts";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(3000);
+	}
 }
