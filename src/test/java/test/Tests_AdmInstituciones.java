@@ -16,7 +16,6 @@ import common.Configuration;
 import common.CrearRut;
 import common.LeerExcel;
 import evidence.CrearLogyDocumento;
-import pages.PageAplicaciones;
 import pages.PageDec5;
 import pages.PageEditarInstituciones;
 import pages.PageInstituciones;
@@ -2479,87 +2478,6 @@ public class Tests_AdmInstituciones {
 		{
 			crearLogyDocumento.CasoNok(cp);
 		}
-		
-		System.out.println("FLUJO OK");
-	}
-	
-	@Test
-	public void Script_0163() throws InterruptedException, IOException, InvalidFormatException {
-		String cp = "DEC_0163";
-		System.out.println(cp);
-		
-		PageDec5 pageDec5 = new PageDec5(driver);
-		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
-		
-		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
-		crearLogyDocumento.CrearEvidencias(cp);
-		
-		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
-		
-		pageDec5.ClickIngresarLogin(cp);
-		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
-		
-		pageDec5.ClickRuedaConfiguracion(cp);
-		pageDec5.OpcionAplicaciones(cp);
-		
-		PageAplicaciones pageAplicaciones = new PageAplicaciones(driver);
-		pageAplicaciones.IconoBusqueda(cp);
-		
-		System.out.println("FLUJO OK");
-	}
-	
-	@Test
-	public void Script_0165() throws InterruptedException, IOException, InvalidFormatException {
-		String cp = "DEC_0165";
-		System.out.println(cp);
-		
-		PageDec5 pageDec5 = new PageDec5(driver);
-		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
-		
-		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
-		crearLogyDocumento.CrearEvidencias(cp);
-		
-		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
-		
-		pageDec5.ClickIngresarLogin(cp);
-		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
-		
-		pageDec5.ClickRuedaConfiguracion(cp);
-		pageDec5.OpcionAplicaciones(cp);
-		
-		PageAplicaciones pageAplicaciones = new PageAplicaciones(driver);
-		pageAplicaciones.NuevaAplicaciones(cp);
-		pageAplicaciones.CargarArchivo(cp,"archivo.zip");
-		pageAplicaciones.MensajeErrorCargaArchivo(cp);
-		
-		System.out.println("FLUJO OK");
-	}
-	
-//	@Test
-	public void Script_0166() throws InterruptedException, IOException, InvalidFormatException {
-		String cp = "DEC_0166";
-		System.out.println(cp);
-		
-		PageDec5 pageDec5 = new PageDec5(driver);
-		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
-		
-		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
-		crearLogyDocumento.CrearEvidencias(cp);
-		
-		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
-		
-		pageDec5.ClickIngresarLogin(cp);
-		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
-		
-		pageDec5.ClickRuedaConfiguracion(cp);
-		pageDec5.OpcionAplicaciones(cp);
-		
-		PageAplicaciones pageAplicaciones = new PageAplicaciones(driver);
-		pageAplicaciones.NuevaAplicaciones(cp);
-		pageAplicaciones.CargarArchivo(cp,"documento.txt");
-		pageAplicaciones.MensajeErrorCargaArchivo(cp);
-		
-//		pageAplicaciones.MensajeErrorCargaArchivo(cp);
 		
 		System.out.println("FLUJO OK");
 	}
