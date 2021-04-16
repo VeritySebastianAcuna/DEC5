@@ -6,9 +6,11 @@ import java.util.concurrent.TimeUnit;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import common.CapturaPantalla;
+import common.Configuration;
 import common.CrearDocEvidencia;
 import common.Log;
 
@@ -175,5 +177,66 @@ public class PageUsuarios {
 		texto=texto.replace(" ","_");
 		capturaPantalla.takeScreenShotTest(driver,texto, caso);
 		Thread.sleep(3000);
+	}
+	
+	public void BtnDeshabilitacionMasiva(String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[1]/div[2]/div/div[2]/button")).click();
+		String texto ="Click Boton Deshabilitacion Masiva";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(3000);
+	}
+	
+	public void CargarArchivoDeshabilitacionMasiva(String caso,String archivo) throws IOException, InvalidFormatException, InterruptedException {
+		WebElement fileInput = driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[2]/div[2]/div/div[2]/div[2]/input"));
+		String rutaArchivo=Configuration.ROOT_DIR+"Archivos/"+archivo;
+		fileInput.sendKeys(rutaArchivo);
+		String texto="Carga de Archivo";
+		log.modificarArchivoLog(caso, texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+		texto=texto.replace(" ", "_");
+		capturaPantalla.takeScreenShotTest(driver, texto, caso);
+		Thread.sleep(2000);
+	}
+			
+	public void BtnCuentasRegistradas(String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div/div[1]/div[2]/button[1]")).click();
+		String texto ="Click Boton Cuentas Registradas";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(3000);
+	}
+	
+	public void LinkVerReportes(String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[2]/div/div/a")).click();
+		String texto ="Click Link Ver Reportes";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(3000);
+	}
+	
+	public String CambiarPestanaReportes(String caso) throws InterruptedException, IOException, InvalidFormatException {
+		// Almacena el ID de la ventana original
+		String originalWindow = driver.getWindowHandle();
+		// Espera a la nueva ventana o pestaña
+		Thread.sleep(7000);
+		for (String windowHandle : driver.getWindowHandles()) {
+		    if(!originalWindow.contentEquals(windowHandle)) {
+		        driver.switchTo().window(windowHandle);
+		        break;
+		    }
+		}
+		String texto = "Pestana Reportes";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver, texto, caso);
+		return originalWindow;
 	}
 }

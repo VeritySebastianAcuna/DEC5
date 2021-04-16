@@ -1,0 +1,8 @@
+Log de Caso de Prueba DEC_0220
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Usuarios
+Click Boton Cuentas Registradas
+Click Link Ver Reportes
+Pestana Reportes
+Busqueda OK
