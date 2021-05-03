@@ -6,8 +6,8 @@
       <class name="test.Tests_MiPortal">
         <methods>
           <include name="FinEjecucion"/>
-          <include name="Script_0710"/>
           <include name="setUp"/>
+          <include name="Script_0715"/>
         </methods>
       </class> <!-- test.Tests_MiPortal -->
     </classes>
