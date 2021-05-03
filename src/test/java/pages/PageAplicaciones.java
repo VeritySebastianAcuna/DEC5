@@ -102,41 +102,4 @@ public class PageAplicaciones {
 			capturaPantalla.takeScreenShotTest(driver, texto, caso);
 		}
 	}
-	
-	public void DescargarXml(String caso) throws InterruptedException {
-		int i=0;
-		int j=0;
-		do {
-			try {
-//				driver.findElement(By.xpath("//*[@id=\"seccion-subir\"]/div[2]/a")).click();
-				String sCarpAct = System.getProperty("C:\\Users\\estef\\Downloads\\config_app.xml");
-				WebElement fileInput = driver.findElement(By.xpath("//*[@id=\"seccion-subir\"]/div[2]/a"));
-				fileInput.sendKeys(sCarpAct);
-				File carpeta = new File(sCarpAct);
-				
-				String texto="Click a Descargar XML";
-				log.modificarArchivoLog(caso, texto);
-				crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
-				texto=texto.replace(" ", "_");
-				capturaPantalla.takeScreenShotTest(driver, texto, caso);
-				
-				if(carpeta.exists()) {
-					System.out.println("OK");
-				}
-				else {
-					System.out.println("NOK");
-				}
-				Thread.sleep(2000);
-				i=1;
-			}catch (Exception e) {
-				// TODO: handle exception
-				j++;
-				if(j==3) {
-					System.out.println("No fue posible dar click a Descargar XML");
-					i=1;
-				}
-			}
-		}while(i==0);
-		Thread.sleep(5000);
-	}
 }

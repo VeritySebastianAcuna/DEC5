@@ -1,3 +1,0 @@
-Log de Caso de Prueba DEC_0079
-Login por Identidad Digital
-Click al botón Autorizar

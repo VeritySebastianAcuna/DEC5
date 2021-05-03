@@ -1,7 +1,0 @@
-Log de Caso de Prueba DEC_0062
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Configuraciones
-Click Manual Navegar en DEC
-Manual abierto en navegador
-Caso OK

@@ -1,8 +1,0 @@
-Log de Caso de Prueba DEC_0210
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Usuarios
-Click Crear Rol
-Se Ingresan Ruts
-Click Boton Inhabilitar
-Caso OK

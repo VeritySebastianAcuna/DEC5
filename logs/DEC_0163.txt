@@ -1,6 +1,0 @@
-Log de Caso de Prueba DEC_0163
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Configuraciones
-Click a Aplicaciones
-Click a Nueva Aplicación

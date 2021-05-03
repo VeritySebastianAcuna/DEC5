@@ -1,9 +1,0 @@
-Log de Caso de Prueba DEC_0216
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Usuarios
-Click Crear Rol
-Click Boton Deshabilitacion Masiva
-Carga de Archivo
-Click Boton Inhabilitar
-Caso OK

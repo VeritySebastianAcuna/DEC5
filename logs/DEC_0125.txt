@@ -1,9 +1,0 @@
-Log de Caso de Prueba DEC_0125
-Login por Identidad Digital
-No aparece el botón Autorizar
-Click a Configuraciones
-Click a Instituciones
-Click a Editar
-Editar Rut
-Click Boton Guardar
-Mensaje OK

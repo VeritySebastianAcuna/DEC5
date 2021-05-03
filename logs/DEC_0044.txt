@@ -1,7 +1,0 @@
-Log de Caso de Prueba DEC_0044
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Configuraciones
-Click a Editar Cuentas
-Click a Registro Certificado HSM
-Caso OK

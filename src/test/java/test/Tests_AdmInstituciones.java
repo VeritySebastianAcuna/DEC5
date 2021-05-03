@@ -27,7 +27,7 @@ public class Tests_AdmInstituciones {
 	@BeforeMethod
 	public void setUp() throws FileNotFoundException, IOException {
 //		DesiredCapabilities caps = new DesiredCapabilities();
-		System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");		
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.navigate().to("https://5cap.dec.cl/portal");// Aquí se ingresa la URL para hacer las pruebas.

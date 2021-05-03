@@ -1,7 +1,0 @@
-Log de Caso de Prueba DEC_0063
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Configuraciones
-Click Manual Crear Documentos
-Manual abierto en navegador
-Caso OK

@@ -1,7 +1,0 @@
-Log de Caso de Prueba DEC_ADM_020
-Se intentará por Identidad Digital
-Login por Identidad Digital
-Click al botón Autorizar
-Caso OK
-Click a Instituciones
-Click a Crear Institucion

@@ -1,7 +1,0 @@
-Log de Caso de Prueba DEC_0197
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Usuarios
-Click Crear Rol
-Click Boton Asignar
-Usuario Agregado con exito

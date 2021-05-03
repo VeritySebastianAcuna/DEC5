@@ -1,8 +1,0 @@
-Log de Caso de Prueba DEC_0132
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Configuraciones
-Click a Instituciones
-Click a Editar
-Click Boton Guardar
-Caso OK

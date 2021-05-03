@@ -1,9 +1,0 @@
-Log de Caso de Prueba DEC_0151
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Configuraciones
-Click a Instituciones
-Click a Editar
-Check Descargar Vinculados
-Click Boton Guardar
-Caso OK

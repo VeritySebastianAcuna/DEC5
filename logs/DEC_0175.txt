@@ -1,6 +1,0 @@
-Log de Caso de Prueba DEC_0175
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Usuarios
-Click Crear Rol
-Caso OK

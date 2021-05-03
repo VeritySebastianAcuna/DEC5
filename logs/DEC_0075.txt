@@ -1,6 +1,0 @@
-Log de Caso de Prueba DEC_0075
-No aparece alerta
-Caso OK
-Click Manual Organizar Documentos
-Manual abierto en navegador
-Caso OK

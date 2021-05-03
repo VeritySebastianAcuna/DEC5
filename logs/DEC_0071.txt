@@ -1,6 +1,0 @@
-Log de Caso de Prueba DEC_0071
-No aparece alerta
-Caso OK
-Click Manual Bienvenido a DEC y Registro de Usuarios
-Manual abierto en navegador
-Caso OK
