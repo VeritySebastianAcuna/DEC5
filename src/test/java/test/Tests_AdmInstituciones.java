@@ -16,7 +16,7 @@ import common.Configuration;
 import common.CrearRut;
 import common.LeerExcel;
 import evidence.CrearLogyDocumento;
-import pages.PageAcepta;
+
 import pages.PageDec5;
 import pages.PageInstituciones;
 import pages.PageLoginAdm;
