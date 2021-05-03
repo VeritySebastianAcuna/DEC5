@@ -137,7 +137,6 @@ public class PageInstituciones {
 		}while(i==0);
 	}
 	
-<<<<<<< HEAD
 	public void ColorNoOk (String caso) throws InterruptedException, IOException, InvalidFormatException {
 		driver.findElement(By.name("scheme_color")).clear();
 		driver.findElement(By.name("scheme_color")).sendKeys("asd");
@@ -405,8 +404,6 @@ public class PageInstituciones {
 		}while(i==0);
 	}
 	
-}
-=======
 	public void CodigoColor (String caso, String codigo) throws InvalidFormatException, IOException, InterruptedException {
 		driver.findElement(By.name("scheme_color")).clear();
 		driver.findElement(By.name("scheme_color")).sendKeys(codigo);
@@ -423,4 +420,3 @@ public class PageInstituciones {
 //		crearLogyDocumento.AgregarRegistroLog(caso, "No Registro seleccionado");
 	}
 }
->>>>>>> ramaSebastian
