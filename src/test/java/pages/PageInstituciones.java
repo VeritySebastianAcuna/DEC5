@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import common.CapturaPantalla;
 import common.CrearDocEvidencia;
 import common.Log;
+import evidence.CrearLogyDocumento;
 
 public class PageInstituciones {
 	private WebDriver driver;
@@ -20,6 +21,7 @@ public class PageInstituciones {
 	public PageInstituciones(WebDriver driver) {
 		this.driver=driver;
 	}
+	CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
 	
 	public void CheckInstitucionesDeshabilitadas (String caso) throws IOException, InvalidFormatException, InterruptedException {
 		driver.findElement(By.id("check-inactive")).click();
@@ -50,7 +52,7 @@ public class PageInstituciones {
 	}
 	
 	public void CrearInstituciones (String caso) throws IOException, InvalidFormatException, InterruptedException {
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[1]/div/a")).click();
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[1]/div/a")).click();//Botón azul/blanco crear institución
 		String texto ="Click a Crear Institucion";
 		log.modificarArchivoLog(caso,texto);
 		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
@@ -59,7 +61,7 @@ public class PageInstituciones {
 	}
 	
 	public void DatosNuevaInstitucion (String caso, String institucion, String prefijoAuditoria, String rut, String descripcion, 
-			String email) throws IOException, InvalidFormatException, InterruptedException {
+			String email) throws IOException, InvalidFormatException, InterruptedException { 
 		driver.findElement(By.id("institution_name")).sendKeys(institucion);
 		driver.findElement(By.name("nemo")).sendKeys(prefijoAuditoria);
 		driver.findElement(By.name("rut")).sendKeys(rut);
@@ -111,7 +113,7 @@ public class PageInstituciones {
 						flag.selectByValue("0");
 						break;
 					case "Si":
-						flag.selectByValue("01");
+						flag.selectByValue("1");
 						break;
 					default:
 						System.out.println("Tipo CPE Valor inválido");
@@ -134,9 +136,19 @@ public class PageInstituciones {
 		}while(i==0);
 	}
 	
-	public void CodigoColor (String caso, String codigo) {
+	public void CodigoColor (String caso, String codigo) throws InvalidFormatException, IOException, InterruptedException {
 		driver.findElement(By.name("scheme_color")).clear();
 		driver.findElement(By.name("scheme_color")).sendKeys(codigo);
+//		crearLogyDocumento.AgregarRegistroLog(caso, "Ingreso Codigo de Color");
 	}
 	
+	public void NoRegistro (String caso) throws InvalidFormatException, IOException, InterruptedException {
+		driver.findElement(By.name("scheme_no_registro"));
+//		crearLogyDocumento.AgregarRegistroLog(caso, "No Registro seleccionado");
+	}
+	
+	public void NoHuella (String caso) throws InvalidFormatException, IOException, InterruptedException {
+		driver.findElement(By.name("scheme_no_finger"));
+//		crearLogyDocumento.AgregarRegistroLog(caso, "No Registro seleccionado");
+	}
 }

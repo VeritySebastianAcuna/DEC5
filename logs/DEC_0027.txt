@@ -1,2 +1,0 @@
-Log de Caso de Prueba DEC_0027
-Ingreso Rut Incorrecto

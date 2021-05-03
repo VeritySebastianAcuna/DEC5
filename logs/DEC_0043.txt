@@ -1,6 +1,0 @@
-Log de Caso de Prueba DEC_0043
-No aparece alerta
-Caso OK
-Caso OK
-Caso OK
-Caso OK

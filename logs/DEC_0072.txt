@@ -1,6 +1,0 @@
-Log de Caso de Prueba DEC_0072
-No aparece alerta
-Caso OK
-Click Manual Conceptos Basicos y Administracion
-Manual abierto en navegador
-Caso OK

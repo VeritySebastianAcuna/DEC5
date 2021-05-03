@@ -140,4 +140,49 @@ public class LeerExcel {
 	    System.out.println("El tamaño es: "+i);
 		return i;
 	}
+	
+	public int LeerCeldas (String archivo) throws FileNotFoundException, IOException{//FUNCIÓN QUE DEBO IMPLEMENTAR PARA QUE LEEA EL ARCHIVO
+		File f = new File(archivo);
+	    InputStream inp = new FileInputStream(f);//Ingresar archivo
+	    Workbook wb = WorkbookFactory.create(inp);
+	    Sheet sheet = wb.getSheetAt(0);//Leo la hoja
+	    int i=0;
+	    Row row = sheet.getRow(0); //En qué fila empezar ya dependerá también de si tenemos, por ejemplo, el título de cada columna en la primera fila
+	    String value=null;
+	    Cell cell;//almacena valor celda
+	    double valor;//Trasnformo algún datos que no es String a String
+	    do {//Termina cuando ya no hay mas datos
+//			cell = row.getCell(i);//Parte de la 1A
+	    	for (int c = 0; c < 5; c++)//RECORRER LAS COLUMNAS
+			{
+	    		cell = row.getCell(c);//OBTENGO LA CELDA
+			try {
+//			  	value = cell.getStringCellValue();
+//			  	System.out.println(value);
+//			  	i++;
+//			  	row = sheet.getRow(i);
+					value = cell.getStringCellValue();//oBTENGO LOS DATOS DE LA CELDA
+					System.out.println(value);	
+				
+			}catch (Exception e) {
+				if(cell!=null) {
+			       	valor = cell.getNumericCellValue();
+			  	  	value = String.valueOf(valor);
+			  	  	System.out.println(value);
+			  	  	i++;
+			    }
+			    else{
+			    	System.out.println("Celda es Nula");
+			    	row = sheet.getRow(1000);
+			    }
+			}
+			
+			}
+	    	i++;
+			row = sheet.getRow(i);//PASA A LA SIGUIENTE FILA
+	    } while(row!=null);
+	    System.out.println("El tamaño es: "+i);
+		return i;
+		
+	}
 }

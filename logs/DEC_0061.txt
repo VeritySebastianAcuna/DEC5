@@ -1,7 +1,0 @@
-Log de Caso de Prueba DEC_0061
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Configuraciones
-Click Manual Conceptos Basicos y Administracion
-Manual abierto en navegador
-Caso OK

@@ -69,6 +69,16 @@ public class PageDec5 {
 		capturaPantalla.takeScreenShotTest(driver,texto, caso);
 	}
 	
+	public void OpcionUserName(String caso) throws IOException, InvalidFormatException, InterruptedException {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[1]/div/button")).click();
+		String texto ="Click a Nombre Usuario";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+	}
+	
 	public void ClickIngresarLogin(String caso) {
 		int i=0;
 		int j=0;

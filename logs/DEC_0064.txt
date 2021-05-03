@@ -1,7 +1,0 @@
-Log de Caso de Prueba DEC_0064
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Configuraciones
-Click Manual Organizar Documentos
-Manual abierto en navegador
-Caso OK

@@ -1,7 +1,0 @@
-Log de Caso de Prueba DEC_0060
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Configuraciones
-Click Manual Bienvenido a DEC y Registro de Usuarios
-Manual abierto en navegador
-Caso OK

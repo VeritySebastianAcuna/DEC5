@@ -1,7 +1,0 @@
-Log de Caso de Prueba DEC_0065
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Configuraciones
-Click Manual Procesar y Firmar
-Manual abierto en navegador
-Caso OK

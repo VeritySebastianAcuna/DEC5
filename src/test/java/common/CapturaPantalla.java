@@ -31,7 +31,7 @@ public class CapturaPantalla {
 		
 		TakesScreenshot captura = (TakesScreenshot) driver; //castear de un WebDriver a TakesScreenshot
 		File archivoCaptura = captura.getScreenshotAs(OutputType.FILE);
-		String path = String.format("%s%s-%s-%s.jpg", Configuration.SCREENSHOT_DIR, caso,"Captura",tiempo);
+		String path = String.format("%s%s-%s-%s.jpg", Configuration.SCREENSHOT_DIR, caso,"Captura",imageName+tiempo);
 		archivoCaptura.renameTo(new File(path));
 		Thread.sleep(1000);
 		

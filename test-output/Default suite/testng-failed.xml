@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.Tests_AdmInstituciones">
+      <class name="test.Test_CrearDocumento">
         <methods>
-          <include name="setUp"/>
+          <include name="Script_1213"/>
           <include name="FinEjecucion"/>
-          <include name="Script_0101"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- test.Tests_AdmInstituciones -->
+      </class> <!-- test.Test_CrearDocumento -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
