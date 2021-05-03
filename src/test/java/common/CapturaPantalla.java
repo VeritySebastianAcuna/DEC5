@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Calendar;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.util.Units;
@@ -21,9 +22,16 @@ import org.openqa.selenium.WebDriver;
 public class CapturaPantalla {
 	
 	public void takeScreenShotTest(WebDriver driver, String imageName, String caso) throws FileNotFoundException, IOException, InvalidFormatException, InterruptedException {
+		Calendar calendario = Calendar.getInstance();
+		int hora, minutos, segundos;
+		hora =calendario.get(Calendar.HOUR_OF_DAY);
+		minutos = calendario.get(Calendar.MINUTE);
+		segundos = calendario.get(Calendar.SECOND);
+		String tiempo = hora+""+minutos+""+segundos;
+		
 		TakesScreenshot captura = (TakesScreenshot) driver; //castear de un WebDriver a TakesScreenshot
 		File archivoCaptura = captura.getScreenshotAs(OutputType.FILE);
-		String path = String.format("%s%s-%s-%s.jpg", Configuration.SCREENSHOT_DIR, caso,"Captura",imageName);
+		String path = String.format("%s%s-%s-%s.jpg", Configuration.SCREENSHOT_DIR, caso,"Captura",imageName+tiempo);
 		archivoCaptura.renameTo(new File(path));
 		Thread.sleep(1000);
 		
