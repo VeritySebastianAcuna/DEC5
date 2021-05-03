@@ -16,7 +16,7 @@ import common.Configuration;
 import common.CrearRut;
 import common.LeerExcel;
 import evidence.CrearLogyDocumento;
-
+import pages.PageAcepta;
 import pages.PageDec5;
 import pages.PageInstituciones;
 import pages.PageLoginAdm;
@@ -959,11 +959,8 @@ public class Tests_AdmInstituciones {
 		
 		rut=crearRut.RutPersona();
 		pageInstituciones.DatosAdminDec(cp, rut, datos[8], datos[9]);
-<<<<<<< HEAD
-		pageInstituciones.ColorNoOk(cp);
-=======
+
 		pageInstituciones.CodigoColor(cp, "asd");
->>>>>>> ramaSebastian
 		
 		pageInstituciones.BtnCrearInstitucion(cp);
 		
@@ -1009,11 +1006,7 @@ public class Tests_AdmInstituciones {
 		
 		rut=crearRut.RutPersona();
 		pageInstituciones.DatosAdminDec(cp, rut, datos[8], datos[9]);
-<<<<<<< HEAD
 		pageInstituciones.CheckNoRegistro(cp);
-=======
-		pageInstituciones.NoRegistro(cp);
->>>>>>> ramaSebastian
 		
 		pageInstituciones.BtnCrearInstitucion(cp);
 		
@@ -1104,7 +1097,6 @@ public class Tests_AdmInstituciones {
 		
 		rut=crearRut.RutPersona();
 		pageInstituciones.DatosAdminDec(cp, rut, datos[8], datos[9]);
-<<<<<<< HEAD
 		pageInstituciones.CheckNoHuella(cp);
 		
 		pageInstituciones.BtnCrearInstitucion(cp);
@@ -1151,9 +1143,7 @@ public class Tests_AdmInstituciones {
 		
 		rut=crearRut.RutPersona();
 		pageInstituciones.DatosAdminDec(cp, rut, datos[8], datos[9]);
-=======
 		pageInstituciones.NoHuella(cp);
->>>>>>> ramaSebastian
 		
 		pageInstituciones.BtnCrearInstitucion(cp);
 		
