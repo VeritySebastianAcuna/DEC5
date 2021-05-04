@@ -4,5 +4,5 @@ Click al botón Autorizar
 Click a Nombre Usuario
 Click empresa ACEPTA
 Click Mis Documentos
-Resultado Busqueda de etiquetas
-Caso NOK
+Busqueda realizada
+Busqueda OK
