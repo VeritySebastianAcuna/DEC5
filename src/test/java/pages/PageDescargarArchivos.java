@@ -1,16 +1,10 @@
 package pages;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.compress.archivers.dump.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import common.CapturaPantalla;
-import common.Configuration;
 import common.CrearDocEvidencia;
 import common.Log;
 

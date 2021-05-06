@@ -1,5 +1,5 @@
 package test;
-import java.io.File;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -22,7 +22,6 @@ import pages.PageCrearDocumento;
 import pages.PageDatosDocumento;
 import pages.PageDatosFirmante;
 import pages.PageDec5;
-import pages.PageDescargarArchivos;
 import pages.PageLoginAdm;
 import pages.PageSubirArchivos;
 

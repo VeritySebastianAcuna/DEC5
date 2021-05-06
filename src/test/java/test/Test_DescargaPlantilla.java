@@ -1,6 +1,5 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import java.io.File;
@@ -10,11 +9,9 @@ import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -27,7 +24,6 @@ import pages.PageAvanzarPagina;
 import pages.PageCrearDocumento;
 import pages.PageDec5;
 import pages.PageDescargarArchivos;
-import pages.PageLeerExcel;
 import pages.PageLoginAdm;
 
 public class Test_DescargaPlantilla {

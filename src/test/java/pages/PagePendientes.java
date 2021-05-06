@@ -1,5 +1,8 @@
 package pages;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -365,5 +368,66 @@ public class PagePendientes {
 		}while(i==0);
 		Thread.sleep(6000);
 	}
-		
+	
+	public void FechaDesde (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				Calendar calendario = new GregorianCalendar();
+				int anio = calendario.get(Calendar.YEAR);
+				int mes = calendario.get(Calendar.MONTH);
+				int dia = calendario.get(Calendar.DAY_OF_MONTH);
+				String fecha = String.valueOf(dia)+String.valueOf(mes)+String.valueOf(anio);
+				System.out.println(fecha);
+				driver.findElement(By.name("from")).sendKeys(fecha);
+				Thread.sleep(1000);
+				String texto ="Ingreso Fecha Desde";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible ingresar Fecha Desde");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void FechaHasta (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				Calendar calendario = new GregorianCalendar();
+				int anio = calendario.get(Calendar.YEAR);
+				int mes = calendario.get(Calendar.MONTH);
+				int dia = calendario.get(Calendar.DAY_OF_MONTH);
+				String fecha = String.valueOf(dia)+String.valueOf(mes)+String.valueOf(anio);
+				System.out.println(fecha);
+				driver.findElement(By.name("to")).sendKeys(fecha);
+				Thread.sleep(1000);
+				String texto ="Ingreso Fecha Desde";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible ingresar Fecha Desde");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
 }

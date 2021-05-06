@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.commons.compress.archivers.dump.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -16,7 +15,6 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import common.CapturaPantalla;
@@ -48,6 +46,7 @@ public class PageLeerExcel {
 			}
 		}
 		Thread.sleep(2000);
+		newWorkbook.close();
 	}
 	
 	public String valorCelda(String caso, String filepath, String sheetName, int rowNumber, int cellNumber) throws IOException {
@@ -59,7 +58,7 @@ public class PageLeerExcel {
 		XSSFRow row = newSheet.createRow(rowNumber);
 		XSSFCell cell = row.getCell(cellNumber);
 		
-		
+		newWorkbook.close();
 		return cell.getStringCellValue();
 	}
 	

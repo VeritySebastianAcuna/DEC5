@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.bouncycastle.crypto.params.DESParameters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,6 +13,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import common.Configuration;
+import common.FechaActual;
 import common.LeerExcel;
 import evidence.CrearLogyDocumento;
 import pages.PageDec5;
@@ -453,6 +453,72 @@ public class Tests_MiPortal {
 		}
 		
 		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0728() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0728";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickPendientes(cp);
+		
+		PagePendientes pagePendientes = new PagePendientes(driver);
+		pagePendientes.ClickFiltrosAvanzados(cp);	
+		pagePendientes.FechaDesde(cp);
+		pagePendientes.BtnFiltrarFiltrosAvanzados(cp);
+		
+		crearLogyDocumento.CasoOk(cp);
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0729() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0729";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickPendientes(cp);
+		
+		PagePendientes pagePendientes = new PagePendientes(driver);
+		pagePendientes.ClickFiltrosAvanzados(cp);	
+		pagePendientes.FechaHasta(cp);
+		pagePendientes.BtnFiltrarFiltrosAvanzados(cp);
+		
+		crearLogyDocumento.CasoOk(cp);
+		
+		System.out.println("FLUJO OK");
+		FechaActual fechaActual = new FechaActual ();
+		fechaActual.Fecha();
 	}
 	
 	@AfterMethod

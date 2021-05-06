@@ -1,5 +1,5 @@
 package test;
-import java.io.File;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -7,7 +7,6 @@ import java.util.concurrent.TimeUnit;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -15,19 +14,11 @@ import org.testng.annotations.Test;
 
 import common.Configuration;
 import common.LeerExcel;
-import common.Log;
 import evidence.CrearLogyDocumento;
 import pages.PageAcepta;
-import pages.PageAvanzarPagina;
-import pages.PageCrearDocumento;
-import pages.PageDatosDocumento;
-import pages.PageDatosFirmante;
 import pages.PageDec5;
-import pages.PageDescargarArchivos;
 import pages.PageLoginAdm;
 import pages.PageMisDocumentos;
-import pages.PagePendientes;
-import pages.PageSubirArchivos;
 
 public class Test_MisDocumentos {
 
