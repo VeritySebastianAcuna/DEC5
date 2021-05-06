@@ -17,14 +17,12 @@ import common.LeerExcel;
 import evidence.CrearLogyDocumento;
 import pages.PageAcepta;
 import pages.PageDec5;
-<<<<<<< HEAD
-=======
 import pages.PageDescargarArchivos;
 import pages.PageFechaCalendario;
->>>>>>> bfc0204d78ac9c79f1a30b0af69729496464e2a3
 import pages.PageLoginAdm;
 import pages.PageMiPortal;
 import pages.PageMisDocumentos;
+import pages.PagePendientes;
 
 public class Test_MisDocumentos {
 
