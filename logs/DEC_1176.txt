@@ -1,0 +1,16 @@
+Log de Caso de Prueba DEC_1176
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Crear Documento
+Click Botón Crear Plantilla DEC
+Click Crear Plantilla DEC
+Click Botón Revisar y Continuar
+Click Botón Continuar
+Click Botón Configurar Firmantes
+Click Firmante
+Click Botón Asignar
+Click Botón Agregar
+Mensaje Rut Inválido OK
+Caso OK

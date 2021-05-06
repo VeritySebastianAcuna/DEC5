@@ -63,27 +63,20 @@ public class Test_CrearDocumento {
 		pageCrearDocumento.crearDocumento(cp);
 		pageCrearDocumento.btnCrearPlantillaDec(cp);			
 		
-		String texto= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/a")).getText();
-		if(texto.equals("Plantilla DEC")) {
-			crearLogyDocumento.AgregarRegistroLog(cp, "Crear Documento usando una plantilla DEC OK");
-			System.out.println(texto);
-			crearLogyDocumento.CasoOk(cp);
-			texto= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[3]/a")).getText();
-			if(texto.equals("Crear Documento por Lote")) {
-				crearLogyDocumento.AgregarRegistroLog(cp, "Crear Documento por Lote OK");
-				System.out.println(texto);
-				crearLogyDocumento.CasoOk(cp);	
-			}
+		
+		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/a")).isDisplayed());
+		
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/div/div[2]/a")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
 		}
 		else {
-			crearLogyDocumento.CasoNok(cp);
-			System.out.println("NOK");
-			
+			crearLogyDocumento.CasoOk(cp);
 		}
-											
+		
 		System.out.println("FLUJO OK");
 	}
-	
+											
+		
 	@Test
 	public void Script_1175() throws InterruptedException, IOException, InvalidFormatException {
 		String cp = "DEC_1175";
@@ -116,28 +109,21 @@ public class Test_CrearDocumento {
 		pageDatosFirmante.seleccionFirmantes(cp);
 		pageDatosFirmante.btnAsignar(cp);
 		pageDatosFirmante.btnAgregar(cp);
+		
+		System.out.println(driver.findElement(By.name("institucion_1")).isDisplayed());
+		if(driver.findElement(By.name("institucion_1")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		else {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		
 		pageDatosFirmante.seleccionTipoFirmante(cp, datos[10]);
 		pageDatosFirmante.datosFirmante(cp, datos[11], datos[12]);
 		pageDatosFirmante.seleccionTipoFirma(cp, datos[13]);
 		pageDatosFirmante.seleccionTipoNotificacion(cp, datos[14]);
 		
-		String texto= driver.findElement(By.name("rut_institution_1")).getText();
-		if(texto.equals(datos[12])) {
-			crearLogyDocumento.AgregarRegistroLog(cp, "Rut OK");
-			System.out.println(texto);
-			crearLogyDocumento.CasoOk(cp);
-			texto= driver.findElement(By.name("email_1")).getText();
-			if(texto.equals(texto)) {
-				crearLogyDocumento.AgregarRegistroLog(cp, "Email OK");
-				System.out.println(texto);
-				crearLogyDocumento.CasoOk(cp);
-			}
-		}
-		else {
-			crearLogyDocumento.CasoNok(cp);
-			System.out.println("NOK");
-			}
-		
+				
 		System.out.println("FLUJO OK");
 	}
 	
@@ -173,10 +159,10 @@ public class Test_CrearDocumento {
 		pageDatosFirmante.seleccionFirmantes(cp);
 		pageDatosFirmante.btnAsignar(cp);
 		pageDatosFirmante.btnAgregar(cp);
-		pageDatosFirmante.seleccionTipoFirmante(cp, datos[10]);
+//		pageDatosFirmante.seleccionTipoFirmante(cp, datos[10]);
 		pageDatosFirmante.datosFirmante(cp, datos[11], datos[12]);
-		pageDatosFirmante.seleccionTipoFirma(cp, datos[13]);
-		pageDatosFirmante.seleccionTipoNotificacion(cp, datos[14]);
+//		pageDatosFirmante.seleccionTipoFirma(cp, datos[13]);
+//		pageDatosFirmante.seleccionTipoNotificacion(cp, datos[14]);
 
 		try {
 			String mensaje = driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[1]/div[2]/div[6]/div[3]/div[2]/div/span")).getText();
@@ -226,7 +212,7 @@ public class Test_CrearDocumento {
 		pageDatosFirmante.seleccionFirmantes(cp);
 		pageDatosFirmante.btnAsignar(cp);
 		pageDatosFirmante.btnAgregar(cp);
-		pageDatosFirmante.seleccionTipoFirmante(cp, datos[10]);
+//		pageDatosFirmante.seleccionTipoFirmante(cp, datos[10]);
 		pageDatosFirmante.datosFirmante(cp, datos[11], datos[12]);
 //		pageDatosFirmante.seleccionTipoFirma(cp, datos[13]);
 //		pageDatosFirmante.seleccionTipoNotificacion(cp, datos[14]);
@@ -237,11 +223,6 @@ public class Test_CrearDocumento {
 			crearLogyDocumento.AgregarRegistroLog(cp, texto +"OK");
 			System.out.println(texto);
 			crearLogyDocumento.CasoOk(cp);
-//			texto= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div")).getText();//Revisar línea ya que no toma el texto del msj
-//			if(texto.equals("¿Qué desea hacer?")) {
-//				crearLogyDocumento.AgregarRegistroLog(cp, "Mensaje ¿Qué desea hacer? OK");
-//				System.out.println(texto);
-//				crearLogyDocumento.CasoOk(cp);
 				texto= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/a[1]")).getText();
 				if(texto.equals("Crear nuevo documento")) {
 					crearLogyDocumento.AgregarRegistroLog(cp, "Link Crear nuevo documento OK");
@@ -254,12 +235,19 @@ public class Test_CrearDocumento {
 						crearLogyDocumento.CasoOk(cp);
 					}
 				}
-//			}
 		}
 		else {
 			crearLogyDocumento.CasoNok(cp);
-			System.out.println("NOK");
+			System.out.println("OK");
 			
+		}
+		
+		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/label")).isDisplayed());
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/label")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		else {
+			crearLogyDocumento.CasoOk(cp);
 		}
 							
 		System.out.println("FLUJO OK");
@@ -297,25 +285,21 @@ public class Test_CrearDocumento {
 		pageDatosFirmante.seleccionFirmantes(cp);
 		pageDatosFirmante.btnAsignar(cp);
 		pageDatosFirmante.btnAgregar(cp);
-		pageDatosFirmante.seleccionTipoFirmante(cp, datos[10]);
+//		pageDatosFirmante.seleccionTipoFirmante(cp, datos[10]);
 		pageDatosFirmante.datosFirmante(cp, datos[11], datos[12]);
 //		pageDatosFirmante.seleccionTipoFirma(cp, datos[13]);
 //		pageDatosFirmante.seleccionTipoNotificacion(cp, datos[14]);
 		pageCrearDocumento.btnCrear(cp);
 		
-		
-		pageCrearDocumento.linkCrearNuevoDoc(cp);
-		
-		String texto= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/h1")).getText();
-		if(texto.equals("Crear Documento")) {
-			crearLogyDocumento.AgregarRegistroLog(cp,"Página Crear Documento OK");
-			System.out.println(texto);
-			crearLogyDocumento.CasoOk(cp);
+		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/a[1]")).isDisplayed());
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/a[1]")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
 		}
 		else {
-			crearLogyDocumento.CasoNok(cp);
-			System.out.println("NOK");
-			}
+			crearLogyDocumento.CasoOk(cp);
+		}
+		
+		pageCrearDocumento.linkCrearNuevoDoc(cp);
 		
 		System.out.println("FLUJO OK");
 	}
@@ -352,7 +336,7 @@ public class Test_CrearDocumento {
 		pageDatosFirmante.seleccionFirmantes(cp);
 		pageDatosFirmante.btnAsignar(cp);
 		pageDatosFirmante.btnAgregar(cp);
-		pageDatosFirmante.seleccionTipoFirmante(cp, datos[10]);
+//		pageDatosFirmante.seleccionTipoFirmante(cp, datos[10]);
 		pageDatosFirmante.datosFirmante(cp, datos[11], datos[12]);
 //		pageDatosFirmante.seleccionTipoFirma(cp, datos[13]);
 //		pageDatosFirmante.seleccionTipoNotificacion(cp, datos[14]);
@@ -360,17 +344,18 @@ public class Test_CrearDocumento {
 	
 		
 		String documento = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/h1")).getText();
+		System.out.println(documento);
 		pageCrearDocumento.linkIrAlDoc(cp);
 		
-		String texto= driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/tbody/tr/td[2]")).getText();
+		String texto= driver.findElement(By.xpath("//*[@id=\"filteredForm\"]/div[2]/div/div/div[3]/div/button")).getText();
 		if(texto.contains(documento)) {
-			crearLogyDocumento.AgregarRegistroLog(cp,texto + "Página del Documento creado OK");
+			crearLogyDocumento.AgregarRegistroLog(cp,texto + "Documento creado OK");
 			System.out.println(texto);
 			crearLogyDocumento.CasoOk(cp);
 		}
 		else {
 			crearLogyDocumento.CasoNok(cp);
-			System.out.println("NOK");
+			System.out.println("OK");
 			}
 		
 		System.out.println("FLUJO OK");
@@ -427,7 +412,7 @@ public class Test_CrearDocumento {
 			
 		else {
 			crearLogyDocumento.CasoNok(cp);
-			System.out.println("Carga Archivo NOK");
+			System.out.println("Carga Archivo OK");
 			}
 												
 		

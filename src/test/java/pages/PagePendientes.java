@@ -158,7 +158,7 @@ public class PagePendientes {
 		do {
 			try {
 				driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[1]/div[2]/div/div/div[2]/div[2]/button")).click();
-				Thread.sleep(1000);
+				Thread.sleep(1000);         
 				String texto ="Boton Filtrar";
 				log.modificarArchivoLog(caso,texto);
 				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
