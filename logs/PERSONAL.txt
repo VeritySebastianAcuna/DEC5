@@ -34,3 +34,15 @@ Tipo Cargo: DEC_1178
 Tipo Cargo: DEC_1179
 Tipo Cargo: DEC_1179
 Tipo Cargo: DEC_1179
+Tipo Cargo: DEC_1175
+Tipo Cargo: DEC_1175
+Tipo Cargo: DEC_1175
+Tipo Cargo: DEC_1176
+Tipo Cargo: DEC_1176
+Tipo Cargo: DEC_1176
+Tipo Cargo: DEC_1177
+Tipo Cargo: DEC_1177
+Tipo Cargo: DEC_1177
+Tipo Cargo: DEC_1178
+Tipo Cargo: DEC_1178
+Tipo Cargo: DEC_1178

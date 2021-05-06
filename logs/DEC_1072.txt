@@ -1,0 +1,11 @@
+Log de Caso de Prueba DEC_1072
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Mis Documentos
+Click Carpetas
+Carpeta Seleccionada
+Clic Link Eliminar Carpeta
+Eliminar Carpeta
+Caso OK

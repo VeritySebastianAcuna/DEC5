@@ -1,0 +1,17 @@
+Log de Caso de Prueba DEC_1178
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Crear Documento
+Click Botón Crear Plantilla DEC
+Click Crear Plantilla DEC
+Click Botón Revisar y Continuar
+Click Botón Continuar
+Click Botón Configurar Firmantes
+Click Firmante
+Click Botón Asignar
+Click Botón Agregar
+Click Botón Crear Documento
+Caso NOK
+Click Link Crear Nuevo Documento
