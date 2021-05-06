@@ -1,0 +1,9 @@
+Log de Caso de Prueba DEC_0735
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click PENDIENTES
+Boton Mostrar Ocultos
+Boton Mostrar Ocultos
+Mensaje Sin Resultados
+Caso OK

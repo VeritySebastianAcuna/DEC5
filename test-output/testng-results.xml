@@ -1,49 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testng-results ignored="12" total="13" passed="1" failed="0" skipped="0">
+<testng-results ignored="23" total="24" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-06T14:07:06Z" name="Default suite" finished-at="2021-05-06T14:08:16Z" duration-ms="69446">
+  <suite started-at="2021-05-06T21:06:09Z" name="Default suite" finished-at="2021-05-06T21:08:21Z" duration-ms="131648">
     <groups>
     </groups>
-    <test started-at="2021-05-06T14:07:06Z" name="Default test" finished-at="2021-05-06T14:08:16Z" duration-ms="69446">
+    <test started-at="2021-05-06T21:06:09Z" name="Default test" finished-at="2021-05-06T21:08:21Z" duration-ms="131648">
       <class name="test.Tests_MiPortal">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.Tests_MiPortal@6239aba6]" started-at="2021-05-06T14:07:06Z" name="setUp" finished-at="2021-05-06T14:07:19Z" duration-ms="12856" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.Tests_MiPortal@2421cc4]" started-at="2021-05-06T21:06:10Z" name="setUp" finished-at="2021-05-06T21:06:23Z" duration-ms="13439" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="Script_0729()[pri:0, instance:test.Tests_MiPortal@6239aba6]" started-at="2021-05-06T14:07:19Z" name="Script_0729" finished-at="2021-05-06T14:08:15Z" duration-ms="55757" status="PASS">
+        <test-method signature="Script_0752()[pri:0, instance:test.Tests_MiPortal@2421cc4]" started-at="2021-05-06T21:06:23Z" name="Script_0752" finished-at="2021-05-06T21:08:20Z" duration-ms="117540" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="modal"]/div/div"}
+  (Session info: chrome=90.0.4430.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'VERITY-98', ip: '192.168.0.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\estef\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50465}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 80a0c3969b52eaab817bc76c41668c27
+*** Element info: {Using=xpath, value=//*[@id="modal"]/div/div}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="modal"]/div/div"}
+  (Session info: chrome=90.0.4430.93)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'VERITY-98', ip: '192.168.0.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\estef\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50465}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 80a0c3969b52eaab817bc76c41668c27
+*** Element info: {Using=xpath, value=//*[@id="modal"]/div/div}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
+at test.Tests_MiPortal.Script_0752(Tests_MiPortal.java:908)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Script_0729 -->
-        <test-method is-config="true" signature="FinEjecucion()[pri:0, instance:test.Tests_MiPortal@6239aba6]" started-at="2021-05-06T14:08:15Z" name="FinEjecucion" finished-at="2021-05-06T14:08:16Z" duration-ms="792" status="PASS">
+        </test-method> <!-- Script_0752 -->
+        <test-method is-config="true" signature="FinEjecucion()[pri:0, instance:test.Tests_MiPortal@2421cc4]" started-at="2021-05-06T21:08:21Z" name="FinEjecucion" finished-at="2021-05-06T21:08:21Z" duration-ms="629" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FinEjecucion -->
       </class> <!-- test.Tests_MiPortal -->
-=======
-<testng-results ignored="34" total="35" passed="1" failed="0" skipped="0">
-  <reporter-output>
-  </reporter-output>
-  <suite started-at="2021-05-05T21:35:44Z" name="Default suite" finished-at="2021-05-05T21:37:49Z" duration-ms="124460">
-    <groups>
-    </groups>
-    <test started-at="2021-05-05T21:35:44Z" name="Default test" finished-at="2021-05-05T21:37:49Z" duration-ms="124460">
-      <class name="test.Test_CrearDocumento">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.Test_CrearDocumento@239a307b]" started-at="2021-05-05T21:35:44Z" name="setUp" finished-at="2021-05-05T21:35:54Z" duration-ms="9980" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="Script_1178()[pri:0, instance:test.Test_CrearDocumento@239a307b]" started-at="2021-05-05T21:35:54Z" name="Script_1178" finished-at="2021-05-05T21:37:49Z" duration-ms="114241" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Script_1178 -->
-        <test-method is-config="true" signature="FinEjecucion()[pri:0, instance:test.Test_CrearDocumento@239a307b]" started-at="2021-05-05T21:37:49Z" name="FinEjecucion" finished-at="2021-05-05T21:37:49Z" duration-ms="205" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- FinEjecucion -->
-      </class> <!-- test.Test_CrearDocumento -->
->>>>>>> bfc0204d78ac9c79f1a30b0af69729496464e2a3
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 
 import common.CapturaPantalla;
 import common.CrearDocEvidencia;
+import common.FechaActual;
 import common.Log;
 
 public class PageFechaCalendario {
