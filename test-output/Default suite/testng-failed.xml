@@ -7,7 +7,7 @@
         <methods>
           <include name="FinEjecucion"/>
           <include name="setUp"/>
-          <include name="Script_0752"/>
+          <include name="Script_0753"/>
         </methods>
       </class> <!-- test.Tests_MiPortal -->
     </classes>

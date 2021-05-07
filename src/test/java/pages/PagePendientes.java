@@ -520,7 +520,7 @@ public class PagePendientes {
 				}
 			}
 		}while(i==0);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 	}
 	
 	public void BarraHerramientas (String caso, String opcion) throws InterruptedException {
@@ -799,6 +799,8 @@ public class PagePendientes {
 		do {
 			try {
 				System.out.println(driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a")).getText());
+				System.out.println(driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a")).getTagName());
+				System.out.println(driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a")).getAttribute("href"));
 				Thread.sleep(1000);
 				driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a")).click();
 				Thread.sleep(1000);
@@ -863,6 +865,31 @@ public class PagePendientes {
 				j++;
 				if(j==3) {
 					System.out.println("No fue posible dar clic en Cerrar Desvincular Documento");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void BtnNoDesvincularDocumento (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[3]/button[2]")).click();
+				Thread.sleep(1000);
+				String texto ="NO Desvincular Documento";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar clic en No Desvincular Documento");
 					i=1;
 				}
 			}

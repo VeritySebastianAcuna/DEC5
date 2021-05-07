@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="23" total="24" passed="0" failed="1" skipped="0">
+<testng-results ignored="24" total="25" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-06T21:06:09Z" name="Default suite" finished-at="2021-05-06T21:08:21Z" duration-ms="131648">
+  <suite started-at="2021-05-07T13:53:13Z" name="Default suite" finished-at="2021-05-07T13:55:16Z" duration-ms="122725">
     <groups>
     </groups>
-    <test started-at="2021-05-06T21:06:09Z" name="Default test" finished-at="2021-05-06T21:08:21Z" duration-ms="131648">
+    <test started-at="2021-05-07T13:53:13Z" name="Default test" finished-at="2021-05-07T13:55:16Z" duration-ms="122725">
       <class name="test.Tests_MiPortal">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.Tests_MiPortal@2421cc4]" started-at="2021-05-06T21:06:10Z" name="setUp" finished-at="2021-05-06T21:06:23Z" duration-ms="13439" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.Tests_MiPortal@30c93896]" started-at="2021-05-07T13:53:13Z" name="setUp" finished-at="2021-05-07T13:53:28Z" duration-ms="14612" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="Script_0752()[pri:0, instance:test.Tests_MiPortal@2421cc4]" started-at="2021-05-06T21:06:23Z" name="Script_0752" finished-at="2021-05-06T21:08:20Z" duration-ms="117540" status="FAIL">
+        <test-method signature="Script_0753()[pri:0, instance:test.Tests_MiPortal@30c93896]" started-at="2021-05-07T13:53:28Z" name="Script_0753" finished-at="2021-05-07T13:55:15Z" duration-ms="107496" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="modal"]/div/div"}
   (Session info: chrome=90.0.4430.93)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'VERITY-98', ip: '192.168.0.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+System info: host: 'VERITY-98', ip: '172.16.8.151', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\estef\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50465}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 80a0c3969b52eaab817bc76c41668c27
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\estef\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54675}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ec0cb991b13ea9c5fbb35dae5553a786
 *** Element info: {Using=xpath, value=//*[@id="modal"]/div/div}]]>
             </message>
             <full-stacktrace>
@@ -29,10 +29,10 @@ Session ID: 80a0c3969b52eaab817bc76c41668c27
   (Session info: chrome=90.0.4430.93)
 For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
-System info: host: 'VERITY-98', ip: '192.168.0.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+System info: host: 'VERITY-98', ip: '172.16.8.151', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\estef\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50465}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 80a0c3969b52eaab817bc76c41668c27
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\estef\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:54675}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ec0cb991b13ea9c5fbb35dae5553a786
 *** Element info: {Using=xpath, value=//*[@id="modal"]/div/div}
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
@@ -49,7 +49,7 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:421)
 at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:311)
-at test.Tests_MiPortal.Script_0752(Tests_MiPortal.java:908)
+at test.Tests_MiPortal.Script_0753(Tests_MiPortal.java:945)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -80,8 +80,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Script_0752 -->
-        <test-method is-config="true" signature="FinEjecucion()[pri:0, instance:test.Tests_MiPortal@2421cc4]" started-at="2021-05-06T21:08:21Z" name="FinEjecucion" finished-at="2021-05-06T21:08:21Z" duration-ms="629" status="PASS">
+        </test-method> <!-- Script_0753 -->
+        <test-method is-config="true" signature="FinEjecucion()[pri:0, instance:test.Tests_MiPortal@30c93896]" started-at="2021-05-07T13:55:15Z" name="FinEjecucion" finished-at="2021-05-07T13:55:16Z" duration-ms="582" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FinEjecucion -->
