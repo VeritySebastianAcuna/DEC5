@@ -1,0 +1,11 @@
+Log de Caso de Prueba DEC_1082
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Mis Documentos
+Click Filtros Avanzados
+Seleccion Estado Filtros Avanzados
+Boton Filtrar
+Caso NOK
+Caso NOK
