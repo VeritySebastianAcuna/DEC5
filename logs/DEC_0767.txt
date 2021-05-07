@@ -1,0 +1,11 @@
+Log de Caso de Prueba DEC_0767
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click PENDIENTES
+Seleccion Primer Registro
+Seleccionar Opcion Barra Herramientas
+Seleccion Carpeta Destino
+Click Boton Crear Carpeta
+Crear Carpeta
+Caso OK
