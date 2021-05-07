@@ -37,13 +37,13 @@ public class PageFechaCalendario {
 				int anio = calendario.get(Calendar.YEAR);
 
 				String fechaDesde;		
-				if(mes<10) {
+				if(mes<12) {
 					//fechaDesde=anio+"-0"+mes+"-01";
-					fechaDesde="01-"+mes+"-"+anio;
+					fechaDesde= dia+"-"+mes+"-"+anio;
 				}
 				else {
 					//fechaDesde=anio+"-"+mes+"-01";
-					fechaDesde="01-"+mes+"-"+anio;
+					fechaDesde= dia+"-"+mes+"-"+anio;
 				}
 
 				driver.findElement(By.name("from")).sendKeys(fechaDesde);
@@ -72,7 +72,7 @@ public class PageFechaCalendario {
 				Calendar calendario = new GregorianCalendar();
 				int dia = calendario.get(Calendar.DAY_OF_MONTH);
 				int mes = calendario.get(Calendar.MONTH);
-				mes=mes-1;
+				mes=mes+1;
 				int anio = calendario.get(Calendar.YEAR);
 
 				String fechaHasta;		
@@ -101,5 +101,109 @@ public class PageFechaCalendario {
 			}
 		}while(i==0);
 	}
+	
+	public void fechaHastaMayor(String caso) throws InterruptedException, FileNotFoundException, InvalidFormatException, IOException
+	{
+		int i=0;
+		int j=0;
+		do {
+			try {
+				Calendar calendario = new GregorianCalendar();
+				int dia = calendario.get(Calendar.DAY_OF_MONTH);
+				int mes = calendario.get(Calendar.MONTH);
+				mes=mes+1;
+				int anio = calendario.get(Calendar.YEAR);
+
+				String fechaHastaMayor;		
+				if(mes<12) {
+					
+					fechaHastaMayor=dia+"-"+mes+"-"+anio;
+				}
+				else {
+					
+					fechaHastaMayor=dia+"-"+mes+"-"+anio;
+				}
+				
+				String fechaDesdeMenor;
+				int mes1 = calendario.get(Calendar.MONTH);
+				mes1=mes-1;
+				if(mes<12) {
+					
+					fechaDesdeMenor=dia+"-"+mes1+"-"+anio;
+				}
+				else {
+					
+					fechaDesdeMenor=dia+"-"+mes1+"-"+anio;
+				}
+
+				driver.findElement(By.name("to")).sendKeys(fechaHastaMayor);
+				driver.findElement(By.name("from")).sendKeys(fechaDesdeMenor);
+				crearDocEvidencia.modificarArchivoEvidencia(caso, "Se Agrega Fecha");
+				capturaPantalla.takeScreenShotTest(driver, "Fecha_Hasta_mayor",caso);
+				Thread.sleep(5000);
+				i=1;
+			} catch (Exception e) {
+				PageAlerta pageAlerta = new PageAlerta(driver);
+				pageAlerta.alertaManejoError();
+				j++;
+				if(j==3) {
+					System.out.println("No se puede agregar datos Fecha");
+					i=1;
+				}
+			}
+		}while(i==0);
+	}
+	
+//	public void fechaHastaMenor(String caso) throws InterruptedException, FileNotFoundException, InvalidFormatException, IOException
+//	{
+//		int i=0;
+//		int j=0;
+//		do {
+//			try {
+//				Calendar calendario = new GregorianCalendar();
+//				int dia = calendario.get(Calendar.DAY_OF_MONTH);
+//				int mes = calendario.get(Calendar.MONTH);
+//				mes=mes+1;
+//				int anio = calendario.get(Calendar.YEAR);
+//
+//				String fechaDesdeMayor;		
+//				if(mes<12) {
+//					
+//					fechaDesdeMayor=dia+"-"+mes+"-"+anio;
+//				}
+//				else {
+//					
+//					fechaDesdeMayor=dia+"-"+mes+"-"+anio;
+//				}
+//				
+//				String fechaHastaMenor;
+//				int mes1 = calendario.get(Calendar.MONTH);
+//				mes1=mes-1;
+//				if(mes<12) {
+//					
+//					fechaHastaMenor=dia+"-"+mes1+"-"+anio;
+//				}
+//				else {
+//					
+//					fechaHastaMenor=dia+"-"+mes1+"-"+anio;
+//				}
+//
+//				driver.findElement(By.name("to")).sendKeys(fechaHastaMenor);
+//				driver.findElement(By.name("from")).sendKeys(fechaDesdeMayor);
+//				crearDocEvidencia.modificarArchivoEvidencia(caso, "Se Agrega Fecha");
+//				capturaPantalla.takeScreenShotTest(driver, "Fecha_Hasta_menor",caso);
+//				Thread.sleep(5000);
+//				i=1;
+//			} catch (Exception e) {
+//				PageAlerta pageAlerta = new PageAlerta(driver);
+//				pageAlerta.alertaManejoError();
+//				j++;
+//				if(j==3) {
+//					System.out.println("No se puede agregar datos Fecha");
+//					i=1;
+//				}
+//			}
+//		}while(i==0);
+//	}
 
 }
