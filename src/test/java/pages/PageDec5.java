@@ -115,18 +115,21 @@ public class PageDec5 {
 		Thread.sleep(3000);
 	}
 	
-	public void CambiarEmpresa (String caso) {
+	public void CambiarEmpresa (String caso) throws InterruptedException {
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[1]/div/child::button")).click();
+		Thread.sleep(2000);
 		int hijos= driver.findElements(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[1]/div/descendant::a")).size();
 		String empresa="";
 		for (int h=1;h<=hijos;h++) {
 			empresa = driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[1]/div/descendant::a["+h+"]")).getText();
-			System.out.println(empresa);
+//			System.out.println(empresa);
 			if(empresa.contains("ACEPTA")) {
 				driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[1]/div/descendant::a["+h+"]")).click();
 				h=10;
 			}
 		}
+		Thread.sleep(2000);
 	}
 	
 	public void OpcionUsuarios(String caso) throws IOException, InvalidFormatException, InterruptedException {

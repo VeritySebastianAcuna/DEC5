@@ -1,0 +1,9 @@
+Log de Caso de Prueba DEC_0763
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click PENDIENTES
+Seleccion Primer Registro
+Seleccionar Opcion Barra Herramientas
+Cerrar Vincular Documento
+Caso OK
