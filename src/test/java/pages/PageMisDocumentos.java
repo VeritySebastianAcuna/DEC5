@@ -1,5 +1,6 @@
 package pages;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -426,42 +427,179 @@ public class PageMisDocumentos {
 		Thread.sleep(3000);
 	}
 	
-	public void BarraHerramientas (String caso, String opcion) throws InterruptedException {
+	public void MoverA (String caso) throws InterruptedException {
 		int i=0;
 		int j=0;
 		do {
 			try {
-				int hijos = driver.findElements(By.xpath("//*[@id=\"barra_herramientas\"]/descendant::button")).size();//Almacena hijos
-				int h=4;//recorre hijos 
-				int g=0;//Variable recorre hijos y msj de error
-				do {
-					System.out.println(driver.findElement(By.xpath("//*[@id=\"barra_herramientas\"]/descendant::button["+h+"]")).getText());//Imprime hijo h
-					if(driver.findElement(By.xpath("//*[@id=\"barra_herramientas\"]/descendant::button["+h+"]")).getText().equals(opcion)) {
-						driver.findElement(By.xpath("//*[@id=\"barra_herramientas\"]/descendant::button["+h+"]")).click();
-					}
-					else {
-						g++;
-						if(g>hijos) {
-								System.out.println("No se encuentra opción");
-						}
-					}
-					h++;
-		        }while(h<hijos);
+				driver.findElement(By.id("checkMover_582")).click();
+//				System.out.println(driver.findElement(By.xpath("//*[@id="checkMover_582"]")).getText());
 				Thread.sleep(1000);
-				String texto ="Seleccionar Opcion Barra Herramientas";
+				String texto ="Seleccion Carpeta Destino";
 				log.modificarArchivoLog(caso,texto);
 				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
 				texto=texto.replace(" ","_");
 				capturaPantalla.takeScreenShotTest(driver,texto, caso);
 				i=1;
-				}catch (Exception e) {
-					// TODO: handle exception
-					j++;
-					if(j==3) {
-						System.out.println("No fue posible Seleccionar Opcion");
-						i=1;
-					}
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar clic en carpeta destino");
+					i=1;
 				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+		
+	public void crearCarpeta( String caso, String nameCarpeta) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.id("id-add-folder")).click();
+				Thread.sleep(1000);
+				driver.findElement(By.name("new_folder")).sendKeys(nameCarpeta);
+				String texto ="Seleccion Crear Carpeta";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			} catch(Exception e) {
+				j++;
+				if(j==3) {
+					System.out.println("No se puede ingresar seleccionar Crear Carpeta");
+					i=1;
+				}
+			}
+		}while(i==0);
+	}
+	
+	public void btnCrear( String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.id("move-folder-create")).click();
+				Thread.sleep(1000);
+				String texto ="Seleccion Crear";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			} catch(Exception e) {
+				j++;
+				if(j==3) {
+					System.out.println("No se puede seleccionar Crear ");
+					i=1;
+				}
+			}
+		}while(i==0);
+	}
+	
+	public void CerrarMoverA (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				String texto ="Cerrar Crear Mover Carpeta";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[1]/button")).click();
+				Thread.sleep(2000);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Cerrar Ventana");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void cerrarAgregarEtiquetas (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				String texto ="Cerrar Crear Mover Carpeta";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[1]/button")).click();
+				Thread.sleep(2000);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Cerrar Ventana");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void BusquedaPalabrasVincular (String caso, String busqueda) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.id("modalSearchDocs")).sendKeys(busqueda);
+				driver.findElement(By.id("modalSearchSubmit")).click();
+				String texto ="Busqueda realizada";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(15000);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible realizar Busqueda");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(3000);
+	}
+	
+	public void seleccionCheckVincular (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.name("docs_selected[]")).click();
+				Thread.sleep(2000);
+				String texto ="Selección Check Vincular";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible seleccionar Check Vincular");
+					i=1;
+				}
+			}
 		}while(i==0);
 		Thread.sleep(2000);
 	}
