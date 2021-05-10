@@ -1,9 +1,0 @@
-Log de Caso de Prueba DEC_0756
-Login por Identidad Digital
-Click al botón Autorizar
-Click MI PORTAL
-Click PENDIENTES
-Seleccion Primer Registro
-Click Crear comentario
-Click Cancelar
-Caso OK

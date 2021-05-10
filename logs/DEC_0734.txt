@@ -1,8 +1,0 @@
-Log de Caso de Prueba DEC_0734
-Login por Identidad Digital
-Click al botón Autorizar
-Click MI PORTAL
-Click PENDIENTES
-Boton Mostrar Ocultos
-Mensaje Sin Resultados
-Caso OK
