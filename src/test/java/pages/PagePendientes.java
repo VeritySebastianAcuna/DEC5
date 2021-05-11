@@ -524,6 +524,37 @@ public class PagePendientes {
 		Thread.sleep(5000);
 	}
 	
+	public void ClickRegistroPorParametro (String caso, int registro) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				int hijos = driver.findElements(By.xpath("//*[@id=\"table-documentos\"]/descendant::input")).size();
+				if(registro<=hijos){
+					driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/descendant::input["+registro+"]")).click();
+					Thread.sleep(1000);
+					String texto ="Seleccion Registro";
+					log.modificarArchivoLog(caso,texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+					texto=texto.replace(" ","_");
+					capturaPantalla.takeScreenShotTest(driver,texto, caso);
+					i=1;
+				}
+				else {
+					System.out.println("Sin Dato");
+				}
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en registro");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(5000);
+	}
+	
 	public void BarraHerramientas (String caso, String opcion) throws InterruptedException {
 		int i=0;
 		int j=0;
@@ -1233,6 +1264,136 @@ public class PagePendientes {
 				j++;
 				if(j==3) {
 					System.out.println("No fue posible dar click en Boton Descarga PDF");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(8000);
+	}
+	
+	public void RechazarDocumentoConClave (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				Thread.sleep(4000);
+				driver.findElement(By.xpath("//*[@id=\"actionForm\"]/div[3]/button[1]")).click();
+				Thread.sleep(1000);
+				String texto ="click Boton Rechazar con Clave";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Rechazar con Clave");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(8000);
+	}
+	
+	public void RechazarDocumentoComentario (String caso, String comentario) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				Thread.sleep(4000);
+				driver.findElement(By.xpath("//*[@id=\"actionForm\"]/div[2]/div[2]/div/div/textarea")).sendKeys(comentario);
+				Thread.sleep(1000);
+				String texto ="Ingreso de Comentario";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible ingresar Comentario");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(8000);
+	}
+	
+	public void RechazarDocumentoIngresoClave (String caso, String pass) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				Thread.sleep(4000);
+				driver.findElement(By.id("password")).sendKeys(pass);
+				Thread.sleep(1000);
+				String texto ="Ingreso de Clave";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible ingresar Clave");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(8000);
+	}
+	
+	public void RechazarDocumentoBtnRechazar (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				Thread.sleep(4000);
+				driver.findElement(By.id("firma_boton2")).click();
+				Thread.sleep(1000);
+				String texto ="Click Boton Rechazar";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Rechazar");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(8000);
+	}
+	
+	public void RechazarDocumentoConHuella (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				Thread.sleep(4000);
+				driver.findElement(By.xpath("//*[@id=\"actionForm\"]/div[3]/button[2]")).click();
+				Thread.sleep(1000);
+				String texto ="Click Boton Rechazar con Huella";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Rechazar con HUella");
 					i=1;
 				}
 			}

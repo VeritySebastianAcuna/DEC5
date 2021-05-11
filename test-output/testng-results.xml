@@ -1,53 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testng-results ignored="41" total="42" passed="1" failed="0" skipped="0">
-=======
-<<<<<<< HEAD
-<testng-results ignored="24" total="25" passed="1" failed="0" skipped="0">
+<testng-results ignored="43" total="44" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-07T19:49:16Z" name="Default suite" finished-at="2021-05-07T19:50:45Z" duration-ms="88902">
+  <suite started-at="2021-05-11T15:49:02Z" name="Default suite" finished-at="2021-05-11T15:50:48Z" duration-ms="106331">
     <groups>
     </groups>
-    <test started-at="2021-05-07T19:49:16Z" name="Default test" finished-at="2021-05-07T19:50:45Z" duration-ms="88902">
-      <class name="test.Test_MisDocumentos">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.Test_MisDocumentos@5b799640]" started-at="2021-05-07T19:49:16Z" name="setUp" finished-at="2021-05-07T19:49:22Z" duration-ms="6458" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="Script_1099()[pri:0, instance:test.Test_MisDocumentos@5b799640]" started-at="2021-05-07T19:49:22Z" name="Script_1099" finished-at="2021-05-07T19:50:45Z" duration-ms="82236" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Script_1099 -->
-        <test-method is-config="true" signature="FinEjecucion()[pri:0, instance:test.Test_MisDocumentos@5b799640]" started-at="2021-05-07T19:50:45Z" name="FinEjecucion" finished-at="2021-05-07T19:50:45Z" duration-ms="177" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- FinEjecucion -->
-      </class> <!-- test.Test_MisDocumentos -->
-=======
-<testng-results ignored="30" total="31" passed="1" failed="0" skipped="0">
->>>>>>> e6d7449704bafbf869f8e24938b4e8239eb4c8ba
-  <reporter-output>
-  </reporter-output>
-  <suite started-at="2021-05-10T21:59:49Z" name="Default suite" finished-at="2021-05-10T22:01:12Z" duration-ms="83078">
-    <groups>
-    </groups>
-    <test started-at="2021-05-10T21:59:49Z" name="Default test" finished-at="2021-05-10T22:01:12Z" duration-ms="83078">
+    <test started-at="2021-05-11T15:49:02Z" name="Default test" finished-at="2021-05-11T15:50:48Z" duration-ms="106331">
       <class name="test.Tests_MiPortal">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.Tests_MiPortal@67d18ed7]" started-at="2021-05-10T21:59:49Z" name="setUp" finished-at="2021-05-10T22:00:02Z" duration-ms="12731" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.Tests_MiPortal@7b205dbd]" started-at="2021-05-11T15:49:02Z" name="setUp" finished-at="2021-05-11T15:49:26Z" duration-ms="24616" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="Script_0787()[pri:0, instance:test.Tests_MiPortal@67d18ed7]" started-at="2021-05-10T22:00:02Z" name="Script_0787" finished-at="2021-05-10T22:01:11Z" duration-ms="69660" status="PASS">
+        <test-method signature="Script_0799()[pri:0, instance:test.Tests_MiPortal@7b205dbd]" started-at="2021-05-11T15:49:26Z" name="Script_0799" finished-at="2021-05-11T15:50:48Z" duration-ms="81184" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Script_0787 -->
-        <test-method is-config="true" signature="FinEjecucion()[pri:0, instance:test.Tests_MiPortal@67d18ed7]" started-at="2021-05-10T22:01:11Z" name="FinEjecucion" finished-at="2021-05-10T22:01:12Z" duration-ms="652" status="PASS">
+        </test-method> <!-- Script_0799 -->
+        <test-method is-config="true" signature="FinEjecucion()[pri:0, instance:test.Tests_MiPortal@7b205dbd]" started-at="2021-05-11T15:50:48Z" name="FinEjecucion" finished-at="2021-05-11T15:50:48Z" duration-ms="499" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FinEjecucion -->
       </class> <!-- test.Tests_MiPortal -->
->>>>>>> 9e0c5f77b733e088ad567245768093d2a94de933
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

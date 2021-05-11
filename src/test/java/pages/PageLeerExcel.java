@@ -15,7 +15,6 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.WebDriver;
 
 import common.CapturaPantalla;
 import common.CrearDocEvidencia;
@@ -23,7 +22,6 @@ import common.Log;
 
 public class PageLeerExcel {
 
-	private WebDriver driver;
 	Log log = new Log();
 	CrearDocEvidencia crearDocEvidencia = new CrearDocEvidencia();
 	CapturaPantalla capturaPantalla = new CapturaPantalla();
