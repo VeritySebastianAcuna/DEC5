@@ -546,7 +546,7 @@ public class PagePendientes {
 					}
 					h++;
 				}while(h<hijos);
-				Thread.sleep(1000);
+				Thread.sleep(3000);
 				String texto ="Seleccionar Opcion Barra Herramientas";
 				log.modificarArchivoLog(caso,texto);
 				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
@@ -776,7 +776,7 @@ public class PagePendientes {
 			try {
 				Thread.sleep(2000);
 				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[1]/button")).click();
-				String texto ="Cerrar Vincular Documento";
+				String texto ="Cerrar Vincular Documento"; 
 				log.modificarArchivoLog(caso,texto);
 				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
 				texto=texto.replace(" ","_");

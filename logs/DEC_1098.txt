@@ -5,6 +5,6 @@ Click a Nombre Usuario
 Click empresa ACEPTA
 Click Mis Documentos
 Selección documento
-Seleccionar Opcion Barra Herramientas
+Vincular Documento
 Caso OK
 Busqueda realizada

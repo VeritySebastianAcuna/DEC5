@@ -1088,7 +1088,7 @@ public class Tests_MiPortal {
 		pagePendientes.BarraHerramientas(cp, "Cancelar");
 		
 		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]")).isDisplayed()) {
-			crearLogyDocumento.CasoNok(cp);
+			crearLogyDocumento.CasoNok(cp); 
 		}
 		else{
 			crearLogyDocumento.CasoOk(cp);

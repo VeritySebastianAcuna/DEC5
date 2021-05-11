@@ -312,7 +312,7 @@ public class PageMisDocumentos {
 				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
 				texto=texto.replace(" ","_");
 				capturaPantalla.takeScreenShotTest(driver,texto, caso);
-				Thread.sleep(15000);
+				Thread.sleep(5000);
 				i=1;
 			}catch (Exception e) {
 				// TODO: handle exception
@@ -337,7 +337,7 @@ public class PageMisDocumentos {
 				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
 				texto=texto.replace(" ","_");
 				capturaPantalla.takeScreenShotTest(driver,texto, caso);
-				Thread.sleep(15000);
+				Thread.sleep(5000);
 				i=1;
 			}catch (Exception e) {
 				// TODO: handle exception
@@ -362,7 +362,7 @@ public class PageMisDocumentos {
 				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
 				texto=texto.replace(" ","_");
 				capturaPantalla.takeScreenShotTest(driver,texto, caso);
-				Thread.sleep(15000);
+				Thread.sleep(10000);
 				i=1;
 			}catch (Exception e) {
 				// TODO: handle exception
@@ -381,9 +381,9 @@ public class PageMisDocumentos {
 		int j=0;
 		do {
 			try {
-				driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[2]/div/h3/span/a")).click();
+				driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[2]/div/h3/span/a")).click();//Click link Agregar Carpeta lateral
 				String texto ="Agregar a carpeta"; //*[@id="details-doc"]/div/div[2]/div/h3/span/a
-				log.modificarArchivoLog(caso,texto);
+				log.modificarArchivoLog(caso,texto); 
 				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
 				texto=texto.replace(" ","_");
 				capturaPantalla.takeScreenShotTest(driver,texto, caso);
@@ -394,6 +394,30 @@ public class PageMisDocumentos {
 				j++;
 				if(j==3) {
 					System.out.println("No fue posible Agregar documento");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(3000);
+	}
+	public void clickAgregarEtiqueta(String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[2]/div/div[2]/a")).click();//Click link Agregar Etiqueta lateral
+				String texto ="Agregar Etiquetas"; 
+				log.modificarArchivoLog(caso,texto); 
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(2000);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Agregar etiqueta");
 					i=1;
 				}
 			}
@@ -512,8 +536,8 @@ public class PageMisDocumentos {
 				texto=texto.replace(" ","_");
 				capturaPantalla.takeScreenShotTest(driver,texto, caso);
 				Thread.sleep(2000);
-				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[1]/button")).click();
-				Thread.sleep(2000);
+				driver.findElement(By.xpath(" //*[@id=\"modal\"]/div/div/div[1]/button")).click();
+				Thread.sleep(2000);          //*[@id="modal"]/div/div/div[1]/button
 				i=1;
 			}catch (Exception e) {
 				// TODO: handle exception
@@ -539,7 +563,7 @@ public class PageMisDocumentos {
 				capturaPantalla.takeScreenShotTest(driver,texto, caso);
 				Thread.sleep(2000);
 				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[1]/button")).click();
-				Thread.sleep(2000);
+				Thread.sleep(2000); 
 				i=1;
 			}catch (Exception e) {
 				// TODO: handle exception
@@ -565,7 +589,7 @@ public class PageMisDocumentos {
 				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
 				texto=texto.replace(" ","_");
 				capturaPantalla.takeScreenShotTest(driver,texto, caso);
-				Thread.sleep(15000);
+				Thread.sleep(5000);
 				i=1;
 			}catch (Exception e) {
 				// TODO: handle exception
@@ -602,5 +626,55 @@ public class PageMisDocumentos {
 			}
 		}while(i==0);
 		Thread.sleep(2000);
+	}
+	
+	public void btnVincular(String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.id("relateDocSubmit")).click();//Botón Verde PopUp
+				String texto ="Botón Vincular";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(5000);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Vincular documento");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(3000);
+	}
+	
+	public void clickVincularDocumento(String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[7]/div/div/div/button")).click();
+				String texto ="Vincular Documento"; 
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(5000);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Vincular documento");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(3000);
 	}
 }
