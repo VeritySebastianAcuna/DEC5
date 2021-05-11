@@ -1,0 +1,8 @@
+Log de Caso de Prueba DEC_0820
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Proceso De Firma
+Ingreso Etiqueta
+Buscar Etiqueta
+Caso OK

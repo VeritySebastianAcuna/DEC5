@@ -27,6 +27,7 @@ import pages.PageDec5;
 import pages.PageLoginAdm;
 import pages.PageMiPortal;
 import pages.PagePendientes;
+import pages.PageProcesoFirma;
 
 public class Tests_MiPortal {
 	private WebDriver driver;
@@ -1758,7 +1759,7 @@ public class Tests_MiPortal {
 		System.out.println("FLUJO OK");
 	}
 	
-	@Test
+//	@Test
 	public void Script_0805() throws InterruptedException, IOException, InvalidFormatException, AWTException {
 		String cp = "DEC_0805";
 		System.out.println(cp);
@@ -1787,7 +1788,7 @@ public class Tests_MiPortal {
 			pagePendientes.ClickRegistroPorParametro(cp,j);
 			pagePendientes.BarraHerramientas(cp, "Firmar");
 			if(driver.findElement(By.xpath("//*[@id=\"actionForm\"]/div[3]/button")).isDisplayed()) {
-				
+				//COMPLETAR
 			}
 		}while(i==0);
 		pagePendientes.RechazarDocumentoComentario(cp, "Rechazo QA");
@@ -1800,6 +1801,111 @@ public class Tests_MiPortal {
 			crearLogyDocumento.CasoNok(cp);
 		}
 		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0819() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0819";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnProcesoDeFirma(cp);
+		
+		PageProcesoFirma pageProcesoFirma = new PageProcesoFirma(driver);
+		pageProcesoFirma.IngresoEtiqueta(cp, "contrato");
+		pageProcesoFirma.BuscarEtiqueta(cp);
+		
+		if(driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/tbody/tr[1]/td[2]/label")).getText().contains("Contrato")) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+			
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0820() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0820";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnProcesoDeFirma(cp);
+		
+		PageProcesoFirma pageProcesoFirma = new PageProcesoFirma(driver);
+		pageProcesoFirma.IngresoEtiqueta(cp, "AJKLÑO");
+		pageProcesoFirma.BuscarEtiqueta(cp);
+		
+		if(driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/descendant::td[1]")).getText().equals("No se encontraron resultados")) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+			
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0823() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0823";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnProcesoDeFirma(cp);
+		
+		PageProcesoFirma pageProcesoFirma = new PageProcesoFirma(driver);
+		pageProcesoFirma.ClickCarpetas(cp);
+		pageProcesoFirma.CrearNuevaCarpeta(cp);
+		String nombre = "nuevaCarpetaQa111";
+		pageProcesoFirma.CrearCarpeta(cp, nombre);
+		
+		crearLogyDocumento.CasoOk(cp);
+			
 		System.out.println("FLUJO OK");
 	}
 	
