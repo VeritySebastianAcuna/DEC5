@@ -4,8 +4,7 @@ Click al botón Autorizar
 Click a Nombre Usuario
 Click empresa ACEPTA
 Click Mis Documentos
-Seleccion Estado Filtros Avanzados
 Selección documento
-Seleccionar Opcion Barra Herramientas
+Agregar a carpeta
 Cerrar Crear Mover Carpeta
 Caso OK
