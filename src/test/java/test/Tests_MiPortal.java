@@ -2498,6 +2498,82 @@ public class Tests_MiPortal {
 		System.out.println("FLUJO OK");
 	}
 	
+	@Test
+	public void Script_0844() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0844";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnProcesoDeFirma(cp);
+		
+		PageProcesoFirma pageProcesoFirma = new PageProcesoFirma(driver);
+		pageProcesoFirma.BtnMostrarOcultos(cp);
+		pageProcesoFirma.BtnMostrarOcultos(cp);
+
+		String mensaje = pageProcesoFirma.MensajeSinResultados(cp);
+		
+		if(mensaje.equals("dataTables_empty") || mensaje.length()>0) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0847() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0847";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnProcesoDeFirma(cp);
+		
+		PageProcesoFirma pageProcesoFirma = new PageProcesoFirma(driver);
+		pageProcesoFirma.ClickPrimerRegistro(cp);
+		pageProcesoFirma.AgregarCarpeta(cp);
+		pageProcesoFirma.MoverA(cp);
+		pageProcesoFirma.BtnMover(cp);
+
+		if(driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[2]/div/div[1]/button/span[1]")).getText().length()>0) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
 	@AfterMethod
 	public void FinEjecucion() {
 		driver.manage().deleteAllCookies();
