@@ -453,7 +453,7 @@ public class PagePendientes {
 		String mensaje = "";
 		do {
 			try {
-				mensaje = driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/descendant::td[1]")).getText();
+				mensaje = driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/descendant::td[1]")).getAttribute("class");
 				Thread.sleep(1000);
 				String texto ="Mensaje Sin Resultados";
 				log.modificarArchivoLog(caso,texto);
@@ -602,7 +602,7 @@ public class PagePendientes {
 		int j=0;
 		do {
 			try {
-				driver.findElement(By.xpath("//*[@id=\"checkMover_580\"]")).click();
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[2]/div/form/div/descendant::input[1]")).click();
 //				System.out.println(driver.findElement(By.xpath("//*[@id=\"checkMover_580\"]")).getText());
 				Thread.sleep(1000);
 				String texto ="Seleccion Carpeta Destino";
@@ -832,9 +832,9 @@ public class PagePendientes {
 		int j=0;
 		do {
 			try {
-				System.out.println(driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a")).getText());
-				System.out.println(driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a")).getTagName());
-				System.out.println(driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a")).getAttribute("href"));
+//				System.out.println(driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a")).getText());
+//				System.out.println(driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a")).getTagName());
+//				System.out.println(driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a")).getAttribute("href"));
 				Thread.sleep(1000);
 				driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a")).click();
 				Thread.sleep(1000);
