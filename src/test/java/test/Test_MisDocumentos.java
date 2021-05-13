@@ -16,6 +16,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import common.Configuration;
+import common.CrearRut;
 import common.LeerExcel;
 import evidence.CrearLogyDocumento;
 import pages.PageAcepta;
@@ -1157,6 +1158,137 @@ public class Test_MisDocumentos {
 	}
 	
 	@Test
+	public void Script_1103() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_1103";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		pageDec5.OpcionUserName(cp);
+		pageAcepta.empresaAcepta(cp);
+		
+		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
+		pageMisDocumentos.MisDocumentos(cp);
+		
+		pageMisDocumentos.clickDocumento(cp);
+		
+		Actions builder = new Actions(driver);
+		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a"));
+		builder.moveToElement(element).build().perform();
+		Thread.sleep(2000);
+		
+		pageMisDocumentos.clickDesvincularDocumento(cp);
+		pageMisDocumentos.btnSiDesvincular(cp);
+		
+		String texto= driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[2]")).getText();
+		if(texto.equals("Documento desvinculado con éxito")) {
+			crearLogyDocumento.AgregarRegistroLog(cp, texto +" OK");
+			System.out.println(texto);
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		pageMisDocumentos.cerrarDesvincular(cp);
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_1104() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_1104";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		pageDec5.OpcionUserName(cp);
+		pageAcepta.empresaAcepta(cp);
+		
+		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
+		pageMisDocumentos.MisDocumentos(cp);
+		
+		pageMisDocumentos.clickDocumento(cp);
+		
+		Actions builder = new Actions(driver);
+		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a"));
+		builder.moveToElement(element).build().perform();
+		Thread.sleep(2000);
+		
+		pageMisDocumentos.clickDesvincularDocumento(cp);		
+		pageMisDocumentos.btnSiDesvincular(cp);
+		pageMisDocumentos.cerrarDesvincular(cp);
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		else {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_1105() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_1105";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		pageDec5.OpcionUserName(cp);
+		pageAcepta.empresaAcepta(cp);
+		
+		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
+		pageMisDocumentos.MisDocumentos(cp);
+		
+		pageMisDocumentos.clickDocumento(cp);
+		
+		Actions builder = new Actions(driver);
+		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a"));
+		builder.moveToElement(element).build().perform();
+		Thread.sleep(2000);
+		
+		pageMisDocumentos.clickDesvincularDocumento(cp);		
+		pageMisDocumentos.btnNoDesvincular(cp);
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		else {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
 	public void Script_1107() throws InterruptedException, IOException, InvalidFormatException {
 		String cp = "DEC_1107";
 		System.out.println(cp);
@@ -1634,6 +1766,143 @@ public class Test_MisDocumentos {
 		
 		pageMisDocumentos.cerrarAgregarEtiquetas(cp);
 		
+		if(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		else {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_1127() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_1127";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		pageDec5.OpcionUserName(cp);
+		pageAcepta.empresaAcepta(cp);
+		
+		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
+		pageMisDocumentos.MisDocumentos(cp);
+		pageMisDocumentos.clickDocumento(cp);
+		
+		PagePendientes pagePendientes = new PagePendientes(driver);
+		pagePendientes.BarraHerramientas(cp,"Compartir");
+		pagePendientes.CompartirDocumentoTipoPersona(cp, "PERSONA NATURAL");
+		pagePendientes.CompartirDocumentoRut(cp, datos[1]);
+		pagePendientes.CompartirDocumentoBtnAgregar(cp);
+		
+		String msjRut= driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[2]/div[1]/div[2]/span")).getText();
+		if(msjRut.equals("RUT Inválido")) {
+			crearLogyDocumento.AgregarRegistroLog(cp, msjRut +" OK");
+			System.out.println(msjRut);
+			crearLogyDocumento.CasoOk(cp);
+			String msjEmail= driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[2]/div[1]/div[3]/span")).getText();
+			if(msjEmail.equals("Email Inválido")) {
+				crearLogyDocumento.AgregarRegistroLog(cp, msjEmail +" OK");
+				System.out.println(msjEmail);
+				crearLogyDocumento.CasoOk(cp);
+			}
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_1128() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_1128";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		pageDec5.OpcionUserName(cp);
+		pageAcepta.empresaAcepta(cp);
+		
+		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
+		pageMisDocumentos.MisDocumentos(cp);
+		pageMisDocumentos.clickDocumento(cp);
+		
+		PagePendientes pagePendientes = new PagePendientes(driver);
+		pagePendientes.BarraHerramientas(cp,"Compartir");
+		pagePendientes.CompartirDocumentoTipoPersona(cp, "PERSONA NATURAL");
+		
+		CrearRut crearRut = new CrearRut();
+		String rut = crearRut.RutPersona();
+				
+		pagePendientes.CompartirDocumentoRut(cp,rut); //Enviamos rut creado
+		pagePendientes.CompartirDocumentoIngresarMail(cp, "asd@asd.cl");
+		pagePendientes.CompartirDocumentoBtnAgregar(cp);
+		
+		
+		String msjUser= driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[2]/div[1]/div[2]/span")).getText();
+		if(msjUser.equals("Usuario no registrado")) {
+			crearLogyDocumento.AgregarRegistroLog(cp, msjUser +" OK");
+			System.out.println(msjUser);
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_1131() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_1131";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		pageDec5.OpcionUserName(cp);
+		pageAcepta.empresaAcepta(cp);
+		
+		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
+		pageMisDocumentos.MisDocumentos(cp);
+		pageMisDocumentos.clickDocumento(cp);
+		
+		PagePendientes pagePendientes = new PagePendientes(driver);
+		pagePendientes.BarraHerramientas(cp,"Compartir");
+		pagePendientes.CompartirDocumentoTipoPersona(cp, "ACEPTA");
+		
+		pageMisDocumentos.CompartirDocumentoRut(cp, datos[1]);
+		
+		pagePendientes.CompartirDocumentoSeleccionRol(cp);
+		pagePendientes.CompartirDocumentoBtnAgregar(cp);
+		pagePendientes.CompartirDocumentoBtnCompartir(cp);
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed());
 		if(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed()) {
 			crearLogyDocumento.CasoNok(cp);
 		}
