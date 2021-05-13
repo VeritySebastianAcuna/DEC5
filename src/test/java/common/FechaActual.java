@@ -9,12 +9,11 @@ public class FechaActual {
 		int anio = calendario.get(Calendar.YEAR);
 		int mes = calendario.get(Calendar.MONTH);
 		mes=mes+1;
-		if(mes<12) {
+		if(mes>12) {
 			mes=1;
 		}
 		int dia = calendario.get(Calendar.DAY_OF_MONTH);
 		String fecha=null;
-		
 		if(dia<10) {
 			fecha="0"+String.valueOf(dia);
 		}
@@ -39,7 +38,7 @@ public class FechaActual {
 		int anio = calendario.get(Calendar.YEAR);
 		int mes = calendario.get(Calendar.MONTH);
 		mes=mes-1;
-		if(mes>0) {
+		if(mes<0) {
 			mes=12;
 		}
 		if(mes==0) {

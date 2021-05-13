@@ -1,9 +1,0 @@
-Log de Caso de Prueba DEC_0788
-Login por Identidad Digital
-Click al botón Autorizar
-Click MI PORTAL
-Click PENDIENTES
-Seleccion Primer Registro
-Seleccionar Opcion Barra Herramientas
-click Boton Close
-Caso OK
