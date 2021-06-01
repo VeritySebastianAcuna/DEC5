@@ -25,6 +25,8 @@ import pages.PageCrearDocumento;
 import pages.PageDec5;
 import pages.PageDescargarArchivos;
 import pages.PageLoginAdm;
+import pages.PageMisDocumentos;
+import pages.PagePendientes;
 
 public class Test_DescargaPlantilla {
 	private WebDriver driver;//Declaro el objeto webdriver
@@ -151,9 +153,10 @@ public class Test_DescargaPlantilla {
 		
 		System.out.println("FLUJO OK");
 	}
+	
 		
 	@AfterMethod
 	public void FinEjecucion() {
-		//driver.close();
+		driver.close();
 	}
 }

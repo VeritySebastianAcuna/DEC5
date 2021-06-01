@@ -480,7 +480,7 @@ public class PagePendientes {
 		do {
 			try {
 				driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div[3]/div/button")).click();
-				Thread.sleep(1000);
+				Thread.sleep(1000); 
 				String texto ="Boton Mostrar Ocultos";
 				log.modificarArchivoLog(caso,texto);
 				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
@@ -1252,7 +1252,7 @@ public class PagePendientes {
 			try {
 				Thread.sleep(4000);
 				driver.findElement(By.xpath("//*[@id=\"bts2\"]/button[1]")).click();
-				Thread.sleep(1000);
+				Thread.sleep(1000);         
 				String texto ="click Boton Descarga PDF";
 				log.modificarArchivoLog(caso,texto);
 				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
