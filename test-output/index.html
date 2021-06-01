@@ -29,15 +29,15 @@
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
-          <img src="collapseall.gif" class="collapse-all-icon">
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" panel-name="suite-Default_suite" class="navigator-link">
+            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
               <span class="suite-name border-passed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
@@ -48,37 +48,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\estef\AppData\Local\Temp\testng-eclipse--2076022420\testng-customsuite.xml</span>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
+                    <span>C:\Users\Verity-Usuario\AppData\Local\Temp\testng-eclipse-386228963\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="group-Default_suite" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="times-Default_suite" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="reporter-Default_suite" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="ignored-methods-Default_suite" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="chronological-Default_suite" class="navigator-link ">
+                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -101,8 +101,8 @@
                     </span>
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="test.Tests_MiPortal" class="method navigator-link" hash-for-method="Script_0865">Script_0865</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="test.Test_MiPortal2" hash-for-method="Script_0872">Script_0872</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -120,14 +120,14 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">test.Tests_MiPortal</span>
+              <span class="class-name">test.Test_MiPortal2</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="Script_0865">
-                  </a> <!-- Script_0865 -->
-                  <span class="method-name">Script_0865</span>
+                  <a name="Script_0872">
+                  </a> <!-- Script_0872 -->
+                  <span class="method-name">Script_0872</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -135,20 +135,16 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\estef\AppData\Local\Temp\testng-eclipse--2076022420\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Verity-Usuario\AppData\Local\Temp\testng-eclipse-386228963\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;test.Tests_MiPortal&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;Script_0865&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- test.Tests_MiPortal --&gt;
+      &lt;class name=&quot;test.Test_MiPortal2&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -190,14 +186,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Script_0865')
-data.setCell(0, 2, 'test.Tests_MiPortal')
-data.setCell(0, 3, 63139);
+data.setCell(0, 1, 'Script_0872')
+data.setCell(0, 2, 'test.Test_MiPortal2')
+data.setCell(0, 3, 57738);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 57 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -212,158 +208,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">72 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">test.Tests_MiPortal</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">Script_0729</span>
-                <br/>
-                <span class="ignored-method-name">Script_0823</span>
-                <br/>
-                <span class="ignored-method-name">Script_0727</span>
-                <br/>
-                <span class="ignored-method-name">Script_0728</span>
-                <br/>
-                <span class="ignored-method-name">Script_0849</span>
-                <br/>
-                <span class="ignored-method-name">Script_0850</span>
-                <br/>
-                <span class="ignored-method-name">Script_0853</span>
-                <br/>
-                <span class="ignored-method-name">Script_0771</span>
-                <br/>
-                <span class="ignored-method-name">Script_0776</span>
-                <br/>
-                <span class="ignored-method-name">Script_0732</span>
-                <br/>
-                <span class="ignored-method-name">Script_0733</span>
-                <br/>
-                <span class="ignored-method-name">Script_0730</span>
-                <br/>
-                <span class="ignored-method-name">Script_0775</span>
-                <br/>
-                <span class="ignored-method-name">Script_0858</span>
-                <br/>
-                <span class="ignored-method-name">Script_0734</span>
-                <br/>
-                <span class="ignored-method-name">Script_0839</span>
-                <br/>
-                <span class="ignored-method-name">Script_0779</span>
-                <br/>
-                <span class="ignored-method-name">Script_0735</span>
-                <br/>
-                <span class="ignored-method-name">Script_0718</span>
-                <br/>
-                <span class="ignored-method-name">Script_0837</span>
-                <br/>
-                <span class="ignored-method-name">Script_0716</span>
-                <br/>
-                <span class="ignored-method-name">Script_0838</span>
-                <br/>
-                <span class="ignored-method-name">Script_0842</span>
-                <br/>
-                <span class="ignored-method-name">Script_0765</span>
-                <br/>
-                <span class="ignored-method-name">Script_0843</span>
-                <br/>
-                <span class="ignored-method-name">Script_0763</span>
-                <br/>
-                <span class="ignored-method-name">Script_0720</span>
-                <br/>
-                <span class="ignored-method-name">Script_0725</span>
-                <br/>
-                <span class="ignored-method-name">Script_0841</span>
-                <br/>
-                <span class="ignored-method-name">Script_0726</span>
-                <br/>
-                <span class="ignored-method-name">Script_0844</span>
-                <br/>
-                <span class="ignored-method-name">Script_0847</span>
-                <br/>
-                <span class="ignored-method-name">Script_0767</span>
-                <br/>
-                <span class="ignored-method-name">Script_0723</span>
-                <br/>
-                <span class="ignored-method-name">Script_0768</span>
-                <br/>
-                <span class="ignored-method-name">Script_0724</span>
-                <br/>
-                <span class="ignored-method-name">Script_0829</span>
-                <br/>
-                <span class="ignored-method-name">Script_0749</span>
-                <br/>
-                <span class="ignored-method-name">Script_0827</span>
-                <br/>
-                <span class="ignored-method-name">Script_0798</span>
-                <br/>
-                <span class="ignored-method-name">Script_0710</span>
-                <br/>
-                <span class="ignored-method-name">Script_0755</span>
-                <br/>
-                <span class="ignored-method-name">Script_0711</span>
-                <br/>
-                <span class="ignored-method-name">Script_0799</span>
-                <br/>
-                <span class="ignored-method-name">Script_0832</span>
-                <br/>
-                <span class="ignored-method-name">Script_0752</span>
-                <br/>
-                <span class="ignored-method-name">Script_0835</span>
-                <br/>
-                <span class="ignored-method-name">Script_0753</span>
-                <br/>
-                <span class="ignored-method-name">Script_0758</span>
-                <br/>
-                <span class="ignored-method-name">Script_0830</span>
-                <br/>
-                <span class="ignored-method-name">Script_0715</span>
-                <br/>
-                <span class="ignored-method-name">Script_0833</span>
-                <br/>
-                <span class="ignored-method-name">Script_0836</span>
-                <br/>
-                <span class="ignored-method-name">Script_0756</span>
-                <br/>
-                <span class="ignored-method-name">Script_0834</span>
-                <br/>
-                <span class="ignored-method-name">Script_0738</span>
-                <br/>
-                <span class="ignored-method-name">Script_0819</span>
-                <br/>
-                <span class="ignored-method-name">Script_0784</span>
-                <br/>
-                <span class="ignored-method-name">Script_0740</span>
-                <br/>
-                <span class="ignored-method-name">Script_0861</span>
-                <br/>
-                <span class="ignored-method-name">Script_0781</span>
-                <br/>
-                <span class="ignored-method-name">Script_0820</span>
-                <br/>
-                <span class="ignored-method-name">Script_0864</span>
-                <br/>
-                <span class="ignored-method-name">Script_0782</span>
-                <br/>
-                <span class="ignored-method-name">Script_0787</span>
-                <br/>
-                <span class="ignored-method-name">Script_0788</span>
-                <br/>
-                <span class="ignored-method-name">Script_0744</span>
-                <br/>
-                <span class="ignored-method-name">Script_0862</span>
-                <br/>
-                <span class="ignored-method-name">Script_0785</span>
-                <br/>
-                <span class="ignored-method-name">Script_0741</span>
-                <br/>
-                <span class="ignored-method-name">Script_0824</span>
-                <br/>
-                <span class="ignored-method-name">Script_0825</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -372,18 +219,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">test.Tests_MiPortal</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">test.Test_MiPortal2</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">Script_0865</span>
-                <span class="method-start">9188 ms</span>
+                <span class="method-name">Script_0872</span>
+                <span class="method-start">11572 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">FinEjecucion</span>
-                <span class="method-start">72329 ms</span>
+                <span class="method-start">69312 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
