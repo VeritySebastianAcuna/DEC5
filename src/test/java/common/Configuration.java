@@ -9,6 +9,7 @@ public class Configuration {
 	public static String EVIDENCIA_DIR = ROOT_DIR + "Evidencia" +File.separator;
 	public static String FILES_DIR = ROOT_DIR + "files" +File.separator;
 	public static String DRIVERS_DIR = ROOT_DIR + "drivers" +File.separator;
+	public static String DOWNLOAD_DIR = ROOT_DIR + "Downloads" +File.separator;
 	
 	public static String modifyInWindows(String inPath) { 
 		if(System.getProperty("os.name").toLowerCase().contains("windows")) {

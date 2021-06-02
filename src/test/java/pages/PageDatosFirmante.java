@@ -343,6 +343,7 @@ public void datosFirmanteArchivo (String caso, String rutFirmante) throws Interr
 			}
 		}while(i==0);
 	}
-
-
+	
+		
+	
 }

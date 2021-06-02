@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
@@ -20,6 +21,29 @@
           </reporter-output>
         </test-method> <!-- FinEjecucion -->
       </class> <!-- test.Test_MiPortal2 -->
+=======
+<testng-results ignored="55" total="56" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-06-01T21:02:23Z" name="Default suite" finished-at="2021-06-01T21:04:21Z" duration-ms="117682">
+    <groups>
+    </groups>
+    <test started-at="2021-06-01T21:02:23Z" name="Default test" finished-at="2021-06-01T21:04:21Z" duration-ms="117682">
+      <class name="test.Test_MisDocumentos">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.Test_MisDocumentos@194fad1]" started-at="2021-06-01T21:02:23Z" name="setUp" finished-at="2021-06-01T21:02:33Z" duration-ms="9894" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="Script_1150()[pri:0, instance:test.Test_MisDocumentos@194fad1]" started-at="2021-06-01T21:02:33Z" name="Script_1150" finished-at="2021-06-01T21:04:20Z" duration-ms="107589" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Script_1150 -->
+        <test-method is-config="true" signature="FinEjecucion()[pri:0, instance:test.Test_MisDocumentos@194fad1]" started-at="2021-06-01T21:04:20Z" name="FinEjecucion" finished-at="2021-06-01T21:04:21Z" duration-ms="170" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FinEjecucion -->
+      </class> <!-- test.Test_MisDocumentos -->
+>>>>>>> f4e451a34375cecbb93a864ebf5e892b0add91b4
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
