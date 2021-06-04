@@ -3,23 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="test.Test_MiPortal2">
+      <class name="test.Test_TiposDocumentos">
         <methods>
-          <include name="FinEjecucion"/>
+          <include name="Script_244"/>
           <include name="setUp"/>
-          <include name="Script_0884"/>
-        </methods>
-      </class> <!-- test.Test_MiPortal2 -->
-=======
-      <class name="test.Test_MisDocumentos">
-        <methods>
           <include name="FinEjecucion"/>
-          <include name="setUp"/>
-          <include name="Script_1150"/>
         </methods>
-      </class> <!-- test.Test_MisDocumentos -->
->>>>>>> f4e451a34375cecbb93a864ebf5e892b0add91b4
+      </class> <!-- test.Test_TiposDocumentos -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

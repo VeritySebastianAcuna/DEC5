@@ -5,9 +5,3 @@ Click a Nombre Usuario
 Click empresa ACEPTA
 Click Mis Documentos
 Seleccion Primer Registro
-Seleccionar Opcion Barra Herramientas
-Ingreso de Comentario
-click Boton Rechazar con Clave
-Ingreso de Clave Incorrecta
-Click Boton Rechazar
-Caso OK
