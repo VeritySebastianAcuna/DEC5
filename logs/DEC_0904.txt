@@ -1,0 +1,8 @@
+Log de Caso de Prueba DEC_0904
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Firmado por Todos
+click Carpetas
+Carpeta Existente
+Caso OK

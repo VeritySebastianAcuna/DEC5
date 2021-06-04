@@ -1363,8 +1363,8 @@ public class PageProcesoFirma {
 		int j=0;
 		do {
 			try {
-				driver.findElement(By.id("searchUser")).sendKeys(rut);
-				driver.findElement(By.id("searchUser")).sendKeys(Keys.TAB);
+				driver.findElement(By.id("searchUser2")).sendKeys(rut);
+				driver.findElement(By.id("searchUser2")).sendKeys(Keys.TAB);
 				String texto ="Ingreso Rut";	
 				log.modificarArchivoLog(caso,texto);
 				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
@@ -1429,6 +1429,157 @@ public class PageProcesoFirma {
 			}
 		}while(i==0);
 		Thread.sleep(5000);
+	}
+	
+	public void SeleccionRol (String caso, String opcion) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {	
+				Select tipoRol = new Select (driver.findElement(By.cssSelector("select[name='role']")));
+				tipoRol.selectByVisibleText(opcion);
+				String texto ="Seleccion Rol";	
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Seleccionar Rol");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void CompartirDocumentoBtnCompartir (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.id("submitCompartir")).click();
+				Thread.sleep(1000);
+				String texto ="click Boton Compartir";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Compartir");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void OcultarDocumentoBtnCancelar (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div/div[3]/button[2]")).click();
+				Thread.sleep(1000);
+				String texto ="click Boton Cancelar";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Cancelar");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void TrazaBtnDescargaPdf (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				Thread.sleep(4000);
+				driver.findElement(By.xpath("//*[@id=\"bts2\"]/button[1]")).click();
+				Thread.sleep(1000);         
+				String texto ="click Boton Descarga PDF";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Descarga PDF");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(8000);
+	}
+	
+	public void TrazaBtnClose (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"bts2\"]/button[2]")).click();
+				Thread.sleep(1000);
+				String texto ="click Boton Close";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Close");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void BarraHerramientas_Traza (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"barra_herramientas\"]/ul/a/li[3]/button/span[2]")).click();
+				Thread.sleep(1000);
+				String texto ="click Boton Traza";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Close");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
 	}
 	
 }

@@ -1,0 +1,14 @@
+Log de Caso de Prueba DEC_0893
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Proceso De Firma
+Seleccion Primer Registro
+Seleccionar Opcion Barra Herramientas
+click Boton Mover
+Seleccion Primer Registro
+Boton Mostrar Ocultos
+Seleccion Primer Registro
+Seleccionar Opcion Barra Herramientas
+click Boton Mover
+Caso OK

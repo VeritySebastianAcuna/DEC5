@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_0922
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Firmado por Todos
+click Filtros Avanzados
+Tipo Documento
+click Filtrar
+Mensaje Sin Resultados
+Caso NOK
