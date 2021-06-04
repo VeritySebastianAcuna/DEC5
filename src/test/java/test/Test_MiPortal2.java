@@ -23,6 +23,7 @@ import common.Configuration;
 import common.FechaActual;
 import common.LeerExcel;
 import evidence.CrearLogyDocumento;
+import pages.PageAcepta;
 import pages.PageDec5;
 import pages.PageFirmadoPorTodos;
 import pages.PageLoginAdm;
@@ -1428,7 +1429,6 @@ public class Test_MiPortal2 {
 		
 		System.out.println("FLUJO OK");
 	}
-	
 
 	
 	@AfterMethod

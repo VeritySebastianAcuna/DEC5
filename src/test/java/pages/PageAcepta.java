@@ -159,8 +159,8 @@ import common.Log;
 			int j=0;
 			do {
 				try {
-					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 					driver.findElement(By.xpath("//*[@id=\"searchDocsTypes\"]/div[2]/div/div/div/button")).click();
+					Thread.sleep(1000);
 					String texto ="Click ícono buscar";
 					log.modificarArchivoLog(caso,texto);
 					crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
@@ -184,9 +184,8 @@ import common.Log;
 			int j=0;
 			do {
 				try {
-					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-					driver.findElement(By.xpath("//*[@id=\"searchDocsTypes\"]/div[2]/div/div/input")).click();
-					driver.findElement(By.xpath("//*[@id=\\\"searchDocsTypes\\\"]/div[2]/div/div/input")).sendKeys(buscarEmpresa);
+					driver.findElement(By.xpath("//*[@id=\"searchDocsTypes\"]/div[2]/div/div/input")).sendKeys(buscarEmpresa);
+					Thread.sleep(1000);
 					String texto ="Ingreso Empresa en campo buscar";
 					log.modificarArchivoLog(caso,texto);
 					crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
