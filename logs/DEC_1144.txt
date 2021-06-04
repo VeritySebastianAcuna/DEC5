@@ -1,10 +1,4 @@
 Log de Caso de Prueba DEC_1144
 Login por Identidad Digital
 Click al botón Autorizar
-Click a Nombre Usuario
-Click empresa ACEPTA
-Click Mis Documentos
-Seleccion Primer Registro
-Seleccionar Opcion Barra Herramientas
-click Boton Rechazar con Clave
-Click Boton Salir Identidad Digital
+Click a Configuraciones

@@ -314,6 +314,7 @@ public class Test_MisDocumentos {
 		System.out.println("FLUJO OK");
 	}
 	
+		
 	@Test
 	public void Script_1075() throws InterruptedException, IOException, InvalidFormatException {
 		String cp = "DEC_1075";
@@ -2177,7 +2178,7 @@ public class Test_MisDocumentos {
 		
 		System.out.println(driver.findElement(By.xpath("//*[@id=\\\"root-content\\\"]/div")).isDisplayed());
 		if(driver.findElement(By.xpath("//*[@id=\"root-content\"]/div")).isDisplayed()) {
-			crearLogyDocumento.CasoOk(cp);
+			crearLogyDocumento.CasoOk(cp); 
 		}
 		else {
 			crearLogyDocumento.CasoNok(cp);
@@ -2347,7 +2348,87 @@ public class Test_MisDocumentos {
 		System.out.println("FLUJO OK");
 		
 	}
+	@Test
+	public void Script_1156() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_1150";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		pageDec5.OpcionUserName(cp);
+		pageAcepta.empresaAcepta(cp);
+		
+		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
+		pageMisDocumentos.MisDocumentos(cp);
+					
+		PagePendientes pagePendientes = new PagePendientes(driver);
+		pagePendientes.ClickPrimerRegistro(cp);
+		pagePendientes.BarraHerramientas(cp, "Firmar");
+		
+		pagePendientes.BtnFirmarIdentidadDigital(cp);
+		pagePendientes.BtnAutorizarIdentidadDigital(cp);
+		
+				
+		String msjExitoso = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/h1")).getText();
+		if(msjExitoso.equals("Documento firmado exitosamente")) {
+			System.out.println("OK");
+			crearLogyDocumento.AgregarRegistroLog(cp, msjExitoso );
+			crearLogyDocumento.CasoOk(cp);
+			String codDoc = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/ul/li")).getText();
+			System.out.println(codDoc);
+			}
+		else {
+			System.out.println("NOK");
+			crearLogyDocumento.CasoNok(cp);
+		}
+	}
 	
+	@Test
+	public void Script_1157() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_1150";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		pageDec5.OpcionUserName(cp);
+		pageAcepta.empresaAcepta(cp);
+		
+		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
+		pageMisDocumentos.MisDocumentos(cp);
+					
+		PagePendientes pagePendientes = new PagePendientes(driver);
+		pagePendientes.ClickPrimerRegistro(cp);
+		pagePendientes.BarraHerramientas(cp, "Firmar");
+		pagePendientes.BtnFirmarIdentidadDigital(cp);
+		pagePendientes.BtnAutorizarIdentidadDigital(cp);
+		pagePendientes.linkVerPendientes(cp);
+				
+		System.out.println(driver.findElement(By.id("__tag_status")).isDisplayed());
+		if(driver.findElement(By.id("__tag_statusv")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+	}
+	
+		
 	@AfterMethod
 	public void FinEjecucion() {
 		driver.manage().deleteAllCookies();
