@@ -204,5 +204,30 @@ import common.Log;
 			Thread.sleep(3000);
 		}
 		
+		public void checkIncluirOcultos(String caso) throws IOException, InvalidFormatException, InterruptedException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.findElement(By.id("check-inactive")).click();
+					Thread.sleep(1000);
+					String texto ="Check Incluir Ocultos";
+					log.modificarArchivoLog(caso,texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+					texto=texto.replace(" ","_");
+					capturaPantalla.takeScreenShotTest(driver,texto, caso);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible hacer Check Incluir Ocultos");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
+		
 	}
 

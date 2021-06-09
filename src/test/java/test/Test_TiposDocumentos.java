@@ -46,7 +46,7 @@ public class Test_TiposDocumentos {
 		
 	@Test
 	public void Script_245() throws InterruptedException, IOException, InvalidFormatException {
-		String cp = "DEC_1144";
+		String cp = "DEC_245";
 		System.out.println(cp);
 	
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
@@ -81,7 +81,7 @@ public class Test_TiposDocumentos {
 	
 	@Test
 	public void Script_246() throws InterruptedException, IOException, InvalidFormatException {
-		String cp = "DEC_1144";
+		String cp = "DEC_245";
 		System.out.println(cp);
 	
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
@@ -116,7 +116,7 @@ public class Test_TiposDocumentos {
 	
 	@Test
 	public void Script_247() throws InterruptedException, IOException, InvalidFormatException {
-		String cp = "DEC_1144";
+		String cp = "DEC_247";
 		System.out.println(cp);
 	
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
@@ -135,12 +135,125 @@ public class Test_TiposDocumentos {
 		pageAcepta.ClickRuedaConfiguracion(cp);
 		pageAcepta.OpcionTiposdeDocumentos(cp);
 		pageAcepta.seleccionEmpresaBusqueda(cp, "ACEPTA");
-		pageAcepta.inputBuscar(cp, "EMPRESA PRUEBA");
+		pageAcepta.inputBuscar(cp, "AGSFAD"); //PENDIENTE NO INGRESA EL DATO
 		pageAcepta.btnIconoBuscar(cp);
 	
-		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[1]")).isDisplayed());
-		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[1]")).isDisplayed()) {
-			crearLogyDocumento.AgregarRegistroLog(cp, "Grilla Documento OK");
+		String msj_No_Resultados = "No se encontraron resultados";
+		
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]")).isDisplayed() &&
+				driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr/td")).getText().equals(msj_No_Resultados)){
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_248() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_247";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.seleccionEmpresaBusqueda(cp, "ACEPTA");
+		pageAcepta.inputBuscar(cp, "002020560195310"); //PENDIENTE NO INGRESA EL DATO
+		pageAcepta.btnIconoBuscar(cp);
+	
+		String nombre_Carpeta_Buscar = "002020560195310";
+	
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]")).isDisplayed() &&
+				driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr/td/div/div/div[1]")).getText().contains(nombre_Carpeta_Buscar)){
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_249() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_247";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.seleccionEmpresaBusqueda(cp, "ACEPTA");
+		pageAcepta.inputBuscar(cp, "002020560195310"); //PENDIENTE NO INGRESA EL DATO
+		pageAcepta.checkIncluirOcultos(cp);
+		pageAcepta.btnIconoBuscar(cp);
+	
+		String nombre_Carpeta_Buscar = "002020560195310";
+	
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]")).isDisplayed() &&
+				driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr/td/div/div/div[1]")).getText().contains(nombre_Carpeta_Buscar)){
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_251() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_247";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.seleccionEmpresaBusqueda(cp, "ACEPTA");
+		pageAcepta.inputBuscar(cp, "002020560195310"); //PENDIENTE NO INGRESA EL DATO
+		pageAcepta.btnIconoBuscar(cp);
+	
+		String nombre_Carpeta_Buscar = "002020560195310";
+	
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[2]")).isDisplayed() &&
+				driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr/td/div/div/div[1]")).getText().contains(nombre_Carpeta_Buscar)){
 			crearLogyDocumento.CasoOk(cp);
 		}
 		else {
