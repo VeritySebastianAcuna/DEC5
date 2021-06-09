@@ -65,7 +65,7 @@ public class Test_TiposDocumentos {
 		pageAcepta.ClickRuedaConfiguracion(cp);
 		pageAcepta.OpcionTiposdeDocumentos(cp);
 		pageAcepta.seleccionEmpresaBusqueda(cp, "ACEPTA");
-		//pageAcepta.btnIconoBuscar(cp);
+		
 	
 		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[1]")).isDisplayed());
 		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[1]")).isDisplayed()) {
@@ -100,7 +100,7 @@ public class Test_TiposDocumentos {
 		pageAcepta.ClickRuedaConfiguracion(cp);
 		pageAcepta.OpcionTiposdeDocumentos(cp);
 		pageAcepta.seleccionEmpresaBusqueda(cp, "Otras Instituciones");
-		//pageAcepta.btnIconoBuscar(cp);
+		
 	
 		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[1]")).isDisplayed());
 		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[1]")).isDisplayed()) {
@@ -172,7 +172,7 @@ public class Test_TiposDocumentos {
 		pageAcepta.ClickRuedaConfiguracion(cp);
 		pageAcepta.OpcionTiposdeDocumentos(cp);
 		pageAcepta.seleccionEmpresaBusqueda(cp, "ACEPTA");
-		pageAcepta.inputBuscar(cp, "002020560195310"); //PENDIENTE NO INGRESA EL DATO
+		pageAcepta.inputBuscar(cp, "002020560195310"); //PENDIENTE NO INGRESA EL DATO, revisar
 		pageAcepta.btnIconoBuscar(cp);
 	
 		String nombre_Carpeta_Buscar = "002020560195310";
@@ -209,7 +209,7 @@ public class Test_TiposDocumentos {
 		pageAcepta.ClickRuedaConfiguracion(cp);
 		pageAcepta.OpcionTiposdeDocumentos(cp);
 		pageAcepta.seleccionEmpresaBusqueda(cp, "ACEPTA");
-		pageAcepta.inputBuscar(cp, "002020560195310"); //PENDIENTE NO INGRESA EL DATO
+		pageAcepta.inputBuscar(cp, "002020560195310"); //PENDIENTE NO INGRESA EL DATO, revisar
 		pageAcepta.checkIncluirOcultos(cp);
 		pageAcepta.btnIconoBuscar(cp);
 	
@@ -247,7 +247,7 @@ public class Test_TiposDocumentos {
 		pageAcepta.ClickRuedaConfiguracion(cp);
 		pageAcepta.OpcionTiposdeDocumentos(cp);
 		pageAcepta.seleccionEmpresaBusqueda(cp, "ACEPTA");
-		pageAcepta.inputBuscar(cp, "002020560195310"); //PENDIENTE NO INGRESA EL DATO
+		pageAcepta.inputBuscar(cp, "002020560195310"); //PENDIENTE NO INGRESA EL DATO, revisar
 		pageAcepta.btnIconoBuscar(cp);
 	
 		String nombre_Carpeta_Buscar = "002020560195310";
