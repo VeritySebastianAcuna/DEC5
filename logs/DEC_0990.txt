@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_0990
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Rechazados
+click Carpetas
+Carpeta Seleccionada
+click Link Eliminar Carpeta
+Eliminar Carpeta
+Caso OK

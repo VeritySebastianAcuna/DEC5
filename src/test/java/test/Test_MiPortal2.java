@@ -57,7 +57,7 @@ public class Test_MiPortal2 {
 		driver.navigate().to("https://5cap.dec.cl/");// Aquí se ingresa la URL para hacer las pruebas.
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
-
+	/*
 	@Test
 	public void Script_0867() throws InterruptedException, IOException, InvalidFormatException, AWTException {
 		String cp = "DEC_0867";
@@ -2860,6 +2860,1240 @@ public class Test_MiPortal2 {
 		}
 		else {
 			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	// Miércoles 09/06/2021
+	
+	@Test
+	public void Script_0968() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0968";
+		String rut_valido = "23.409.729-6";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnFirmadoPorTodos(cp);
+		
+		PageFirmadoPorTodos pageFirmadoPorTodos = new PageFirmadoPorTodos(driver);
+		pageFirmadoPorTodos.ClickPrimerRegistro(cp);
+		pageFirmadoPorTodos.BarraHerramientas(cp, "Compartir");
+		
+		pageFirmadoPorTodos.CompartirDocumentoTipoPersona(cp, "ACEPTA");
+		pageFirmadoPorTodos.SeleccionRol(cp, "ADMIN");
+		pageFirmadoPorTodos.CompartirDocumentoRut_Acepta(cp, rut_valido);
+		pageFirmadoPorTodos.CompartirDocumentoBtnAgregar(cp);
+		pageFirmadoPorTodos.CompartirDocumentoBtnCompartir(cp);
+		
+		if(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		else {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0970() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0970";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnFirmadoPorTodos(cp);
+		
+		PageFirmadoPorTodos pageFirmadoPorTodos = new PageFirmadoPorTodos(driver);
+		pageFirmadoPorTodos.ClickPrimerRegistro(cp);
+		pageFirmadoPorTodos.BarraHerramientas(cp, "Ocultar");
+		pageFirmadoPorTodos.BtnMover(cp); // Botón Aceptar tiene el mismo id que botón Mover
+		
+		if(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		else {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0971() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0971";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnFirmadoPorTodos(cp);
+		
+		PageFirmadoPorTodos pageFirmadoPorTodos = new PageFirmadoPorTodos(driver);
+		pageFirmadoPorTodos.ClickPrimerRegistro(cp);
+		pageFirmadoPorTodos.BarraHerramientas(cp, "Ocultar");
+		pageFirmadoPorTodos.OcultarDocumentoBtnCancelar(cp);
+		
+		if(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		else {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0973() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0973";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnFirmadoPorTodos(cp);
+		
+		PageFirmadoPorTodos pageFirmadoPorTodos = new PageFirmadoPorTodos(driver);
+		
+		// Generar Pre-condición : documento oculto
+		pageFirmadoPorTodos.ClickPrimerRegistro(cp);
+		pageFirmadoPorTodos.BarraHerramientas(cp, "Ocultar");
+		pageFirmadoPorTodos.BtnMover(cp); // Botón Aceptar tiene el mismo id que botón Mover
+		
+		pageFirmadoPorTodos.BtnMostrarOcultos(cp);
+		pageFirmadoPorTodos.ClickPrimerRegistro(cp);
+		pageFirmadoPorTodos.BarraHerramientas(cp, "Mostrar");
+		pageFirmadoPorTodos.BtnMover(cp); // Botón Aceptar tiene el mismo id que botón Mover
+		
+		if(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		else {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0974() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0974";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnFirmadoPorTodos(cp);
+		
+		PageFirmadoPorTodos pageFirmadoPorTodos = new PageFirmadoPorTodos(driver);
+		
+		// Generar Pre-condición : documento oculto
+		pageFirmadoPorTodos.ClickPrimerRegistro(cp);
+		pageFirmadoPorTodos.BarraHerramientas(cp, "Ocultar");
+		pageFirmadoPorTodos.BtnMover(cp); // Botón Aceptar tiene el mismo id que botón Mover
+		
+		pageFirmadoPorTodos.BtnMostrarOcultos(cp);
+		pageFirmadoPorTodos.ClickPrimerRegistro(cp);
+		pageFirmadoPorTodos.BarraHerramientas(cp, "Mostrar");
+		pageFirmadoPorTodos.OcultarDocumentoBtnCancelar(cp);
+		
+		if(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		else {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0977() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0977";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnFirmadoPorTodos(cp);
+		
+		PageFirmadoPorTodos pageFirmadoPorTodos = new PageFirmadoPorTodos(driver);
+		pageFirmadoPorTodos.ClickPrimerRegistro(cp);
+		pageFirmadoPorTodos.BarraHerramientas_Traza(cp);
+		
+		File folder = new File(downloadFilePath);
+		File[] archivosAntes = folder.listFiles();
+		System.out.println("Archivos antes: "+archivosAntes.length);
+		pageFirmadoPorTodos.TrazaBtnDescargaPdf(cp);
+		File[] archivosDespues = folder.listFiles();
+		System.out.println("Archivos después: "+archivosDespues.length);
+
+		if(archivosDespues.length>archivosAntes.length) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else{
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0978() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0978";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnFirmadoPorTodos(cp);
+		
+		PageFirmadoPorTodos pageFirmadoPorTodos = new PageFirmadoPorTodos(driver);
+		pageFirmadoPorTodos.ClickPrimerRegistro(cp);
+		pageFirmadoPorTodos.BarraHerramientas_Traza(cp);
+		
+		pageFirmadoPorTodos.TrazaBtnClose(cp);
+
+		if(driver.findElement(By.id("modaltraza")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		else {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0980() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0980";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		String Nombre_Etiqueta = driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/tbody/tr[1]/td[2]/span[1]")).getText().substring(0, 5);
+		pageRechazados.IngresoEtiqueta(cp, Nombre_Etiqueta);
+		pageRechazados.BuscarEtiqueta(cp);
+		
+		if(driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/tbody/tr[1]/td[2]/span[1]")).getText().contains(Nombre_Etiqueta)) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+			
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0981() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0981";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.IngresoEtiqueta(cp, "AJKLÑO");
+		pageRechazados.BuscarEtiqueta(cp);
+		
+		if(driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/descendant::td[1]")).getText().equals("No se encontraron resultados")) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+			
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0984() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0984";
+		String nombre_Nueva_Carpeta = "Prueba QA -"+System.currentTimeMillis();
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		
+		pageRechazados.ClickCarpetas(cp);
+		pageRechazados.LinkCrearNuevaCarpeta(cp);
+		pageRechazados.CrearCarpeta(cp, nombre_Nueva_Carpeta);
+		
+		crearLogyDocumento.CasoOk(cp);
+
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0985() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0985";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		
+		pageRechazados.ClickCarpetas(cp);
+		pageRechazados.AgregarCarpetaYaExistente(cp);
+		
+		if(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[2]/div/div/div/span")).getText().equals("Carpeta ya existe")) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	// Jueves 10/06/2021
+	
+	@Test
+	public void Script_0986() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0986";
+		String nombre_Nueva_Carpeta = "Prueba QA -"+System.currentTimeMillis();
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.ClickCarpetas(cp);
+		pageRechazados.LinkCrearNuevaCarpeta(cp);
+		pageRechazados.CrearCarpeta(cp, nombre_Nueva_Carpeta);
+		pageRechazados.IngresarNombreCarpeta(cp, nombre_Nueva_Carpeta);
+		pageRechazados.BtnCancelar(cp);
+		
+		if(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		else {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0988() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0988";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.ClickCarpetas(cp);
+		pageRechazados.BtnFiltrarCarpetas(cp);
+		
+		crearLogyDocumento.CasoOk(cp);
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0989() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0989";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.ClickCarpetas(cp);
+		pageRechazados.SeleccionarCarpeta(cp);
+		String nombre_Carpeta = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[1]/div[2]/div/div/div[1]/div[1]/button")).getText();
+		pageRechazados.LinkEliminarCarpeta(cp);
+		String titulo_PopUp_Eliminar_Carpeta = "¿Estás seguro de querer eliminar la siguente carpeta?";
+	
+		if(driver.findElement(By.id("modalDeleteFolders")).isDisplayed() &&
+				driver.findElement(By.xpath("//*[@id=\"modalDeleteFolders\"]/div/div/div[1]/h1")).getText().equals(titulo_PopUp_Eliminar_Carpeta) &&
+				driver.findElement(By.xpath("//*[@id=\"modalDeleteFolders\"]/div/div/div[2]/ul/li")).getText().equals("- "+nombre_Carpeta) &&
+				driver.findElement(By.id("eliminarFolder")).getText().equals("Eliminar")){
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0990() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0990";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.ClickCarpetas(cp);
+		
+		int cantidadAntes = pageRechazados.CantidadCarpeta(cp);
+		System.out.println("Cantidad inicial de carpetas: "+cantidadAntes);
+		pageRechazados.SeleccionarCarpeta(cp);
+		pageRechazados.LinkEliminarCarpeta(cp);
+		pageRechazados.EliminarCarpeta(cp);
+		int cantidadDespues = pageRechazados.CantidadCarpeta(cp);
+		System.out.println("Cantidad final de carpetas: "+cantidadDespues);
+	
+		if(cantidadDespues<cantidadAntes) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0993() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0993";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.ClickFiltrosAvanzados(cp);
+		pageRechazados.CambiarEstadoFiltro(cp, "RECHAZADO");
+		pageRechazados.BtnFiltrar(cp);
+	
+		if(driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/descendant::div[2]")).getAttribute("title").equals("Rechazado")) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0997() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0997";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.ClickFiltrosAvanzados(cp);
+		pageRechazados.CambiarEstadoFiltro(cp, "TODOS");
+		pageRechazados.BtnFiltrar(cp);
+	
+		if(driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/descendant::div[2]")).getAttribute("title").equals("Firmado por Todos") ||
+				driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/descendant::div[2]")).getAttribute("title").equals("Rechazado") ||
+				driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/descendant::div[2]")).getAttribute("title").equals("Pendiente") ||
+				driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/descendant::div[2]")).getAttribute("title").equals("En Proceso de Firma")){
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0998() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0998";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.ClickFiltrosAvanzados(cp);
+		pageRechazados.FechaDesde(cp);
+		pageRechazados.BtnFiltrar(cp);
+		
+	
+		if(driver.findElement(By.xpath("//*[@id=\"__tag_date_from\"]/button")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_0999() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0999";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.ClickFiltrosAvanzados(cp);
+		pageRechazados.FechaHasta(cp);
+		pageRechazados.BtnFiltrar(cp);
+		
+	
+		if(driver.findElement(By.xpath("//*[@id=\"__tag_date_to\"]/button")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_1000() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_1000";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.ClickFiltrosAvanzados(cp);
+		pageRechazados.FechaDesde(cp);
+		pageRechazados.FechaHasta(cp);
+		pageRechazados.BtnFiltrar(cp);
+		
+		if(driver.findElement(By.xpath("//*[@id=\"__tag_date_from\"]/button")).isDisplayed() && 
+				driver.findElement(By.xpath("//*[@id=\"__tag_date_to\"]/button")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_1002() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_1002";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		String Nombre_Etiqueta = driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/tbody/tr[1]/td[2]/span[1]")).getText().substring(0, 5);
+		pageRechazados.ClickFiltrosAvanzados(cp);
+		pageRechazados.TipoDocumento(cp, Nombre_Etiqueta);
+		pageRechazados.BtnFiltrar(cp);
+		
+		if(driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/tbody/tr[1]/td[2]/span[1]")).getText().contains(Nombre_Etiqueta)) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	// Viernes 11/06/2021
+	 
+	@Test
+	public void Script_0913() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0913";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnFirmadoPorTodos(cp);
+		
+		PageFirmadoPorTodos pageFirmadoPorTodos = new PageFirmadoPorTodos(driver);
+		
+		pageFirmadoPorTodos.ClickFiltrosAvanzados(cp);
+		pageFirmadoPorTodos.CambiarEstadoFiltro(cp, "FIRMADO POR TODOS");
+		pageFirmadoPorTodos.BtnFiltrar(cp);
+	
+		if(driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/descendant::div[2]")).getAttribute("title").equals("Firmado por Todos")) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0914() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0914";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnFirmadoPorTodos(cp);
+		
+		PageFirmadoPorTodos pageFirmadoPorTodos = new PageFirmadoPorTodos(driver);
+		
+		pageFirmadoPorTodos.ClickFiltrosAvanzados(cp);
+		pageFirmadoPorTodos.CambiarEstadoFiltro(cp, "FIRMADO POR TODOS");
+		pageFirmadoPorTodos.BtnFiltrar(cp);
+	
+		if(driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/descendant::div[2]")).getAttribute("title").equals("Firmado por Todos")) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0994() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0994";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.ClickFiltrosAvanzados(cp);
+		pageRechazados.CambiarEstadoFiltro(cp, "RECHAZADO");
+		pageRechazados.BtnFiltrar(cp);
+	
+		if(driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/descendant::div[2]")).getAttribute("title").equals("Rechazado")) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0995() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0995";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.ClickFiltrosAvanzados(cp);
+		pageRechazados.CambiarEstadoFiltro(cp, "RECHAZADO");
+		pageRechazados.BtnFiltrar(cp);
+	
+		if(driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/descendant::div[2]")).getAttribute("title").equals("Rechazado")) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0996() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_0996";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.ClickFiltrosAvanzados(cp);
+		pageRechazados.CambiarEstadoFiltro(cp, "RECHAZADO");
+		pageRechazados.BtnFiltrar(cp);
+	
+		if(driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/descendant::div[2]")).getAttribute("title").equals("Rechazado")) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		System.out.println("FLUJO OK");
+	}
+	 
+	@Test
+	public void Script_1003() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_1003";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.ClickFiltrosAvanzados(cp);
+		pageRechazados.TipoDocumento(cp, "123NM");
+		pageRechazados.BtnFiltrar(cp);
+		this.driver.switchTo().frame("NombreB");
+		
+		String mensaje = pageRechazados.MensajeSinResultados(cp);
+		
+		if(mensaje.equals("No se encontraron resultados")) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_1004() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_1004";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.BtnMostrarOcultos(cp);
+
+		String mensaje = pageRechazados.MensajeSinResultados(cp);
+		
+		if(mensaje.equals("No se encontraron resultados") || mensaje.length()>0) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_1005() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_1005";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.BtnMostrarOcultos(cp);
+		pageRechazados.BtnMostrarOcultos(cp);
+		
+		String mensaje = pageRechazados.MensajeSinResultados(cp);
+		
+		if(mensaje.equals("dataTables_empty") || mensaje.length()>0) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	
+	@Test
+	public void Script_1025() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_1025";
+		String comentario = "Prueba QA";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.ClickPrimerRegistro(cp);
+		
+		Thread.sleep(2000);
+		Robot robot = new Robot();
+		robot.setAutoDelay(100);
+		robot.mouseWheel(50);
+		Thread.sleep(2000);
+		
+		int antes = driver.findElements(By.xpath("//*[@id=\"details-doc\"]/div/div[7]/div/div[1]/descendant::div")).size();
+		System.out.println("Antes: "+antes);
+		pageRechazados.BtnCrearComentario(cp);
+		pageRechazados.IngresarComentario(cp, comentario);
+		pageRechazados.BtnComentar(cp);
+		int despues = driver.findElements(By.xpath("//*[@id=\"details-doc\"]/div/div[7]/div/div[1]/descendant::div")).size();
+		System.out.println("Despues: "+despues);
+		
+		if(despues>=antes) {
+			crearLogyDocumento.CasoOk(cp);
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	*/
+	
+	@Test
+	public void Script_1026() throws InterruptedException, IOException, InvalidFormatException, AWTException {
+		String cp = "DEC_1026";
+		System.out.println(cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.ClickMiPortal(cp);
+		
+		PageMiPortal pageMiPortal = new PageMiPortal(driver);
+		pageMiPortal.ClickEnRechazados(cp);
+		
+		PageRechazados pageRechazados = new PageRechazados(driver);
+		pageRechazados.ClickPrimerRegistro(cp);
+		
+		Thread.sleep(2000);
+		Robot robot = new Robot();
+		robot.setAutoDelay(100);
+		robot.mouseWheel(50);
+		Thread.sleep(2000);
+		
+		pageRechazados.BtnCrearComentario(cp);
+		pageRechazados.BtnCancelarComentario(cp);
+
+		if(driver.findElement(By.id("comment-text")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		else {
+			crearLogyDocumento.CasoOk(cp);
 		}
 		
 		System.out.println("FLUJO OK");

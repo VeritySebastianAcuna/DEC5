@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="57674" started-at="2021-06-09T04:44:13Z" finished-at="2021-06-09T04:45:11Z">
+  <suite name="Default suite" duration-ms="69166" started-at="2021-06-11T21:34:04Z" finished-at="2021-06-11T21:35:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="57674" started-at="2021-06-09T04:44:13Z" finished-at="2021-06-09T04:45:11Z">
+    <test name="Default test" duration-ms="69166" started-at="2021-06-11T21:34:04Z" finished-at="2021-06-11T21:35:13Z">
       <class name="test.Test_MiPortal2">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:test.Test_MiPortal2@3901d134]" name="setUp" is-config="true" duration-ms="9006" started-at="2021-06-09T04:44:13Z" finished-at="2021-06-09T04:44:22Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:test.Test_MiPortal2@3901d134]" name="setUp" is-config="true" duration-ms="11521" started-at="2021-06-11T21:34:04Z" finished-at="2021-06-11T21:34:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="Script_0981()[pri:0, instance:test.Test_MiPortal2@3901d134]" name="Script_0981" duration-ms="47917" started-at="2021-06-09T04:44:22Z" finished-at="2021-06-09T04:45:10Z">
+        <test-method status="PASS" signature="Script_1026()[pri:0, instance:test.Test_MiPortal2@3901d134]" name="Script_1026" duration-ms="57026" started-at="2021-06-11T21:34:15Z" finished-at="2021-06-11T21:35:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Script_0981 -->
-        <test-method status="PASS" signature="FinEjecucion()[pri:0, instance:test.Test_MiPortal2@3901d134]" name="FinEjecucion" is-config="true" duration-ms="719" started-at="2021-06-09T04:45:10Z" finished-at="2021-06-09T04:45:11Z">
+        </test-method> <!-- Script_1026 -->
+        <test-method status="PASS" signature="FinEjecucion()[pri:0, instance:test.Test_MiPortal2@3901d134]" name="FinEjecucion" is-config="true" duration-ms="588" started-at="2021-06-11T21:35:12Z" finished-at="2021-06-11T21:35:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FinEjecucion -->

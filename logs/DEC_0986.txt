@@ -1,0 +1,11 @@
+Log de Caso de Prueba DEC_0986
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Rechazados
+click Carpetas
+click Link Agregar Carpeta
+Crear Carpeta
+Ingresar Nombre de Carpeta
+click Boton Cancelar
+Caso OK

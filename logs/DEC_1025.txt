@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_1025
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Rechazados
+Seleccion Primer Registro
+click Crear comentario
+Ingreso de comentario
+click Comentar
+Caso OK

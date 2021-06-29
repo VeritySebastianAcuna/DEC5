@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_1003
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Rechazados
+click Filtros Avanzados
+Tipo Documento
+click Filtrar
+Mensaje Sin Resultados
+Caso NOK

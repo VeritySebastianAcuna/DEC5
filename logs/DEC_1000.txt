@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_1000
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Rechazados
+click Filtros Avanzados
+Ingreso Fecha Desde
+Ingreso Fecha Hasta
+click Filtrar
+Caso OK
