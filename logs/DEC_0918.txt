@@ -1,7 +1,0 @@
-Log de Caso de Prueba DEC_0918
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Configuraciones
-Click Tipos de Documentos
-Ingreso Empresa en campo buscar
-Click ícono buscar

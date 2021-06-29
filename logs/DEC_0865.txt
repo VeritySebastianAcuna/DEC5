@@ -1,9 +1,0 @@
-Log de Caso de Prueba DEC_0865
-Login por Identidad Digital
-Click al botón Autorizar
-Click MI PORTAL
-Click En Proceso De Firma
-Seleccion Primer Registro
-click Crear comentario
-click Cancelar
-Caso OK

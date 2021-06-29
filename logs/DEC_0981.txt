@@ -1,8 +1,0 @@
-Log de Caso de Prueba DEC_0981
-Login por Identidad Digital
-Click al botón Autorizar
-Click MI PORTAL
-Click En Rechazados
-Ingreso Etiqueta
-Buscar Etiqueta
-Caso OK

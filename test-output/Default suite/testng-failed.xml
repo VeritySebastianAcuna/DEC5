@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.Test_MiPortal2">
+      <class name="test.Test_TiposDocumentos">
         <methods>
-          <include name="FinEjecucion"/>
           <include name="setUp"/>
+<<<<<<< HEAD
           <include name="Script_1025"/>
+=======
+          <include name="Script_0253"/>
+          <include name="FinEjecucion"/>
+>>>>>>> 06da81655f79374026a296b28e2e091426810051
         </methods>
-      </class> <!-- test.Test_MiPortal2 -->
+      </class> <!-- test.Test_TiposDocumentos -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

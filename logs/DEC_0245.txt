@@ -1,0 +1,9 @@
+Log de Caso de Prueba DEC_0245
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click Tipos de Documentos
+click Link Crear
+click Link Plantilla DEC
+Click en botón Cerrar
+Caso OK

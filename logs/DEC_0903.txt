@@ -1,9 +1,0 @@
-Log de Caso de Prueba DEC_0903
-Login por Identidad Digital
-Click al botón Autorizar
-Click MI PORTAL
-Click En Firmado por Todos
-click Carpetas
-Agregar Carpeta
-Crear Carpeta
-Caso OK

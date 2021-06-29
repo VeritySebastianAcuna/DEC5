@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results ignored="9" total="10" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="69166" started-at="2021-06-11T21:34:04Z" finished-at="2021-06-11T21:35:13Z">
     <groups>
     </groups>
@@ -16,10 +17,26 @@
           </reporter-output>
         </test-method> <!-- Script_1026 -->
         <test-method status="PASS" signature="FinEjecucion()[pri:0, instance:test.Test_MiPortal2@3901d134]" name="FinEjecucion" is-config="true" duration-ms="588" started-at="2021-06-11T21:35:12Z" finished-at="2021-06-11T21:35:13Z">
+=======
+  <suite started-at="2021-06-15T19:33:58Z" name="Default suite" finished-at="2021-06-15T19:36:21Z" duration-ms="142701">
+    <groups>
+    </groups>
+    <test started-at="2021-06-15T19:33:58Z" name="Default test" finished-at="2021-06-15T19:36:21Z" duration-ms="142701">
+      <class name="test.Test_TiposDocumentos">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.Test_TiposDocumentos@4bdeaabb]" started-at="2021-06-15T19:33:58Z" name="setUp" finished-at="2021-06-15T19:34:05Z" duration-ms="7347" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="Script_0319()[pri:0, instance:test.Test_TiposDocumentos@4bdeaabb]" started-at="2021-06-15T19:34:05Z" name="Script_0319" finished-at="2021-06-15T19:36:20Z" duration-ms="135147" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Script_0319 -->
+        <test-method is-config="true" signature="FinEjecucion()[pri:0, instance:test.Test_TiposDocumentos@4bdeaabb]" started-at="2021-06-15T19:36:20Z" name="FinEjecucion" finished-at="2021-06-15T19:36:21Z" duration-ms="180" status="PASS">
+>>>>>>> 06da81655f79374026a296b28e2e091426810051
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FinEjecucion -->
-      </class> <!-- test.Test_MiPortal2 -->
+      </class> <!-- test.Test_TiposDocumentos -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

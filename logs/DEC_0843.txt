@@ -1,8 +1,0 @@
-Log de Caso de Prueba DEC_0843
-Login por Identidad Digital
-Click al botón Autorizar
-Click MI PORTAL
-Click En Proceso De Firma
-Boton Mostrar Ocultos
-Mensaje Sin Resultados
-Caso OK
