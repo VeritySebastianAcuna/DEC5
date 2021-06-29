@@ -1,9 +1,0 @@
-Log de Caso de Prueba DEC_1139
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Nombre Usuario
-Click empresa ACEPTA
-Click Mis Documentos
-Seleccion Primer Registro
-Seleccionar Opcion Barra Herramientas
-click Boton Descarga PDF

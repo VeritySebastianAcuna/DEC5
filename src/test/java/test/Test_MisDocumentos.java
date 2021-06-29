@@ -178,12 +178,13 @@ public class Test_MisDocumentos {
 		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
 		
 		pageDec5.CambiarEmpresa(cp);
-		pageDec5.ClickMiPortal(cp);
+		
+		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
+		pageMisDocumentos.MisDocumentos(cp);
 		
 		PageMiPortal pageMiPortal = new PageMiPortal(driver);
 		pageMiPortal.ClickPendientes(cp);
 		
-		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.clickCarpeta(cp);
 		pageMisDocumentos.clickNuevaCarpeta(cp);
 		pageMisDocumentos.BtnCancelar(cp);
@@ -191,10 +192,10 @@ public class Test_MisDocumentos {
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed());
 		
 		if(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div")).isDisplayed()) {
-			crearLogyDocumento.CasoOk(cp);
+			crearLogyDocumento.CasoNok(cp);
 		}
 		else {
-			crearLogyDocumento.CasoNok(cp);
+			crearLogyDocumento.CasoOk(cp);
 		}
 		
 		System.out.println("FLUJO OK");
@@ -253,17 +254,17 @@ public class Test_MisDocumentos {
 			if(mensaje.equals("¿Estás seguro de querer eliminar la siguente carpeta?")) {
 				String texto1 = "Mensaje eliminar OK";
 				crearLogyDocumento.AgregarRegistroLog(cp, texto1);
-				System.out.println("Paso 2");
+				System.out.println("Mensaje OK");
 				String btn = driver.findElement(By.xpath("//*[@id=\"eliminarFolder\"]")).getText();
 				if(btn.equals("Eliminar")) {
 					String texto2 = "Botón eliminar OK";
 					crearLogyDocumento.AgregarRegistroLog(cp, texto2);
-					System.out.println("Paso 3");
+					System.out.println("Boton OK");
 					String carpeta = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[1]/div[2]/div/div/div[1]/div[4]/button")).getText();
 					if(driver.findElement(By.xpath("//*[@id=\"modalDeleteFolders\"]/div/div/div[2]")).getText().equals(carpeta)){
-						String texto = "Carpeta a eliminar OK";
-						crearLogyDocumento.AgregarRegistroLog(cp, texto);
-						System.out.println("Paso 1");
+						String texto3 = "Carpeta a eliminar OK";
+						crearLogyDocumento.AgregarRegistroLog(cp, texto3);
+						System.out.println("Carpeta a eliminar OK");
 					}
 				}
 			}
@@ -2350,7 +2351,7 @@ public class Test_MisDocumentos {
 	}
 	@Test
 	public void Script_1156() throws InterruptedException, IOException, InvalidFormatException {
-		String cp = "DEC_1150";
+		String cp = "DEC_1156";
 		System.out.println(cp);
 		
 		PageDec5 pageDec5 = new PageDec5(driver);
@@ -2393,7 +2394,7 @@ public class Test_MisDocumentos {
 	
 	@Test
 	public void Script_1157() throws InterruptedException, IOException, InvalidFormatException {
-		String cp = "DEC_1150";
+		String cp = "DEC_1157";
 		System.out.println(cp);
 		
 		PageDec5 pageDec5 = new PageDec5(driver);

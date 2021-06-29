@@ -1,4 +1,0 @@
-Log de Caso de Prueba DEC_1144
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Configuraciones

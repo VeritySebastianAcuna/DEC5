@@ -1,0 +1,8 @@
+Log de Caso de Prueba DEC_1068
+Login por Identidad Digital
+Click al botón Autorizar
+Click Mis Documentos
+Click Selección Carpetas
+Crear Nueva Carpeta
+Boton Cancelar
+Caso OK
