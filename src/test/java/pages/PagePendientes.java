@@ -704,8 +704,8 @@ public class PagePendientes {
 		int j=0;
 		do {
 			try {
-				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[3]/div/div/form/input[2]")).sendKeys(nombre);
-				driver.findElement(By.id("move-folder-create")).click();
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[2]/div/div/div/input")).sendKeys(nombre);
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[3]/button[2]")).click();
 				Thread.sleep(1000);
 				String texto ="Crear Carpeta";
 				log.modificarArchivoLog(caso,texto);
@@ -1582,6 +1582,184 @@ public class PagePendientes {
 			}
 		}while(i==0);
 		Thread.sleep(8000);
+	}
+	
+	public void LinkCrearNuevaCarpeta (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.partialLinkText("Crear Nueva")).click();
+				Thread.sleep(1000);
+				String texto ="click Link Agregar Carpeta";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible click Link para agregar carpeta");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(3000);
+	}
+	
+	public void LinkAgregarEtiquetas (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.partialLinkText("Agregar Etiquetas")).click();
+				Thread.sleep(1000);
+				String texto ="Click Link Agregar Etiquetas";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Link Agregar Etiquetas");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void BtnVincularDocumento (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[7]/div/div/div/button")).click();
+				Thread.sleep(1000);
+				String texto ="Vincular Documento";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Vincular Documento");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void Buscar_Vincular_Documento (String caso, String busqueda) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.id("modalSearchDocs")).sendKeys(busqueda);
+				driver.findElement(By.id("modalSearchSubmit")).click();
+				String texto ="Busqueda realizada";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(15000);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible realizar Busqueda");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(3000);
+	}
+	
+	public void VincularDocumento (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"table-adjuntar\"]/tbody/tr/td[1]/input")).click();
+				Thread.sleep(1000);
+				String texto ="Check para Vincular Documento";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(15000);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar check en Documento");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void BtnVincular (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.id("relateDocSubmit")).click();
+				Thread.sleep(1000);
+				String texto ="click Boton Vincular";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Vincular");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void LinkDesvincularDocumento (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				Thread.sleep(1000);
+				driver.findElement(By.partialLinkText("Desvincular")).click();
+				Thread.sleep(1000);
+				String texto ="Desvincular Documento";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Desvincular Documento");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
 	}
 	
 }

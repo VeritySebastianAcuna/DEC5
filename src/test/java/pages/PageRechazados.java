@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
@@ -668,6 +669,551 @@ public class PageRechazados {
 				j++;
 				if(j==3) {
 					System.out.println("No fue posible dar click en Cancelar");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void BarraHerramientas (String caso, String opcion) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				int hijos = driver.findElements(By.xpath("//*[@id=\"barra_herramientas\"]/descendant::button")).size();
+				int h=1;
+				int g=0;
+				do {
+					System.out.println(driver.findElement(By.xpath("//*[@id=\"barra_herramientas\"]/descendant::button["+h+"]")).getText());
+					if(driver.findElement(By.xpath("//*[@id=\"barra_herramientas\"]/descendant::button["+h+"]")).getText().equals(opcion)) {
+						driver.findElement(By.xpath("//*[@id=\"barra_herramientas\"]/descendant::button["+h+"]")).click();
+						h=hijos;
+					}
+					else {
+						g++;
+						if(g>hijos) {
+							System.out.println("No se encuentra opción");
+							h=hijos;
+						}
+					}
+					h++;
+				}while(h<hijos);
+				Thread.sleep(3000);
+				String texto ="Seleccionar Opcion Barra Herramientas";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Seleccionar Opcion");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(4000);
+	}
+	
+	public void Buscar_Vincular_Documento (String caso, String busqueda) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.id("modalSearchDocs")).sendKeys(busqueda);
+				driver.findElement(By.id("modalSearchSubmit")).click();
+				String texto ="Busqueda realizada";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(15000);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible realizar Busqueda");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(3000);
+	}
+	
+	public void VincularDocumento (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"table-adjuntar\"]/tbody/tr/td[1]/input")).click();
+				Thread.sleep(1000);
+				String texto ="Check para Vincular Documento";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(15000);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar check en Documento");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void CerrarVincularDocumento (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				String texto ="Cerrar Vincular Documento";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[1]/button")).click();
+				Thread.sleep(2000);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Cerrar Ventana");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	public void SeleccionarCarpeta_AgregarA (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[2]/div/form/div/div[1]/label")).click();
+				Thread.sleep(1000);
+				String texto ="Carpeta Seleccionada";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Seleccionar Carpeta");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(3000);
+	}
+	
+	public void BtnMover (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.id("move-folder")).click();
+				Thread.sleep(1000);
+				String texto ="click Boton Mover";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en boton Mover");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void BtnCrearCarpeta (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.id("id-add-folder")).click();
+				Thread.sleep(1000);
+				String texto ="click Boton Crear Carpeta";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Crear Carpeta");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void CrearCarpeta_Mover_A (String caso, String nombre) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.name("new_folder")).sendKeys(nombre);
+				driver.findElement(By.id("move-folder-create")).click();
+				Thread.sleep(3000);
+				String texto ="Crear Carpeta";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Crear Carpeta");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void CerrarMoverA (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				String texto ="Cerrar Mover A";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[1]/button")).click();
+				Thread.sleep(2000);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Cerrar Ventana");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void CerrarAgregarEtiquetas (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				String texto ="Cerrar Agregar Etiquetas";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[1]/button")).click();
+				Thread.sleep(2000);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Cerrar Ventana");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void CompartirDocumentoTipoPersona (String caso, String opcion) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				Select tipoPersona = new Select (driver.findElement(By.name("option")));
+				tipoPersona.selectByVisibleText(opcion);
+				String texto ="Seleccion Tipo Persona";	
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Seleccionar Tipo Persona");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void CompartirDocumentoRut (String caso, String rut) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.id("searchUser")).sendKeys(rut);
+				driver.findElement(By.id("searchUser")).sendKeys(Keys.TAB);
+				String texto ="Ingreso Rut";	
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Buscar Rut");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(5000);
+	}
+	
+	public void CompartirDocumentoIngresarMail (String caso, String mail) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[2]/div[1]/div[3]/input[2]")).sendKeys(mail);
+				String texto ="Ingreso Mail";	
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible ingresar Mail");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(5000);
+	}
+	
+	public void CompartirDocumentoBtnAgregar (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[2]/div[1]/div[4]/button")).click();
+				String texto ="click Boton Agregar";	
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Agregar");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(5000);
+	}
+	
+	public void SeleccionRol (String caso, String opcion) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {	
+				Select tipoRol = new Select (driver.findElement(By.cssSelector("select[name='role']")));
+				tipoRol.selectByVisibleText(opcion);
+				String texto ="Seleccion Rol";	
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Seleccionar Rol");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void CompartirDocumentoRut_Acepta (String caso, String rut) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.id("searchUser2")).sendKeys(rut);
+				String texto ="Ingreso Rut";	
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Buscar Rut");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(5000);
+	}
+	
+	public void CompartirDocumentoBtnCompartir (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.id("submitCompartir")).click();
+				Thread.sleep(1000);
+				String texto ="click Boton Compartir";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Compartir");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void OcultarDocumentoBtnCancelar (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div/div[3]/button[2]")).click();
+				Thread.sleep(1000);
+				String texto ="click Boton Cancelar";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Cancelar");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void BarraHerramientas_Traza (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"barra_herramientas\"]/ul/a/li[4]/button/span[2]")).click();
+				Thread.sleep(1000);
+				String texto ="click Boton Traza";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Close");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void TrazaBtnDescargaPdf (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				Thread.sleep(4000);
+				driver.findElement(By.xpath("//*[@id=\"bts2\"]/button[1]")).click();
+				Thread.sleep(1000);         
+				String texto ="click Boton Descarga PDF";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Descarga PDF");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(8000);
+	}
+	
+	public void TrazaBtnClose (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"bts2\"]/button[2]")).click();
+				Thread.sleep(1000);
+				String texto ="click Boton Close";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Close");
 					i=1;
 				}
 			}
