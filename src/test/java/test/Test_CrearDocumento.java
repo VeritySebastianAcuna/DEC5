@@ -541,24 +541,24 @@ public class Test_CrearDocumento {
 		pageCrearDocumento.CrearDocumentoLote(cp);
 		pageSubirArchivos.CargarArchivoPorLote(cp, "PlantillaExcel_002020560195310_26Apr21_10_39_31.xls");
 		
-		String mensaje= driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/div/span")).getText();
-		if(mensaje.equals("El archivo está vacío")) {
-			crearLogyDocumento.AgregarRegistroLog(cp, "Archivo Vacío");
-			System.out.println(mensaje);
-			crearLogyDocumento.CasoNok(cp);
-			mensaje= driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/div/span")).getText();
-			if(mensaje.equals("La celda B2 tiene un formato de Email Inválido")) {
-				crearLogyDocumento.AgregarRegistroLog(cp, "Celda B2 tiene un formato de Email Inválido");
-				System.out.println(mensaje);
-				crearLogyDocumento.CasoNok(cp);
-			}
-			}
-			else {
-				crearLogyDocumento.CasoOk(cp);
-				System.out.println("Archivo incompleto NOK");
-				}
+//		String mensaje= driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/div/span")).getText();
+//		if(mensaje.equals("El archivo está vacío")) {
+//			crearLogyDocumento.AgregarRegistroLog(cp, "Archivo Vacío");
+//			System.out.println(mensaje);
+//			crearLogyDocumento.CasoNok(cp);
+//			mensaje= driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/div/span")).getText();
+//			if(mensaje.equals("La celda B2 tiene un formato de Email Inválido")) {
+//				crearLogyDocumento.AgregarRegistroLog(cp, "Celda B2 tiene un formato de Email Inválido");
+//				System.out.println(mensaje);
+//				crearLogyDocumento.CasoNok(cp);
+//			}
+//			}
+//			else {
+//				crearLogyDocumento.CasoOk(cp);
+//				System.out.println("Archivo incompleto NOK");
+//				}
 			
-		mensaje= driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/p[1]")).getText();
+		String mensaje= driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/p[1]")).getText();
 			if(mensaje.equals("Se cargaron los datos de 1 Documentos con éxito")) {
 					crearLogyDocumento.AgregarRegistroLog(cp, "Carga Archivo OK");
 					System.out.println(mensaje);

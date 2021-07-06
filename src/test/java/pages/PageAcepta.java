@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import common.CapturaPantalla;
@@ -309,8 +310,10 @@ import common.Log;
 			int j=0;
 			do {
 				try {
+					driver.switchTo().frame(0);//SwitchTo().frame permite ingresar y reconocer el iframe
 					driver.findElement(By.xpath("/html/body/p")).sendKeys(txtEditor);
-					Thread.sleep(1000);          
+					Thread.sleep(3000);
+					driver.switchTo().defaultContent();//SwitchTo().defaultContent permite salir del iframe y continuar flujo
 					String texto ="Ingreso texto Editor Plantilla";
 					log.modificarArchivoLog(caso,texto);
 					crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
@@ -584,6 +587,32 @@ import common.Log;
 			Thread.sleep(3000);
 		}
 		
+		public void btn2CrearTipodeDocumento(String caso) throws InterruptedException, IOException, InvalidFormatException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+					driver.findElement(By.id("crearBotonTemplate")).click();
+					String texto="Click botón Crear Tipo de Documento"; 
+					log.modificarArchivoLog(caso, texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+					texto=texto.replace(" ", "_");
+					capturaPantalla.takeScreenShotTest(driver, texto, caso);
+					Thread.sleep(2000);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible dar click en botón Crear Tipo de Documento");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
+		
 		public void checkboxPermitirAgregarFirmantes (String caso) throws InterruptedException {
 			int i=0;
 			int j=0;
@@ -771,8 +800,8 @@ import common.Log;
 			int j=0;
 			do {
 				try {
-					Select rol = new Select (driver.findElement(By.cssSelector("select[name='signer_institution_0']")));
-					rol.selectByVisibleText(institucion); 
+					Select institucionList = new Select (driver.findElement(By.className("signer-institution")));
+					institucionList .selectByVisibleText(institucion);
 					String texto ="Seleccion Institución";
 					log.modificarArchivoLog(caso,texto);
 					crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
@@ -790,6 +819,7 @@ import common.Log;
 			}while(i==0);
 			Thread.sleep(3000);
 		}
+		
 		
 		public void tipoNotificacion(String caso, String notificacion) throws InterruptedException {
 			int i=0;
