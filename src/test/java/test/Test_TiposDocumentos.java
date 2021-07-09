@@ -469,7 +469,6 @@ public class Test_TiposDocumentos {
 		pageAcepta.nombreTipoDocumento(cp, datos[5]);
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.rolRut(cp, "Admin");
-		pageAcepta.estadoEspecificacion(cp, "Firmar");
 		pageAcepta.btn2CrearTipodeDocumento(cp);
 		
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
@@ -510,7 +509,6 @@ public class Test_TiposDocumentos {
 		pageAcepta.nombreTipoDocumento(cp, datos[5]);
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.rolRut(cp, "Admin");
-		pageAcepta.estadoEspecificacion(cp, "Firmar");
 		pageAcepta.btn2CrearTipodeDocumento(cp);
 		
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
@@ -552,7 +550,6 @@ public class Test_TiposDocumentos {
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.checkboxPermitirAgregarFirmantes(cp);
 		pageAcepta.rolRut(cp, "Admin");
-		pageAcepta.estadoEspecificacion(cp, "Firmar");
 		pageAcepta.btn2CrearTipodeDocumento(cp);
 		
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
@@ -594,7 +591,6 @@ public class Test_TiposDocumentos {
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.checkboxRecibirNotificaciones(cp);
 		pageAcepta.rolRut(cp, "Admin");
-		pageAcepta.estadoEspecificacion(cp, "Firmar");
 		pageAcepta.btn2CrearTipodeDocumento(cp);
 		
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
@@ -636,7 +632,6 @@ public class Test_TiposDocumentos {
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.checkboxTituloDocumentoIgualNombreArchivo(cp);
 		pageAcepta.rolRut(cp, "Admin");
-		pageAcepta.estadoEspecificacion(cp, "Firmar");
 		pageAcepta.btn2CrearTipodeDocumento(cp);
 		
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
@@ -678,7 +673,6 @@ public class Test_TiposDocumentos {
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.checkboxVisualizacionOrdenFirma(cp);
 		pageAcepta.rolRut(cp, "Admin");
-		pageAcepta.estadoEspecificacion(cp, "Firmar");
 		pageAcepta.btn2CrearTipodeDocumento(cp);
 		
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
@@ -720,7 +714,6 @@ public class Test_TiposDocumentos {
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.checkboxEnviarBotonFirmaCorreoPendienteFirma(cp);
 		pageAcepta.rolRut(cp, "Admin");
-		pageAcepta.estadoEspecificacion(cp, "Firmar");
 		pageAcepta.btn2CrearTipodeDocumento(cp);
 		
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
@@ -762,7 +755,6 @@ public class Test_TiposDocumentos {
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.checkboxPDFconPassword(cp);
 		pageAcepta.rolRut(cp, "Admin");
-		pageAcepta.estadoEspecificacion(cp, "Firmar");
 		pageAcepta.btn2CrearTipodeDocumento(cp);
 		
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
@@ -804,7 +796,6 @@ public class Test_TiposDocumentos {
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.checkboxValidacionCorreoPersonal(cp);
 		pageAcepta.rolRut(cp, "Admin");
-		pageAcepta.estadoEspecificacion(cp, "Firmar");
 		pageAcepta.btn2CrearTipodeDocumento(cp);
 		
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
@@ -844,9 +835,8 @@ public class Test_TiposDocumentos {
 		pageAcepta.btnContinuarEditorPlantilla(cp);
 		pageAcepta.nombreTipoDocumento(cp, datos[5]);
 		pageAcepta.rolCreador(cp, "Admin");
-		pageAcepta.seleccionInstitucion(cp, "PERSONAL");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
 		pageAcepta.rolRut(cp, "Admin");
-		pageAcepta.estadoEspecificacion(cp, "Firmar");
 		pageAcepta.btn2CrearTipodeDocumento(cp);
 		
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
@@ -858,6 +848,1460 @@ public class Test_TiposDocumentos {
 		}
 		
 		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0268() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0268";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "PERSONAL");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.btn2CrearTipodeDocumento(cp);
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0269() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0269";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "GRUPO PERSONAS");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.btn2CrearTipodeDocumento(cp);
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0270() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0270";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "000_VERITY_PRUEBA");//OTRAS INSTITUCIONES
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.btn2CrearTipodeDocumento(cp);
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0271() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0271";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Trabajador");//Selecciona rol/rut
+		pageAcepta.btn2CrearTipodeDocumento(cp);
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0272() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0272";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECÍFICO");
+		pageAcepta.btn2CrearTipodeDocumento(cp);
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0273() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0273";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "CUALQUIERA");
+		pageAcepta.btn2CrearTipodeDocumento(cp);
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0274() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0274";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0275() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0275";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0276() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0276";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Visar");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0277() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0277";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Compartir");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0278() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0278";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar solo con Pin");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0279() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0279";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar solo con Huella");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0280() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0280";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar solo con HSM");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0281() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0281";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar solo con Firma Móvil Avanzada");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0282() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0282";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar solo con Token");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0283() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0283";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar solo con Clave Unica");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0284() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0284";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar solo con Cedula Identidad");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0285() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0285";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar solo con Clave Unica + Cedula Identidad");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0286() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0286";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar solo con Pin Notarial");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0287() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0287";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firma Cédula(Notarios)");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0288() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0288";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firma Bioholografa(Notarios)");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0289() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0289";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Visar solo con Pin");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0290() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0290";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Visar solo con Huella");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0291() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0291";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Visar solo con Clave Unica");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0292() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0292";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Visar con Firma");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0293() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0293";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar");
+		pageAcepta.tipoNotificacion(cp, "Sin notificaciones");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0294() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0294";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar");
+		pageAcepta.tipoNotificacion(cp, "Todas");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0295() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0295";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar");
+		pageAcepta.tipoNotificacion(cp, "Finalizado");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0296() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0296";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar");
+		pageAcepta.tipoNotificacion(cp, "Firmado");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0297() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0297";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar");
+		pageAcepta.tipoNotificacion(cp, "Rechazo");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0298() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0298";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar");
+		pageAcepta.tipoNotificacion(cp, "Pendiente de firma");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0299() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0299";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.btnAgregar(cp);
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[4]/div[3]/div[2]")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[4]/div[3]/div[2]")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar");
+		pageAcepta.tipoNotificacion(cp, "Sin notificaciones");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0300() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0300";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkPlantillaDEC(cp);
+		pageAcepta.EditorPlantilla(cp, datos[4]);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.btnAgregarEtiquetasOpcional(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+		pageAcepta.orden(cp, "1");//Ingreso el número de orden que quiero que firmen
+		pageAcepta.tipoAccion(cp, "Firmar");
+		pageAcepta.tipoNotificacion(cp, "Sin notificaciones");
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
 	}
 	
 	@Test

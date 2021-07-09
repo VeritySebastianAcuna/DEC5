@@ -845,5 +845,59 @@ import common.Log;
 			}while(i==0);
 			Thread.sleep(3000);
 		}
+		
+		public void btnAgregar(String caso) throws InterruptedException, IOException, InvalidFormatException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[4]/div[2]/div/div[9]/button")).click();
+					String texto="Click botón Agregar"; 
+					log.modificarArchivoLog(caso, texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+					texto=texto.replace(" ", "_");
+					capturaPantalla.takeScreenShotTest(driver, texto, caso);
+					Thread.sleep(2000);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible dar click en botón Agregar");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
+		
+		public void btnAgregarEtiquetasOpcional(String caso) throws InterruptedException, IOException, InvalidFormatException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+					driver.findElement(By.id("newTagButton")).click();
+					String texto="Click botón Agregar Etiquetas (opcional)"; 
+					log.modificarArchivoLog(caso, texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+					texto=texto.replace(" ", "_");
+					capturaPantalla.takeScreenShotTest(driver, texto, caso);
+					Thread.sleep(2000);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible dar click en botón Agregar Etiquetas (opcional)");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
+		
+		
 	}
 
