@@ -176,4 +176,53 @@ public class PageDec5 {
 		}while(i==0);
 		Thread.sleep(3000);
 	}
+	
+	public void ClickCubo (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[2]/div/button")).click();
+				String texto ="Click en Cubo";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar clic en Cubo");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(3000);
+	}
+	
+	public void SeleccionarOpcionCubo (String caso, String opcion) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.partialLinkText(opcion)).click();
+				String texto ="Seleccionar opción en Cubo";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible seleccionar opción en Cubo");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(3000);
+	}
+	
 }
