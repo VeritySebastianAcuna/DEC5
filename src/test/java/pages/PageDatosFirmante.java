@@ -25,8 +25,8 @@ public class PageDatosFirmante {
 	
 	public void btnConfigurarFirmantes(String caso) throws InterruptedException, IOException, InvalidFormatException {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[1]/div[2]/div[6]/div[1]/div[2]/div/button")).click();
-		String texto="Click Botón Configurar Firmantes";
+		driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[1]/div[2]/div[6]/div[2]/div[2]/div/button")).click();
+		String texto="Click Botón Configurar Firmantes"; 
 		log.modificarArchivoLog(caso, texto);
 		crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
 		texto=texto.replace(" ", "_");
@@ -141,52 +141,54 @@ public class PageDatosFirmante {
 		Thread.sleep(2000);
 	}
 	
-	public void seleccionTipoFirmante (String tipoFirmante, String caso) throws InterruptedException, FileNotFoundException, InvalidFormatException, IOException {
+	
+	public void seleccionTipoFirmante (String caso, String tipoFirmante) throws InterruptedException {
 		int i=0;
 		int j=0;
 		do {
 			try {
-				Select tipodeFirmante = new Select (driver.findElement(By.name("institucion_1")));
-				switch (tipoFirmante){
-				case "PERSONAL":
-					tipodeFirmante.selectByValue("(institucion_personal)");
-					break;
-				case "GRUPO PERSONAS":
-					tipodeFirmante.selectByValue("(grupo_personas)");
-					break;
-				case "ACEPTA":
-					tipodeFirmante.selectByValue("ACEPTA");
-					break;
-				default:
-					System.out.println("Tipo de Firmante Institución Valor inválido");
-					break;
-				}
-				Thread.sleep(2000);
-				log.modificarArchivoLog(caso, "Tipo Cargo: "+tipoFirmante);
-				crearDocEvidencia.modificarArchivoEvidencia(caso, "Seleccion Tipo Firmante");
-				capturaPantalla.takeScreenShotTest(driver, "Seleccion_Tipo_Firmante", caso);
+				Select rol = new Select (driver.findElement(By.cssSelector("select[name='institucion_2']")));
+				rol.selectByVisibleText(tipoFirmante); 
+				String texto ="Seleccion tipo firmante";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
 				i=1;
-			} catch (Exception e){
+			}catch (Exception e) {
+				// TODO: handle exception
 				j++;
 				if(j==3) {
-					System.out.println("No fue posible seleccionar Tipo de Firmante Institución");
+					System.out.println("No fue posible seleccionar tipo firmante");
 					i=1;
 				}
 			}
 		}while(i==0);
+		Thread.sleep(3000);
+	}
+
+	
+	public void datosRutFirmante0 (String caso, String rutFirmante, String ordenFirma) throws InterruptedException, FileNotFoundException, InvalidFormatException, IOException {
+		
+		driver.findElement(By.name("rut_institution_0")).sendKeys(rutFirmante);
+		Thread.sleep(2000);
+		driver.findElement(By.name("rut_institution_0")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		crearDocEvidencia.modificarArchivoEvidencia(caso, "Datos de firmante");
+		capturaPantalla.takeScreenShotTest(driver, "Datos_Firmante_DEC",caso);
 	}
 	
 	public void datosFirmante (String caso, String rutFirmante, String ordenFirma) throws InterruptedException, FileNotFoundException, InvalidFormatException, IOException {
 		
-		driver.findElement(By.name("rut_institution_1")).clear();
+		driver.findElement(By.name("rut_institution_2")).clear();
 		Thread.sleep(2000);
-		driver.findElement(By.name("rut_institution_1")).sendKeys(rutFirmante);
+		driver.findElement(By.name("rut_institution_2")).sendKeys(rutFirmante);
 		Thread.sleep(2000);
-		driver.findElement(By.name("rut_institution_1")).sendKeys(Keys.TAB);
+		driver.findElement(By.name("rut_institution_2")).sendKeys(Keys.TAB);
 		Thread.sleep(2000);
-		driver.findElement(By.id("orden_1")).clear();
+		driver.findElement(By.id("orden_2")).clear();
 		Thread.sleep(2000);
-		driver.findElement(By.id("orden_1")).sendKeys(ordenFirma);
+		driver.findElement(By.id("orden_2")).sendKeys(ordenFirma);
 		Thread.sleep(2000);
 		crearDocEvidencia.modificarArchivoEvidencia(caso, "Datos de firmante");
 		capturaPantalla.takeScreenShotTest(driver, "Datos_Firmante_DEC",caso);
@@ -217,131 +219,55 @@ public void datosFirmanteArchivo (String caso, String rutFirmante) throws Interr
 		capturaPantalla.takeScreenShotTest(driver, "Datos_Firmante",caso);
 	}
 	
-	public void seleccionTipoFirma (String tipoFirma, String caso) throws InterruptedException, FileNotFoundException, InvalidFormatException, IOException {
+	
+	public void seleccionTipoFirma (String caso, String tipoFirma) throws InterruptedException {
 		int i=0;
 		int j=0;
 		do {
 			try {
-				Select tipodeFirma = new Select (driver.findElement(By.name("tipo_firma_1")));
-				switch (tipoFirma){
-				case "Firmar":
-					tipodeFirma.selectByValue("0");
-					break;
-				case "Visar":
-					tipodeFirma.selectByValue("2");
-					break;
-				case "Compartir":
-					tipodeFirma.selectByValue("5");
-					break;
-				case "Firmar solo con Pin":
-					tipodeFirma.selectByValue("10");
-					break;
-				case "Firmar solo con Huella":
-					tipodeFirma.selectByValue("11");
-					break;
-				case "Firmar solo con HSM":
-					tipodeFirma.selectByValue("12");
-					break;
-				case "Firmar solo con Firma Móvil Avanzada":
-					tipodeFirma.selectByValue("20");
-					break;
-				case "Firmar solo con Token":
-					tipodeFirma.selectByValue("13");
-					break;
-				case "Firmar solo con Clave Unica":
-					tipodeFirma.selectByValue("21");
-					break;
-				case "Firmar solo con Cedula Identidad":
-					tipodeFirma.selectByValue("24");
-					break;
-				case "Firmar solo con Clave Unica + Cedula Identidad":
-					tipodeFirma.selectByValue("25");
-					break;
-				case "Facial":
-					tipodeFirma.selectByValue("29");
-					break;
-				case "Firmar solo con Pin Notarial":
-					tipodeFirma.selectByValue("30");
-					break;
-				case "Firma Cédula(Notarios)":
-					tipodeFirma.selectByValue("15");
-					break;
-				case "Firma Bioholografa(Notarios)":
-					tipodeFirma.selectByValue("16");
-					break;
-				case "Visar solo con Pin":
-					tipodeFirma.selectByValue("32");
-					break;
-				case "Visar solo con Huella":
-					tipodeFirma.selectByValue("42");
-					break;
-				case "Visar solo con Clave Unica":
-					tipodeFirma.selectByValue("52");
-					break;
-				case "Visar con Firma":
-					tipodeFirma.selectByValue("23");
-					break;
-				default:
-					System.out.println("Tipo de Firma Valor inválido");
-					break;
-				}
-				Thread.sleep(2000);
-				log.modificarArchivoLog(caso, "Tipo Cargo: "+tipoFirma);
-				crearDocEvidencia.modificarArchivoEvidencia(caso, "Seleccion Tipo Firma");
-				capturaPantalla.takeScreenShotTest(driver, "Seleccion_Tipo_Firma", caso);
+				Select rol = new Select (driver.findElement(By.cssSelector("select[name='tipo_firma_2']")));
+				rol.selectByVisibleText(tipoFirma); 
+				String texto ="Seleccion tipo firma";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
 				i=1;
-			} catch (Exception e){
+			}catch (Exception e) {
+				// TODO: handle exception
 				j++;
 				if(j==3) {
-					System.out.println("No fue posible seleccionar Tipo de Firmante Institución");
+					System.out.println("No fue posible seleccionar tipo firma");
 					i=1;
 				}
 			}
 		}while(i==0);
+		Thread.sleep(3000);
 	}
 	
-	public void seleccionTipoNotificacion (String tipoNotificar, String caso) throws InterruptedException, FileNotFoundException, InvalidFormatException, IOException {
+	public void seleccionTipoNotificacion (String caso, String notificacion) throws InterruptedException {
 		int i=0;
 		int j=0;
 		do {
 			try {
-				Select tipodeNotificar = new Select (driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[1]/div[2]/div[6]/div[3]/div[6]/select")));
-				switch (tipoNotificar){
-				case "Sin notificaciones":
-					tipodeNotificar.selectByValue("0");
-					break;
-				case "Todas":
-					tipodeNotificar.selectByValue("1");
-					break;
-				case "Finalizado":
-					tipodeNotificar.selectByValue("2");
-					break;
-				case "Firmado":
-					tipodeNotificar.selectByValue("3");
-					break;
-				case "Rechazo":
-					tipodeNotificar.selectByValue("4");
-					break;
-				case "Pendiente de firma":
-					tipodeNotificar.selectByValue("5");
-					break;
-				default:
-					System.out.println("Tipo de Notificación Valor inválido");
-					break;
-				}
-				Thread.sleep(2000);
-				log.modificarArchivoLog(caso, "Tipo Cargo: "+tipoNotificar);
-				crearDocEvidencia.modificarArchivoEvidencia(caso, "Seleccion Tipo Notificación");
-				capturaPantalla.takeScreenShotTest(driver, "Seleccion_Tipo_Notificar", caso);
+				Select rol = new Select (driver.findElement(By.cssSelector("select[name='notificar_2']")));
+				rol.selectByVisibleText(notificacion); 
+				String texto ="Seleccion tipo firma";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
 				i=1;
-			} catch (Exception e){
+			}catch (Exception e) {
+				// TODO: handle exception
 				j++;
 				if(j==3) {
-					System.out.println("No fue posible seleccionar Tipo de Notificación");
+					System.out.println("No fue posible seleccionar tipo firma");
 					i=1;
 				}
 			}
 		}while(i==0);
+		Thread.sleep(3000);
 	}
 	
 		

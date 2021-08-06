@@ -1,0 +1,15 @@
+Log de Caso de Prueba DEC_0317
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click Tipos de Documentos
+click Link Crear
+click Link Plantilla DEC
+Ingreso texto Editor Plantilla
+Click en Continuar
+Click botón Crear Tipo de Documento
+Cerrar Editor Plantilla
+Caso OK
+Caso OK
+Caso OK
+Caso OK

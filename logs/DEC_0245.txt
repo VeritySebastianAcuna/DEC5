@@ -3,7 +3,6 @@ Login por Identidad Digital
 Click al botón Autorizar
 Click a Configuraciones
 Click Tipos de Documentos
-click Link Crear
-click Link Plantilla DEC
-Click en botón Cerrar
+empresa: ACEPTA
+Grilla Documento OK
 Caso OK

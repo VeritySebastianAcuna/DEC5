@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results skipped="0" failed="0" ignored="44" total="45" passed="1">
   <reporter-output>
   </reporter-output>
@@ -20,6 +21,29 @@
           </reporter-output>
         </test-method> <!-- FinEjecucion -->
       </class> <!-- test.Tests_EditarCuenta -->
+=======
+<testng-results ignored="109" total="110" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-08-05T19:07:20Z" name="Default suite" finished-at="2021-08-05T19:08:46Z" duration-ms="85270">
+    <groups>
+    </groups>
+    <test started-at="2021-08-05T19:07:20Z" name="Default test" finished-at="2021-08-05T19:08:46Z" duration-ms="85270">
+      <class name="test.Test_TiposDocumentos">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.Test_TiposDocumentos@6f43c82]" started-at="2021-08-05T19:07:20Z" name="setUp" finished-at="2021-08-05T19:07:26Z" duration-ms="5679" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="Script_0317()[pri:0, instance:test.Test_TiposDocumentos@6f43c82]" started-at="2021-08-05T19:07:26Z" name="Script_0317" finished-at="2021-08-05T19:08:46Z" duration-ms="79456" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Script_0317 -->
+        <test-method is-config="true" signature="FinEjecucion()[pri:0, instance:test.Test_TiposDocumentos@6f43c82]" started-at="2021-08-05T19:08:46Z" name="FinEjecucion" finished-at="2021-08-05T19:08:46Z" duration-ms="113" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FinEjecucion -->
+      </class> <!-- test.Test_TiposDocumentos -->
+>>>>>>> b9efc835bc85ad6d1863209488f792e6da7f3036
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

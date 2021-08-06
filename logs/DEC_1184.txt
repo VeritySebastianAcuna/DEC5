@@ -9,9 +9,4 @@ Click Crear Documento por Lote
 Carga Archivo OK
 Caso OK
 Click Botón procesar
-La solicitud procesada.
-Caso OK
-Notificación enviada
-Caso OK
-Botón Volver OK
 Caso OK

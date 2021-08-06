@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_0249
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click Tipos de Documentos
+empresa: ACEPTA
+Ingreso Empresa en campo buscar
+Check Incluir Ocultos
+Click ícono buscar
+Caso OK
