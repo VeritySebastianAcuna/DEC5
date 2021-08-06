@@ -55,6 +55,7 @@ public class Test_DescargaPlantilla {
 	@Test
 	public void Script_1181() throws InterruptedException, IOException, InvalidFormatException {
 		String cp = "DEC_1181";
+		//Menu ppal - Crear Documentos - plantilla DEC - crear - Doc por lote - descargar plantilla
 		System.out.println(cp);
 		
 		PageDec5 pageDec5 = new PageDec5(driver);

@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_1183
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Crear Documento
+Click Botón Crear Plantilla DEC
+Click Crear Documento por Lote
+Carga Archivo OK
+Caso OK

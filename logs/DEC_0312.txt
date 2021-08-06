@@ -1,0 +1,18 @@
+Log de Caso de Prueba DEC_0312
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click Tipos de Documentos
+click Link Crear
+click Link Plantilla DEC
+Ingreso texto Editor Plantilla
+Click en Continuar
+Ingreso nombre tipo de documento
+Seleccion Rol Creador
+Seleccion Rol Rut
+Click botón Agregar Etiqueta Campo/Valor
+Click botón Agregar Etiqueta Campo/Valor
+Click botón Agregar Etiqueta Campo/Valor
+Ingreso campo etiqueta
+Click Rueda configuración Etiqueta
+Caso OK

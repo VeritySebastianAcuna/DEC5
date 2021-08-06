@@ -7,3 +7,4 @@ click Link Crear
 click Link Plantilla DEC
 Ingreso texto Editor Plantilla
 Click en Continuar
+Caso OK

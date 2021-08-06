@@ -281,7 +281,7 @@ public class PageProcesoFirma {
 		do {
 			try {
 				cantidad = driver.findElements(By.xpath("//*[@id=\"modal\"]/div/div/div[2]/div/form/div/descendant::input")).size();
-				Thread.sleep(1000);
+				Thread.sleep(1000);                      
 				i=1;
 			}catch (Exception e) {
 				// TODO: handle exception

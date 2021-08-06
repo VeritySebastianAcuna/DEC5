@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_1189
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Crear Documento
+Click Botón Crear Plantilla PDF
+Click Crear Plantilla PDF
+Click Botón Revisar y Continuar documento PDF
+Caso OK

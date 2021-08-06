@@ -1,0 +1,8 @@
+Log de Caso de Prueba DEC_1171
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Crear Documento
+Click Botón Crear Plantilla DEC
+Caso NOK
