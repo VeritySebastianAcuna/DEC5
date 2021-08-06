@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -90,6 +91,16 @@ public class PageUsuarios {
 	
 	public void IngresarMail(String caso, String mail) throws InterruptedException {
 		driver.findElement(By.name("email")).sendKeys(mail);
+		Thread.sleep(2000);
+	}
+	
+	public void ingresarFechaDesdeVacia(String caso) throws InterruptedException {
+		driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div/form/div[2]/div[1]/div/div[3]/div/input")).clear();
+		Thread.sleep(2000);
+	}
+	
+	public void ingresarFechaHastaVacia(String caso) throws InterruptedException {
+		driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div/form/div[2]/div[1]/div/div[4]/div/input")).clear();
 		Thread.sleep(2000);
 	}
 	
@@ -212,7 +223,7 @@ public class PageUsuarios {
 	}
 	
 	public void LinkVerReportes(String caso) throws IOException, InvalidFormatException, InterruptedException {
-		driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[2]/div/div/a")).click();
+		driver.findElement(By.partialLinkText("Ver Reportes")).click();
 		String texto ="Click Link Ver Reportes";
 		log.modificarArchivoLog(caso,texto);
 		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
@@ -239,4 +250,110 @@ public class PageUsuarios {
 		capturaPantalla.takeScreenShotTest(driver, texto, caso);
 		return originalWindow;
 	}
+	
+	// Martes 03/08/2021
+	
+	public void IngresarRolMail(String caso, String mail) throws InterruptedException {
+		driver.findElement(By.name("role_email")).sendKeys(mail);
+		Thread.sleep(2000);
+	}
+	
+	public void BtnGuardar(String caso) throws InterruptedException {
+		driver.findElement(By.className("btn-save")).click();
+		Thread.sleep(3000);
+	}
+	
+	public void AsignacionMasiva(String caso) throws InterruptedException, IOException, InvalidFormatException {
+		driver.findElement(By.className("add-multiple")).click();
+		String texto ="Click Boton Asignación Masiva";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(4000);
+	}
+	
+	public void BtnCerrarDeshabilitar(String caso) throws InterruptedException {
+		driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[3]/div/button")).click();
+		Thread.sleep(3000);
+	}
+	
+	public void ReportesBuscar(String caso, String text) throws InterruptedException {
+		driver.findElement(By.xpath("//*[@id=\"tabla_grilla_reportesNEW_filter\"]/label/input")).sendKeys(text);
+		Thread.sleep(2000);
+	}
+	
+	public void ClicOpciones(String caso) throws InterruptedException {
+		driver.findElement(By.xpath("//*[@id=\"dropdown\"]/button")).click();
+		Thread.sleep(2000);
+	}
+	
+	public void ClicEliminar(String caso) throws InterruptedException {
+		driver.findElement(By.id("1Eliminargrilla_reportesNEW")).click();
+		Thread.sleep(2000);
+	}
+	
+	public boolean AlertIsPresent(String caso) throws InterruptedException {
+		try { 
+	        driver.switchTo().alert(); 
+	        return true; 
+	    }
+	    catch (NoAlertPresentException Ex) { 
+	        return false; 
+	    }
+	}
+	
+	public void IngresarRutUsuario(String caso, String rut) throws InterruptedException {
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/table/tbody/tr/td[1]/input")).sendKeys(rut);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/table/tbody/tr/td[2]/button")).click();
+		Thread.sleep(2000);
+	}
+	
+	public void SeleccionarRolUsuario(String caso, String rol) throws InterruptedException {
+		Select lista_rol = new Select (driver.findElement(By.className("filter-role")));
+		lista_rol.selectByVisibleText(rol);
+		Thread.sleep(2000);
+	}
+	
+	public void CheckNotificaMailPersonal(String caso) throws InterruptedException {
+		driver.findElement(By.id("notif_roles_personal")).click();
+		Thread.sleep(2000);
+	}
+	
+	public void CheckNotificaMailInstitucional(String caso) throws InterruptedException {
+		driver.findElement(By.id("notif_roles_institucional")).click();
+		Thread.sleep(2000);
+	}
+	
+	public void CheckNotificaMailDocumentos(String caso) throws InterruptedException {
+		driver.findElement(By.id("notif_roles_docs")).click();
+		Thread.sleep(2000);
+	}
+	
+	public void BtnConfigurarNotificaciones(String caso) throws InterruptedException {
+		driver.findElement(By.id("config_notificaciones")).click();
+		Thread.sleep(2000);
+	}
+	
+	public void BtnCancelarConfigurarNotificaciones(String caso) throws InterruptedException {
+		driver.findElement(By.xpath("//*[@id=\"notificaciones_masivas\"]/div/div/div[3]/button[1]")).click();
+		Thread.sleep(2000);
+	}
+	
+	public void BtnSubirPlantilla(String caso) throws InterruptedException {
+		driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div/form/div[2]/div[3]/div/div[5]/div[2]")).click();
+		Thread.sleep(2000);
+	}
+	
+	public void BtnCerrar(String caso) throws InterruptedException {
+		driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div/form/div[3]/div[2]/button[1]")).click();
+		Thread.sleep(2000);
+	}
+	
+	public void SubirPlantilla(String caso, String nombreArchivo) throws InterruptedException {
+		driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/form/div[2]/div[2]/div/div[2]/div[2]/input")).sendKeys(Configuration.FILES_DIR2+nombreArchivo);
+		Thread.sleep(2000);
+	}
+	
 }

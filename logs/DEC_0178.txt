@@ -1,0 +1,6 @@
+Log de Caso de Prueba DEC_0178
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Usuarios
+Click Boton Cuentas Registradas
+Caso OK

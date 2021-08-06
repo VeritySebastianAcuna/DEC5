@@ -1,0 +1,7 @@
+Log de Caso de Prueba DEC_0184
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Usuarios
+Click Boton Cuentas Registradas
+Click Link Ver Reportes
+Caso OK

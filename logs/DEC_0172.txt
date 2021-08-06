@@ -1,0 +1,7 @@
+Log de Caso de Prueba DEC_0172
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Usuarios
+Click Crear Rol
+Click Boton Inhabilitar
+Caso OK

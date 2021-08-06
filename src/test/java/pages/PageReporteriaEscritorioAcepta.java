@@ -76,11 +76,12 @@ public class PageReporteriaEscritorioAcepta {
 		int j=0;
 		do {
 			try {
-				//FechaActual fechaActual = new FechaActual();
-				//String fecha = fechaActual.FechaHoy();
+				FechaActual fechaActual = new FechaActual();
+				String fecha = fechaActual.FechaHoy();
 				driver.findElement(By.name("FSTART")).clear();
 				Thread.sleep(2000);
-				driver.findElement(By.name("FSTART")).sendKeys("07-07-2021");
+				//driver.findElement(By.name("FSTART")).sendKeys(fecha);
+				driver.findElement(By.name("FSTART")).sendKeys("14-07-2021");
 				Thread.sleep(1000);
 				String texto ="Ingreso Fecha Desde";
 				log.modificarArchivoLog(caso,texto);
@@ -107,8 +108,8 @@ public class PageReporteriaEscritorioAcepta {
 		int j=0;
 		do {
 			try {
-				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/div[1]/div[1]/input")).click();
-				Thread.sleep(1000);          
+				//driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/div[1]/div[1]/input")).click(); // original
+				driver.findElement(By.name("Exportar")).click();     
 				String texto ="click Boton Exportar";
 				log.modificarArchivoLog(caso,texto);
 				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
@@ -120,6 +121,78 @@ public class PageReporteriaEscritorioAcepta {
 				j++;
 				if(j==3) {
 					System.out.println("No fue posible dar click en Boton Exportar");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void BtnDescargarPdfs (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.name("Descargar PDFs")).click();     
+				String texto ="click Boton Descargar PDFs";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en Boton Descargar PDFs");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void RutFirmante (String caso, String rut) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"form_params\"]/div[9]/div/input")).sendKeys(rut);
+				String texto ="Ingresar Rut firmante";	
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Ingresar Rut firmante");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void CodigoDocumento (String caso, String cod) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"form_params\"]/div[11]/div/input")).sendKeys(cod);
+				String texto ="Ingresar Código de Documento";	
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Ingresar Código de Documento");
 					i=1;
 				}
 			}

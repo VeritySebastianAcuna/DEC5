@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_1262
+Login por Identidad Digital
+Click al botón Autorizar
+Click en Cubo
+Seleccionar opción en Cubo
+Seleccion Reporte
+Ingreso Fecha Desde
+click Boton Buscar
+click Boton Descargar PDFs
+Caso OK

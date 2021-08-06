@@ -1,0 +1,5 @@
+Log de Caso de Prueba DEC_0191
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Usuarios
+Caso OK

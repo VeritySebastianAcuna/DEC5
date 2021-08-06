@@ -225,4 +225,20 @@ public class PageDec5 {
 		Thread.sleep(3000);
 	}
 	
+	// implementación 05/08/2021
+	
+	public void OpcionEditarCuenta(String caso) throws IOException, InvalidFormatException, InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("/html/body/div[1]/div[1]/div/nav/div/ul/li[3]/div/button")).click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.partialLinkText("Editar Cuenta")).click();
+		
+		String texto ="Click a Editar Cuenta";
+		log.modificarArchivoLog(caso,texto);
+		crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+		texto=texto.replace(" ","_");
+		capturaPantalla.takeScreenShotTest(driver,texto, caso);
+		Thread.sleep(3000);
+	}
+	
 }
