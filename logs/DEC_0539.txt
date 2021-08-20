@@ -1,0 +1,14 @@
+Log de Caso de Prueba DEC_0539
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click Tipos de Documentos
+click Link Crear
+click Link Plantilla Colaborativa
+Ingreso archivo
+Click en Continuar
+Ingresar Campo Valor
+Click rueda configuración
+Ingresar Campo Valor Configuración
+Click Agregar
+Caso OK

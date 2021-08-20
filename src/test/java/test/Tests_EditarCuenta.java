@@ -27,7 +27,7 @@ import pages.PageUsuarios;
 public class Tests_EditarCuenta {
 	private WebDriver driver;
 	private String downloadFilePath = Configuration.ROOT_DIR+"Downloads/";
-	String datapool = Configuration.ROOT_DIR+"DataPool.xlsx";
+	String datapool = Configuration.ROOT_DIR+"DataPool2.xlsx";
 	LeerExcel leerExcel = new LeerExcel();
 	
 	@BeforeMethod
@@ -278,6 +278,241 @@ public class Tests_EditarCuenta {
 				
 				driver.findElement(By.xpath("//*[@id=\"actionForm\"]/div[3]/button[1]")).getText().contains("Cancelar") &&
 				driver.findElement(By.xpath("//*[@id=\"actionForm\"]/div[3]/button[2]")).getText().contains("Registrar")){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("FLUJO OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("FLUJO NOOK");
+			resultado = "FLUJO NOOK";
+		}
+		
+		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
+	}
+	
+	
+	@Test
+	public void Script_0071() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0071";
+		// Editar Cuenta - clave - Registro de Certificado HSM - nro solicitud nok
+		String mensajeErrorEsperado = "Error en la instalación del certificado: El Numero de Solicitud tiene un formato incorrecto.";
+		System.out.println(cp);
+		String resultado = null;
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.OpcionEditarCuenta(cp);
+		
+		PageEditarCuenta pageEditarCuenta = new PageEditarCuenta(driver);
+		pageEditarCuenta.BtnRegistrar(cp);
+		pageEditarCuenta.IngresarNumeroSolicitud(cp, "123");
+		pageEditarCuenta.IngresarPinSolicitud(cp, "123");
+		pageEditarCuenta.IngresarContrasenaSolicitud(cp, "1234qqqq");
+		pageEditarCuenta.IngresarRepitaContrasenaSolicitud(cp, "1234qqqq");
+		pageEditarCuenta.BtnRegistrarHSM(cp);
+		
+		String mensajeError = driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[2]/div/div/p/strong")).getText();
+		
+		if(mensajeError.contains(mensajeErrorEsperado)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("FLUJO OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("FLUJO NOOK");
+			resultado = "FLUJO NOOK";
+		}
+		
+		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
+	}
+	
+	
+	@Test
+	public void Script_0073() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0073";
+		// Editar Cuenta - clave - Registro de Certificado HSM - Pin nok
+		String mensajeErrorEsperado = "Error en la instalación del certificado: El Numero de Solicitud tiene un formato incorrecto.";
+		System.out.println(cp);
+		String resultado = null;
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.OpcionEditarCuenta(cp);
+		
+		PageEditarCuenta pageEditarCuenta = new PageEditarCuenta(driver);
+		pageEditarCuenta.BtnRegistrar(cp);
+		pageEditarCuenta.IngresarNumeroSolicitud(cp, "123");
+		pageEditarCuenta.IngresarPinSolicitud(cp, "123");
+		pageEditarCuenta.IngresarContrasenaSolicitud(cp, "1234qqqq");
+		pageEditarCuenta.IngresarRepitaContrasenaSolicitud(cp, "1234qqqq");
+		pageEditarCuenta.BtnRegistrarHSM(cp);
+		
+		String mensajeError = driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[2]/div/div/p/strong")).getText();
+		
+		if(mensajeError.contains(mensajeErrorEsperado)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("FLUJO OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("FLUJO NOOK");
+			resultado = "FLUJO NOOK";
+		}
+		
+		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
+	}
+	
+	
+	@Test
+	public void Script_0075() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0075";
+		// Editar Cuenta - clave - Registro de Certificado HSM - contraseña nok - repita ok
+		String mensajeErrorEsperado1 = "El campo Nueva Clave debe ser de al menos 6 caracteres de longitud.";
+		String mensajeErrorEsperado2 = "El campo Repita Nueva Clave no coincide con el campo Nueva Clave.";
+		System.out.println(cp);
+		String resultado = null;
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.OpcionEditarCuenta(cp);
+		
+		PageEditarCuenta pageEditarCuenta = new PageEditarCuenta(driver);
+		pageEditarCuenta.BtnRegistrar(cp);
+		pageEditarCuenta.IngresarNumeroSolicitud(cp, "123");
+		pageEditarCuenta.IngresarPinSolicitud(cp, "123");
+		pageEditarCuenta.IngresarContrasenaSolicitud(cp, "123");
+		pageEditarCuenta.IngresarRepitaContrasenaSolicitud(cp, "1234qqqq");
+		pageEditarCuenta.BtnRegistrarHSM(cp);
+		
+		String mensajeError1 = driver.findElement(By.xpath("//*[@id=\"actionForm\"]/div[2]/div[3]/div/div/span")).getText();
+		String mensajeError2 = driver.findElement(By.xpath("//*[@id=\"actionForm\"]/div[2]/div[4]/div/div/span")).getText();
+		
+		if(mensajeError1.contains(mensajeErrorEsperado1) &&
+				mensajeError2.contains(mensajeErrorEsperado2)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("FLUJO OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("FLUJO NOOK");
+			resultado = "FLUJO NOOK";
+		}
+		
+		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
+	}
+	
+	
+	@Test
+	public void Script_0076() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0076";
+		// Editar Cuenta - clave - Registro de Certificado HSM - contraseña nok - repita nok
+		String mensajeErrorEsperado1 = "El campo Nueva Clave debe ser de al menos 6 caracteres de longitud.";
+		String mensajeErrorEsperado2 = "El campo Repita Nueva Clave debe ser de al menos 6 caracteres de longitud.";
+		System.out.println(cp);
+		String resultado = null;
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.OpcionEditarCuenta(cp);
+		
+		PageEditarCuenta pageEditarCuenta = new PageEditarCuenta(driver);
+		pageEditarCuenta.BtnRegistrar(cp);
+		pageEditarCuenta.IngresarNumeroSolicitud(cp, "123");
+		pageEditarCuenta.IngresarPinSolicitud(cp, "123");
+		pageEditarCuenta.IngresarContrasenaSolicitud(cp, "1234");
+		pageEditarCuenta.IngresarRepitaContrasenaSolicitud(cp, "1234");
+		pageEditarCuenta.BtnRegistrarHSM(cp);
+		
+		String mensajeError1 = driver.findElement(By.xpath("//*[@id=\"actionForm\"]/div[2]/div[3]/div/div/span")).getText();
+		String mensajeError2 = driver.findElement(By.xpath("//*[@id=\"actionForm\"]/div[2]/div[4]/div/div/span")).getText();
+		
+		if(mensajeError1.contains(mensajeErrorEsperado1) &&
+				mensajeError2.contains(mensajeErrorEsperado2)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("FLUJO OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("FLUJO NOOK");
+			resultado = "FLUJO NOOK";
+		}
+		
+		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
+	}
+	
+	
+	@Test
+	public void Script_0078() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0078";
+		// Editar Cuenta - clave - Registro de Certificado HSM - cancelar
+		System.out.println(cp);
+		String resultado = null;
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		pageDec5.ClickIngresarLogin(cp);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		pageDec5.CambiarEmpresa(cp);
+		pageDec5.OpcionEditarCuenta(cp);
+		
+		PageEditarCuenta pageEditarCuenta = new PageEditarCuenta(driver);
+		pageEditarCuenta.BtnRegistrar(cp);
+		pageEditarCuenta.BtnCancelarRegistrar(cp);
+	
+		
+		if(!driver.findElement(By.id("myModalLabel")).isDisplayed()){
 			crearLogyDocumento.CasoOk(cp);
 			System.out.println("FLUJO OK");
 			resultado = "FLUJO OK";

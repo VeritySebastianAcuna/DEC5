@@ -1,0 +1,11 @@
+Log de Caso de Prueba DEC_0071
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Editar Cuenta
+Click Registrar
+Ingresar Número de solicitud
+Ingresar PIN de solicitud
+Ingresar contraseña de solicitud
+Ingresar contraseña de solicitud
+Click Registrar
+Caso OK

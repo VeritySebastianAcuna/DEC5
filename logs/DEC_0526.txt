@@ -1,0 +1,13 @@
+Log de Caso de Prueba DEC_0526
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click Tipos de Documentos
+click Link Crear
+click Link Plantilla Colaborativa
+Ingreso archivo
+Click en Continuar
+Click botón Agregar
+Ingresar Etiqueta
+Click botón Eliminar
+Caso OK

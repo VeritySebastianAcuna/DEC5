@@ -1,6 +1,1 @@
 Log de Caso de Prueba DEC_0081
-Login por Identidad Digital
-Click al botón Autorizar
-Click a Editar Cuenta
-Click Registrar
-Caso OK

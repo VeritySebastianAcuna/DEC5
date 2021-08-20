@@ -1,0 +1,18 @@
+Log de Caso de Prueba DEC_0486
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click Tipos de Documentos
+click Link Crear
+click Link Plantilla Colaborativa
+Ingreso archivo
+Click en Continuar
+Ingreso nombre tipo de documento
+Seleccion Rol Creador
+CheckBox Título Documento Igual Nombre Archivo
+Seleccion Rol Rut
+Seleccion Especificación
+Seleccion Notificación
+Click botón Crear Tipo Documento
+Click botón Crear Tipo Documento
+Caso OK

@@ -1,0 +1,11 @@
+Log de Caso de Prueba DEC_0480
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click Tipos de Documentos
+click Link Crear
+click Link Plantilla Colaborativa
+Click en botón Cerrar
+Click en botón Abrir Editor
+Ingreso archivo
+Caso OK

@@ -1,0 +1,7 @@
+Log de Caso de Prueba DEC_0078
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Editar Cuenta
+Click Registrar
+Click Cancelar
+Caso OK

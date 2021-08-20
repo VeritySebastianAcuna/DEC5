@@ -266,4 +266,148 @@ public class PageEditarCuenta {
 		Thread.sleep(3000);
 	}
 	
+	public void BtnCancelarRegistrar (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"actionForm\"]/div[3]/button[1]")).click();
+				String texto ="Click Cancelar";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar clic en Cancelar");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
+	public void IngresarNumeroSolicitud (String caso, String numero) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.name("solicitud_hsm")).sendKeys(numero);
+				String texto ="Ingresar Número de solicitud";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Ingresar Número de solicitud");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(1000);
+	}
+	
+	public void IngresarPinSolicitud (String caso, String numero) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.name("pin_hsm")).sendKeys(numero);
+				String texto ="Ingresar PIN de solicitud";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Ingresar PIN de solicitud");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(1000);
+	}
+	
+	public void IngresarContrasenaSolicitud (String caso, String pass) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.name("password_hsm")).sendKeys(pass);
+				String texto ="Ingresar contraseña de solicitud";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Ingresar contraseña de solicitud");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(1000);
+	}
+	
+	public void IngresarRepitaContrasenaSolicitud (String caso, String pass) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.name("confirm_password_hsm")).sendKeys(pass);
+				String texto ="Ingresar contraseña de solicitud";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible Ingresar contraseña de solicitud");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(1000);
+	}
+	
+	public void BtnRegistrarHSM (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"actionForm\"]/div[3]/button[2]")).click();
+				String texto ="Click Registrar";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("Click Registrar");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(2000);
+	}
+	
 }

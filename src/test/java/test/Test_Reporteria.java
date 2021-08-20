@@ -40,7 +40,7 @@ import pages.PageReporteriaEscritorioAcepta;
 public class Test_Reporteria {
 	private WebDriver driver;
 	private String downloadFilePath = Configuration.ROOT_DIR+"Downloads/";
-	String datapool = Configuration.ROOT_DIR+"DataPool.xlsx";
+	String datapool = Configuration.ROOT_DIR+"DataPool2.xlsx";
 	LeerExcel leerExcel = new LeerExcel();
 	
 	@BeforeMethod

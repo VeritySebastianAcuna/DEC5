@@ -1,0 +1,20 @@
+Log de Caso de Prueba DEC_0431
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click Tipos de Documentos
+click Link Crear
+click Link Plantilla PDF
+Ingreso archivo
+Click en Continuar
+Ingreso nombre tipo de documento
+Seleccion Rol Creador
+Seleccion Institución
+Seleccion Rol Rut
+Ingreso orden de firma
+Seleccion Tipo de Accion
+Seleccion Especificación
+Seleccion Notificación
+Click botón Crear Tipo Documento
+Click botón Crear Tipo Documento
+Caso OK

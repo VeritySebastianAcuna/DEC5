@@ -26,7 +26,7 @@ import pages.PageUsuarios;
 public class Tests_Usuarios2 {
 	private WebDriver driver;
 	private String downloadFilePath = Configuration.ROOT_DIR+"Downloads/";
-	String datapool = Configuration.ROOT_DIR+"DataPool.xlsx";
+	String datapool = Configuration.ROOT_DIR+"DataPool2.xlsx";
 	LeerExcel leerExcel = new LeerExcel();
 	
 	@BeforeMethod
