@@ -5196,7 +5196,7 @@ public class Test_TiposDocumentos {
 		}
 		
 		System.out.println("FLUJO OK");
-		
+		Thread.sleep(3000);
 	}
 	
 	@AfterMethod
