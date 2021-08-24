@@ -108,7 +108,7 @@ public class Test_Reporteria {
 		Robot robot = new Robot();
 		robot.setAutoDelay(7);
 		robot.mouseWheel(7);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		
 		int filas = driver.findElements(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/tbody/descendant::tr")).size();
 		System.out.println("cantidad filas:"+filas);
@@ -123,12 +123,11 @@ public class Test_Reporteria {
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[5]")).getText());
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[6]")).getText());
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[7]")).getText());
-		System.out.println(driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[8]")).getText());
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[2]")).getText());
 		
 		if(driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/div[1]/div[1]/input")).getAttribute("value").contains("Exportar") && 
 				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/div[1]/div[2]/input")).getAttribute("value").contains("Descargar PDFs") &&
-				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[1]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de "+filas+" Registros") &&	
+				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[1]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de ") &&	
 				
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[1]")).getText().contains("N°") &&
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[3]")).getText().contains("INSTITUCION") &&
@@ -136,9 +135,8 @@ public class Test_Reporteria {
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[5]")).getText().contains("CODDOC") &&
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[6]")).getText().contains("FIRMANTE") &&
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[7]")).getText().contains("ESTADO FIRMA") &&
-				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[8]")).getText().contains("ESTADO DOCUMENTO") &&
 				
-				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[2]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de "+filas+" Registros")){
+				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[2]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de ")){
 			crearLogyDocumento.CasoOk(cp);
 			System.out.println("FLUJO OK");
 			resultado = "FLUJO OK";
@@ -366,7 +364,7 @@ public class Test_Reporteria {
 		
 		if(driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/div[1]/div[1]/input")).getAttribute("value").contains("Exportar") && 
 				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/div[1]/div[2]/input")).getAttribute("value").contains("Descargar PDFs") &&
-				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[1]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de "+filas+" Registros") &&	
+				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[1]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de ") &&	
 				
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[1]")).getText().contains("N°") &&
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[3]")).getText().contains("INSTITUCION") &&
@@ -376,7 +374,7 @@ public class Test_Reporteria {
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[7]")).getText().contains("FECHA CREACION") &&
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[8]")).getText().contains("RUT") &&
 				
-				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[2]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de "+filas+" Registros")){
+				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[2]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de ")){
 			crearLogyDocumento.CasoOk(cp);
 			System.out.println("FLUJO OK");
 			resultado = "FLUJO OK";
@@ -1381,7 +1379,7 @@ public class Test_Reporteria {
 		
 		if(driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/div[1]/div[1]/input")).getAttribute("value").contains("Exportar") && 
 				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/div[1]/div[2]/input")).getAttribute("value").contains("Descargar PDFs") &&
-				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[1]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de "+filas+" Registros") &&	
+				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[1]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de ") &&	
 				
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[1]")).getText().contains("N°") &&
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[3]")).getText().contains("INSTITUCION") &&
@@ -1392,7 +1390,7 @@ public class Test_Reporteria {
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[8]")).getText().contains("CORREO") &&
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[9]")).getText().contains("ACCIONES") &&
 				
-				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[2]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de "+filas+" Registros")){
+				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[2]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de ")){
 			crearLogyDocumento.CasoOk(cp);
 			System.out.println("FLUJO OK");
 			resultado = "FLUJO OK";
@@ -1921,7 +1919,7 @@ public class Test_Reporteria {
 		
 		if(driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/div[1]/div[1]/input")).getAttribute("value").contains("Exportar") && 
 				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/div[1]/div[2]/input")).getAttribute("value").contains("Descargar PDFs") &&
-				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[1]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de "+filas+" Registros") &&	
+				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[1]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de ") &&	
 				
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[1]")).getText().contains("N°") &&
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[3]")).getText().contains("INSTITUCION") &&
@@ -1930,7 +1928,7 @@ public class Test_Reporteria {
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[6]")).getText().contains("ESTADO DOCUMENTO") &&
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[8]")).getText().contains("FECCREACION") &&
 				
-				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[2]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de "+filas+" Registros")){
+				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[2]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de ")){
 			crearLogyDocumento.CasoOk(cp);
 			System.out.println("FLUJO OK");
 			resultado = "FLUJO OK";
@@ -2156,7 +2154,7 @@ public class Test_Reporteria {
 		
 		if(driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/div[1]/div[1]/input")).getAttribute("value").contains("Exportar") && 
 				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/div[1]/div[2]/input")).getAttribute("value").contains("Descargar PDFs") &&
-				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[1]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de "+filas+" Registros") &&	
+				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[1]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de ") &&	
 				
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[1]")).getText().contains("N°") &&
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[3]")).getText().contains("CODIGO") &&
@@ -2166,7 +2164,7 @@ public class Test_Reporteria {
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[8]")).getText().contains("INSTITUCION") &&
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[9]")).getText().contains("TIPO DCTO") &&
 				
-				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[2]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de "+filas+" Registros")){
+				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[2]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de ")){
 			crearLogyDocumento.CasoOk(cp);
 			System.out.println("FLUJO OK");
 			resultado = "FLUJO OK";
@@ -2393,7 +2391,7 @@ public class Test_Reporteria {
 		
 		if(driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/div[1]/div[1]/input")).getAttribute("value").contains("Exportar") && 
 				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/div[1]/div[2]/input")).getAttribute("value").contains("Descargar PDFs") &&
-				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[1]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de "+filas+" Registros") &&	
+				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[1]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de ") &&	
 				
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[1]")).getText().contains("N°") &&
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[3]")).getText().contains("ULTIMO FIRMANTE") &&
@@ -2402,7 +2400,7 @@ public class Test_Reporteria {
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[7]")).getText().contains("FECCREACION") &&
 				driver.findElement(By.xpath("//*[@id=\"tabla_grilla_busqueda_dec\"]/thead/tr/th[8]")).getText().contains("FIRMANTES EXTENDIDOS") &&
 				
-				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[2]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de "+filas+" Registros")){
+				driver.findElement(By.xpath("//*[@id=\"grilla_busqueda_dec\"]/div/label[2]")).getText().contains("Mostrando del "+"1"+" al "+filas+" de ")){
 			crearLogyDocumento.CasoOk(cp);
 			System.out.println("FLUJO OK");
 			resultado = "FLUJO OK";

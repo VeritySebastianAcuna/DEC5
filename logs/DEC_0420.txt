@@ -14,6 +14,11 @@ Seleccion Rol Rut
 Ingreso orden de firma
 Seleccion Tipo de Accion
 Seleccion Especificación
-Seleccion Notificación
+Click botón Agregar
+Seleccion Rol Rut
+Ingreso orden de firma
+Seleccion Tipo de Accion
+Seleccion Especificación
 Click botón Crear Tipo Documento
 Click botón Crear Tipo Documento
+Caso OK

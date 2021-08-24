@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="149" total="150" passed="1">
+<testng-results skipped="0" failed="0" ignored="31" total="32" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="106000" started-at="2021-08-19T22:40:09Z" finished-at="2021-08-19T22:41:55Z">
+  <suite name="Default suite" duration-ms="68237" started-at="2021-08-24T17:01:58Z" finished-at="2021-08-24T17:03:06Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="106000" started-at="2021-08-19T22:40:09Z" finished-at="2021-08-19T22:41:55Z">
-      <class name="test.Test_TiposDocumentos2">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:test.Test_TiposDocumentos2@7219ec67]" name="setUp" is-config="true" duration-ms="7888" started-at="2021-08-19T22:40:09Z" finished-at="2021-08-19T22:40:17Z">
+    <test name="Default test" duration-ms="68237" started-at="2021-08-24T17:01:58Z" finished-at="2021-08-24T17:03:06Z">
+      <class name="test.Test_Reporteria">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:test.Test_Reporteria@7219ec67]" name="setUp" is-config="true" duration-ms="7541" started-at="2021-08-24T17:01:58Z" finished-at="2021-08-24T17:02:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="Script_0543()[pri:0, instance:test.Test_TiposDocumentos2@7219ec67]" name="Script_0543" duration-ms="97915" started-at="2021-08-19T22:40:17Z" finished-at="2021-08-19T22:41:55Z">
+        <test-method status="PASS" signature="Script_01283()[pri:0, instance:test.Test_Reporteria@7219ec67]" name="Script_01283" duration-ms="59776" started-at="2021-08-24T17:02:06Z" finished-at="2021-08-24T17:03:05Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Script_0543 -->
-        <test-method status="PASS" signature="FinEjecucion()[pri:0, instance:test.Test_TiposDocumentos2@7219ec67]" name="FinEjecucion" is-config="true" duration-ms="150" started-at="2021-08-19T22:41:55Z" finished-at="2021-08-19T22:41:55Z">
+        </test-method> <!-- Script_01283 -->
+        <test-method status="PASS" signature="FinEjecucion()[pri:0, instance:test.Test_Reporteria@7219ec67]" name="FinEjecucion" is-config="true" duration-ms="889" started-at="2021-08-24T17:03:05Z" finished-at="2021-08-24T17:03:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- FinEjecucion -->
-      </class> <!-- test.Test_TiposDocumentos2 -->
+      </class> <!-- test.Test_Reporteria -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
