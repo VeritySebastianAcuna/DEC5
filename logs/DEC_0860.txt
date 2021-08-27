@@ -1,0 +1,13 @@
+Log de Caso de Prueba DEC_0860
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Proceso De Firma
+Seleccion Primer Registro
+Vincular Documento
+Busqueda realizada
+Check para Vincular Documento
+click Boton Vincular
+Desvincular Documento
+SI Desvincular Documento
+Caso OK

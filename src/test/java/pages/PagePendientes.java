@@ -525,6 +525,31 @@ public class PagePendientes {
 		Thread.sleep(5000);
 	}
 	
+	public void ClickUltimoRegistro (String caso) throws InterruptedException {
+		int i=0;
+		int j=0;
+		do {
+			try {
+				driver.findElement(By.xpath("//*[@id=\"table-documentos\"]/tbody/tr[10]/td[2]/span[1]")).click();
+				Thread.sleep(1000);
+				String texto ="Seleccion Primer Registro";
+				log.modificarArchivoLog(caso,texto);
+				crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+				texto=texto.replace(" ","_");
+				capturaPantalla.takeScreenShotTest(driver,texto, caso);
+				i=1;
+			}catch (Exception e) {
+				// TODO: handle exception
+				j++;
+				if(j==3) {
+					System.out.println("No fue posible dar click en primer registro");
+					i=1;
+				}
+			}
+		}while(i==0);
+		Thread.sleep(5000);
+	}
+	
 	public void ClickRegistroPorParametro (String caso, int registro) throws InterruptedException {
 		int i=0;
 		int j=0;

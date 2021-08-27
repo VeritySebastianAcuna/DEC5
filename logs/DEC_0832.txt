@@ -1,0 +1,8 @@
+Log de Caso de Prueba DEC_0832
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Proceso De Firma
+click Filtros Avanzados
+click Filtrar
+Caso OK

@@ -1,5 +1,7 @@
 package test;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -38,7 +40,7 @@ public class Test_CrearDocumento {
 		System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.navigate().to("https://5cap.dec.cl/portal");// Aquí se ingresa la URL para hacer las pruebas.
+		driver.navigate().to("https://5qa.dec.cl/portal");// Aquí se ingresa la URL para hacer las pruebas.
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
@@ -85,6 +87,7 @@ public class Test_CrearDocumento {
 		String cp = "DEC_1175";
 		//Menu ppal - Crear Documentos - plantilla DEC - plantilla DEC - ingreso datos - continuar - firmante ok
 		System.out.println(cp);
+//		String resultado = null;
 		
 		PageDec5 pageDec5 = new PageDec5(driver);
 		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
@@ -108,23 +111,20 @@ public class Test_CrearDocumento {
 		pageDatosDocumento.datosDocumento("PRUEBA AUTOMATIZADA", cp);
 		pageDatosDocumento.btnRevisaryContinuar(cp);
 		pageDatosDocumento.btnContinuar(cp);
-//		pageDatosFirmante.btnConfigurarFirmantes(cp);
-//		pageDatosFirmante.buscarPersonasAdmin("RIQUELME SANDO",cp);
-//		pageDatosFirmante.seleccionFirmantes(cp);
-//		pageDatosFirmante.btnAsignar(cp);
-		pageDatosFirmante.datosRutFirmante0(cp, datos[11], datos[12]);
+		pageDatosFirmante.datosRutFirmante1(cp, datos[11], datos[12]);
 		pageDatosFirmante.btnAgregar(cp);
 		
-		System.out.println(driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[1]/div[2]/div[6]/div[3]")).isDisplayed());
-		if(driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[1]/div[2]/div[6]/div[3]")).isDisplayed()) {
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[1]/div[2]/div[6]/div[4]")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[1]/div[2]/div[6]/div[4]")).isDisplayed()) {
 			crearLogyDocumento.CasoOk(cp); 
 			System.out.println("FLUJO OK");
 		}
 		else {
 			crearLogyDocumento.CasoNok(cp);
 			System.out.println("FLUJO NOOK");
-		}	
-				
+		}
+		
+//		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);		
 	}
 	
 	@Test
@@ -159,11 +159,11 @@ public class Test_CrearDocumento {
 //				pageDatosFirmante.buscarPersonasAdmin("RIQUELME SANDO",cp);
 //				pageDatosFirmante.seleccionFirmantes(cp);
 //				pageDatosFirmante.btnAsignar(cp);
-				pageDatosFirmante.datosRutFirmante0(cp, datos[11], datos[12]);
+				pageDatosFirmante.datosRutFirmante1(cp, datos[11], datos[12]);
 				pageDatosFirmante.btnAgregar(cp);
 				
 				
-				if(driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[1]/div[2]/div[6]/div[1]/div[2]/div/span")).getText().equals("RUT no válido")){
+				if(driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[1]/div[2]/div[6]/div[2]/div[2]/div/span")).getText().equals("RUT no válido")){
 					crearLogyDocumento.AgregarRegistroLog(cp, "Mensaje Rut Inválido OK");
 					crearLogyDocumento.CasoOk(cp);
 					System.out.println("FLUJO OK");
@@ -203,14 +203,10 @@ public class Test_CrearDocumento {
 		pageDatosDocumento.datosDocumento("PRUEBA AUTOMATIZADA", cp);
 		pageDatosDocumento.btnRevisaryContinuar(cp);
 		pageDatosDocumento.btnContinuar(cp);
-//		pageDatosFirmante.btnConfigurarFirmantes(cp);
-//		pageDatosFirmante.buscarPersonasAdmin("RIQUELME SANDO",cp);
-//		pageDatosFirmante.seleccionFirmantes(cp);
-//		pageDatosFirmante.btnAsignar(cp);
-		pageDatosFirmante.datosRutFirmante0(cp, datos[11], datos[12]);
+		pageDatosFirmante.datosRutFirmante1(cp, datos[11], datos[12]);
 		pageCrearDocumento.btnCrear(cp);
 		
-		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/h1")).getText().contains("0000000001_plantillaDEC") &&
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/h1")).getText().contains("0000000001_AutomatizacionDec") &&
 				driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/label")).getText().equals("¿Qué desea hacer?")&&
 				driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/a")).getText().equals("Crear nuevo documento")){
 			crearLogyDocumento.CasoOk(cp);
@@ -251,15 +247,7 @@ public class Test_CrearDocumento {
 		pageDatosDocumento.datosDocumento("PRUEBA AUTOMATIZADA", cp);
 		pageDatosDocumento.btnRevisaryContinuar(cp);
 		pageDatosDocumento.btnContinuar(cp);
-//		pageDatosFirmante.btnConfigurarFirmantes(cp);
-//		pageDatosFirmante.buscarPersonasAdmin("RIQUELME",cp);
-//		pageDatosFirmante.seleccionFirmantes(cp);
-//		pageDatosFirmante.btnAsignar(cp);
-//		pageDatosFirmante.btnAgregar(cp);
-//		pageDatosFirmante.seleccionTipoFirmante(cp, datos[10]);
-		pageDatosFirmante.datosRutFirmante0(cp, datos[11], datos[12]);
-//		pageDatosFirmante.seleccionTipoFirma(cp, datos[13]);
-//		pageDatosFirmante.seleccionTipoNotificacion(cp, datos[14]);
+		pageDatosFirmante.datosRutFirmante1(cp, datos[11], datos[12]);
 		pageCrearDocumento.btnCrear(cp);
 		pageCrearDocumento.linkCrearNuevoDoc(cp);
 		
@@ -365,10 +353,10 @@ public class Test_CrearDocumento {
 			crearLogyDocumento.CasoNok(cp);
 		}
 		
-			if(driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/h1")).getText().equals("Crear Documento por Lote")//&&
-					//driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/button")).getText().equals("Descargar Plantilla Excel")&&
-					//driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/div/div[2]/input")).getText().equals("Subir Plantilla")
-					){
+			if(driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/h1")).getText().equals("Crear Documento por Lote")&&
+					driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/button")).getText().equals("Descargar Plantilla Excel")&&
+					driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/div/div[2]/input")).getText().equals("Subir Plantilla")
+					){ //REVISAR PORQUE NO RECONOCE XPATH DE DESCARGAR Y SUBIR PLANTILLA Y ENVÍA UN NOOK (FALSO POSITIVO)
 				crearLogyDocumento.CasoOk(cp);
 				System.out.println("FLUJO OK");
 			}
@@ -376,55 +364,12 @@ public class Test_CrearDocumento {
 				crearLogyDocumento.CasoNok(cp);
 				System.out.println("FLUJO NOOK");
 			}
+			
 		
 	}
 	
 		
-//	@Test
-//	public void Script_1182() throws InterruptedException, IOException, InvalidFormatException {
-//		String cp = "DEC_1182";
-//		System.out.println(cp);
-//		
-//		PageDec5 pageDec5 = new PageDec5(driver);
-//		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
-//		PageAcepta pageAcepta = new PageAcepta(driver);
-//		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
-//		PageSubirArchivos  pageSubirArchivos = new PageSubirArchivos(driver);
-//		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
-//		crearLogyDocumento.CrearEvidencias(cp);
-//		
-//		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
-//		
-//		pageDec5.ClickIngresarLogin(cp);
-//		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
-//		pageDec5.OpcionUserName(cp);
-//		pageAcepta.empresaAcepta(cp);
-//		pageCrearDocumento.crearDocumento(cp);
-//		pageCrearDocumento.btnCrearPlantillaDec(cp);
-//		pageCrearDocumento.CrearDocumentoLote(cp);
-//		pageSubirArchivos.CargarArchivoPorLote(cp, "PlantillaExcel_002020560195310_26Apr21_10_39_31.xls");
-//		
-//		String mensaje= driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/div/span")).getText();
-//		if(mensaje.equals("El archivo está vacío")) {
-//			crearLogyDocumento.AgregarRegistroLog(cp, "Archivo Vacío");
-//			System.out.println(mensaje);
-//			crearLogyDocumento.CasoNok(cp);
-//			mensaje= driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/div/span")).getText();
-//			if(mensaje.equals("La celda B2 tiene un formato de Email Inválido")) {
-//				crearLogyDocumento.AgregarRegistroLog(cp, "Celda B2 tiene un formato de Email Inválido");
-//				System.out.println(mensaje);
-//				crearLogyDocumento.CasoNok(cp);
-//			}
-//		}
-//		else {
-//			crearLogyDocumento.CasoOk(cp);
-//			System.out.println("Archivo Carga OK");
-//			}
-//												
-//				
-//		System.out.println("FLUJO OK");
-//	}
-	
+
 	@Test
 	public void Script_1183() throws InterruptedException, IOException, InvalidFormatException {
 		String cp = "DEC_1183";
@@ -745,71 +690,6 @@ public class Test_CrearDocumento {
 		System.out.println("FLUJO OK");
 	}
 	
-	@Test
-	public void Script_1191() throws InterruptedException, IOException, InvalidFormatException {
-		String cp = "DEC_1191";
-		System.out.println(cp);
-		
-		PageDec5 pageDec5 = new PageDec5(driver);
-		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
-		PageAcepta pageAcepta = new PageAcepta(driver);
-		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
-		PageDatosDocumento pageDatosDocumento = new PageDatosDocumento(driver);
-		PageDatosFirmante pageDatosFirmante = new PageDatosFirmante(driver);
-		
-		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
-		crearLogyDocumento.CrearEvidencias(cp);
-		
-		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
-		
-		pageDec5.ClickIngresarLogin(cp);
-		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
-		pageDec5.OpcionUserName(cp);
-		pageAcepta.empresaAcepta(cp);
-		pageCrearDocumento.crearDocumento(cp);
-		pageCrearDocumento.btnCrearPlantillaPdf(cp);
-		pageCrearDocumento.CrearPlantillaPdf(cp);
-		pageDatosDocumento.btnRevisaryContinuarPdf(cp);
-		pageDatosDocumento.btnContinuar(cp);
-		pageDatosFirmante.btnConfigurarFirmantes(cp);
-		pageDatosFirmante.buscarPersonasAdmin("RIQUELME",cp);
-		pageDatosFirmante.seleccionFirmantes(cp);
-		pageDatosFirmante.btnAsignar(cp);
-		pageDatosFirmante.datosFirmantePdf(cp, datos[11]);
-		pageCrearDocumento.btnCrearPdf(cp);
-		
-		String texto= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/h1")).getText();
-		if(texto.equals(texto)) {
-			crearLogyDocumento.AgregarRegistroLog(cp, "Nombre documento OK");
-			System.out.println(texto);
-			crearLogyDocumento.CasoOk(cp);
-//			texto= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div")).getText();
-//			if(texto.contains("¿Qué desea hacer?")) {
-//				crearLogyDocumento.AgregarRegistroLog(cp, "Mensaje ¿Qué desea hacer? OK");
-//				System.out.println(texto);
-//				crearLogyDocumento.CasoOk(cp);
-				texto= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/a[1]")).getText();
-				if(texto.contains("Crear nuevo documento")) {
-					crearLogyDocumento.AgregarRegistroLog(cp, " Link Crear nuevo documento OK");
-					System.out.println(texto);
-					crearLogyDocumento.CasoOk(cp);
-					texto= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/a[2]")).getText();
-					if(texto.equals("Ir al Documento")) {
-						crearLogyDocumento.AgregarRegistroLog(cp, "Link Ir al DocumentoOK");
-						System.out.println(texto);
-						crearLogyDocumento.CasoOk(cp);
-					}
-				}
-//			}
-		}
-		else {
-			crearLogyDocumento.CasoNok(cp);
-			System.out.println("NOK");
-			
-		}
-									
-		System.out.println("FLUJO OK");
-	}
 	
 	@Test
 	public void Script_1192() throws InterruptedException, IOException, InvalidFormatException {
@@ -853,63 +733,13 @@ public class Test_CrearDocumento {
 		pageDatosFirmante.buscarPersonasAdmin("RIQUELME",cp);
 		pageDatosFirmante.seleccionFirmantes(cp);
 		pageDatosFirmante.btnAsignar(cp);
-		pageDatosFirmante.datosFirmantePdf(cp, datos[11]);
-		pageCrearDocumento.btnCrear(cp);
-		
-		try {
-			String mensaje = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/h1")).getText();
-			System.out.println(mensaje);
-			if(mensaje.contains("se ha creado con éxito.")) {
-				crearLogyDocumento.CasoOk(cp);
-			}
-		}catch (Exception e) {
-			
-			crearLogyDocumento.CasoNok(cp);
-		   }
-		
+		pageCrearDocumento.btnCrearPdf(cp);
 		pageCrearDocumento.linkCrearNuevoDoc(cp);
-									
-		System.out.println("FLUJO OK");
-	}
-	
-	@Test
-	public void Script_1193() throws InterruptedException, IOException, InvalidFormatException {
-		String cp = "DEC_1193";
-		System.out.println(cp);
-		
-		PageDec5 pageDec5 = new PageDec5(driver);
-		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
-		PageAcepta pageAcepta = new PageAcepta(driver);
-		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
-		PageDatosDocumento pageDatosDocumento = new PageDatosDocumento(driver);
-		PageDatosFirmante pageDatosFirmante = new PageDatosFirmante(driver);
-		
-		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
-		crearLogyDocumento.CrearEvidencias(cp);
-		
-		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
-		
-		pageDec5.ClickIngresarLogin(cp);
-		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
-		pageDec5.OpcionUserName(cp);
-		pageAcepta.empresaAcepta(cp);
-		pageCrearDocumento.crearDocumento(cp);
-		pageCrearDocumento.btnCrearPlantillaPdf(cp);
-		pageCrearDocumento.CrearPlantillaPdf(cp);
-		pageDatosDocumento.btnRevisaryContinuarPdf(cp);
-		pageDatosDocumento.btnContinuar(cp);
-		pageDatosFirmante.btnConfigurarFirmantes(cp);
-		pageDatosFirmante.buscarPersonasAdmin("RIQUELME",cp);
-		pageDatosFirmante.seleccionFirmantes(cp);
-		pageDatosFirmante.btnAsignar(cp);
-		pageDatosFirmante.datosFirmantePdf(cp, datos[11]);
-		pageCrearDocumento.btnCrear(cp);
-		pageCrearDocumento.linkIrAlDoc(cp);
 		
 		try {
 			String mensaje = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/h1")).getText();
 			System.out.println(mensaje);
-			if(mensaje.equals("Mis Documentos")) {
+			if(mensaje.contains("Crear Documento")) {
 				crearLogyDocumento.CasoOk(cp);
 			}
 		}catch (Exception e) {
@@ -919,6 +749,8 @@ public class Test_CrearDocumento {
 									
 		System.out.println("FLUJO OK");
 	}
+	
+
 	
 	@Test
 	public void Script_1194() throws InterruptedException, IOException, InvalidFormatException {
@@ -976,63 +808,6 @@ public class Test_CrearDocumento {
 		System.out.println("FLUJO OK");
 	}
 	
-//	@Test
-//	public void Script_1196() throws InterruptedException, IOException, InvalidFormatException {
-//		String cp = "DEC_1196";
-//		System.out.println(cp);
-//		
-//		PageDec5 pageDec5 = new PageDec5(driver);
-//		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
-//		PageAcepta pageAcepta = new PageAcepta(driver);
-//		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
-//		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
-//		PageSubirArchivos  pageSubirArchivos = new PageSubirArchivos(driver);
-//		crearLogyDocumento.CrearEvidencias(cp);
-//		
-//		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
-//		
-//		pageDec5.ClickIngresarLogin(cp);
-//		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
-//		pageDec5.OpcionUserName(cp);
-//		pageAcepta.empresaAcepta(cp);
-//		pageCrearDocumento.crearDocumento(cp);
-//		pageCrearDocumento.btnCrearPlantillaPdf(cp);
-//		pageCrearDocumento.CrearDocumentoLote(cp);
-//		
-//		String mensaje= driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/div/div[2]/input")).getText();
-//		if(mensaje.equals("Subir Plantilla")) {
-//			crearLogyDocumento.AgregarRegistroLog(cp, "Botón Subir");
-//			System.out.println(mensaje);
-//			crearLogyDocumento.CasoNok(cp);
-//			
-//		}
-//		else {
-//			crearLogyDocumento.CasoOk(cp);
-//			System.out.println("Botón Subir Plantilla NOK");
-//			}
-//												
-//		pageSubirArchivos.CargarArchivoPorLote(cp, "PlantillaExcel_002020560195310_26Apr21_10_39_31.xls");
-//		
-//		mensaje= driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/div/span")).getText();
-//		if(mensaje.equals("El archivo está vacío")) {
-//			crearLogyDocumento.AgregarRegistroLog(cp, "Archivo Vacío");
-//			System.out.println(mensaje);
-//			crearLogyDocumento.CasoNok(cp);
-//			mensaje= driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/div/span")).getText();
-//			if(mensaje.equals("La celda B2 tiene un formato de Email Inválido")) {
-//				crearLogyDocumento.AgregarRegistroLog(cp, "Celda B2 tiene un formato de Email Inválido");
-//				System.out.println(mensaje);
-//				crearLogyDocumento.CasoNok(cp);
-//			}
-//		}
-//		else {
-//			crearLogyDocumento.CasoOk(cp);
-//			System.out.println("Archivo Carga OK");
-//			}
-//				
-//		
-//		System.out.println("FLUJO OK");
-//	}
 	
 	@Test
 	public void Script_1197() throws InterruptedException, IOException, InvalidFormatException {
@@ -1187,41 +962,6 @@ public class Test_CrearDocumento {
 		
 		System.out.println("FLUJO OK");
 	}
-//	@Test
-//	public void Script_1202() throws InterruptedException, IOException, InvalidFormatException {
-//		String cp = "DEC_1202";
-//		System.out.println(cp);
-//		
-//		PageDec5 pageDec5 = new PageDec5(driver);
-//		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
-//		PageAcepta pageAcepta = new PageAcepta(driver);
-//		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
-//		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
-//		crearLogyDocumento.CrearEvidencias(cp);
-//		
-//		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
-//		
-//		pageDec5.ClickIngresarLogin(cp);
-//		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
-//		pageDec5.OpcionUserName(cp);
-//		pageAcepta.empresaAcepta(cp);
-//		pageCrearDocumento.crearDocumento(cp);
-//		pageCrearDocumento.btnCrearPlantillaArchivo(cp);
-//		
-//							
-//			try {
-//				String mensaje= driver.findElement(By.id("uploadFile")).getText();
-//				System.out.println(mensaje); 
-//				if(mensaje.contains("Selecciona un archivo de tu Equipo")) {
-//					crearLogyDocumento.CasoOk(cp);
-//				}
-//			}catch (Exception e) {
-//				crearLogyDocumento.CasoNok(cp);
-//				System.out.println("Vista Carga Archivo NOK");
-//			   }
-//												
-//		System.out.println("FLUJO OK");
-//	}
 	
 	@Test
 	public void Script_1203() throws InterruptedException, IOException, InvalidFormatException {
@@ -1411,7 +1151,6 @@ public class Test_CrearDocumento {
 		PageAcepta pageAcepta = new PageAcepta(driver);
 		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
 		PageDatosDocumento pageDatosDocumento = new PageDatosDocumento(driver);
-		PageAvanzarPagina pageAvanzarPagina = new PageAvanzarPagina(driver);
 		
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
 		crearLogyDocumento.CrearEvidencias(cp);
@@ -1423,7 +1162,6 @@ public class Test_CrearDocumento {
 		pageDec5.OpcionUserName(cp);
 		pageAcepta.empresaAcepta(cp);
 		pageCrearDocumento.crearDocumento(cp);
-		pageAvanzarPagina.clickAvanzar(cp);
 		pageCrearDocumento.btnCrearPlantillaColaborativa(cp);
 		pageCrearDocumento.CrearPlantillaPdf(cp);
 		pageDatosDocumento.btnRevisaryContinuarPdf(cp);
@@ -1460,7 +1198,6 @@ public class Test_CrearDocumento {
 		PageAcepta pageAcepta = new PageAcepta(driver);
 		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
 		PageDatosDocumento pageDatosDocumento = new PageDatosDocumento(driver);
-		PageAvanzarPagina pageAvanzarPagina = new PageAvanzarPagina(driver);
 		
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
 		crearLogyDocumento.CrearEvidencias(cp);
@@ -1472,7 +1209,6 @@ public class Test_CrearDocumento {
 		pageDec5.OpcionUserName(cp);
 		pageAcepta.empresaAcepta(cp);
 		pageCrearDocumento.crearDocumento(cp);
-		pageAvanzarPagina.clickAvanzar(cp);
 		pageCrearDocumento.btnCrearPlantillaColaborativa(cp);
 		pageCrearDocumento.CrearPlantillaPdf(cp);
 		pageDatosDocumento.btnRevisaryContinuarPdf(cp);
@@ -1480,7 +1216,7 @@ public class Test_CrearDocumento {
 		
 		
 		String texto= driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/h1")).getText();
-		if(texto.equals("NUEVO 01PLANTILLA_COLABORATIVA_PRUEBA")) {
+		if(texto.equals("NUEVO 0000000001_AUTOMATIZACIONZCOLABORATIVA")) {
 			crearLogyDocumento.AgregarRegistroLog(cp, "Creación Documento plantilla Colaborativa OK");
 			System.out.println(texto);
 			crearLogyDocumento.CasoOk(cp);
@@ -1494,7 +1230,7 @@ public class Test_CrearDocumento {
 					crearLogyDocumento.AgregarRegistroLog(cp, "Botón Crear OK");
 					System.out.println(texto);
 					crearLogyDocumento.CasoOk(cp);
-					texto= driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[2]/div[2]/a")).getText();
+					texto= driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[2]/div[3]/a")).getText();
 					if(texto.equals("Volver")) {
 						crearLogyDocumento.AgregarRegistroLog(cp, "Link Volver OK");
 						System.out.println(texto);
@@ -1522,7 +1258,7 @@ public class Test_CrearDocumento {
 		PageAcepta pageAcepta = new PageAcepta(driver);
 		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
 		PageDatosDocumento pageDatosDocumento = new PageDatosDocumento(driver);
-		PageAvanzarPagina pageAvanzarPagina = new PageAvanzarPagina(driver);
+		PageDatosFirmante pageDatosFirmante = new PageDatosFirmante(driver);
 		
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
 		crearLogyDocumento.CrearEvidencias(cp);
@@ -1534,14 +1270,13 @@ public class Test_CrearDocumento {
 		pageDec5.OpcionUserName(cp);
 		pageAcepta.empresaAcepta(cp);
 		pageCrearDocumento.crearDocumento(cp);
-		pageAvanzarPagina.clickAvanzar(cp);
 		pageCrearDocumento.btnCrearPlantillaColaborativa(cp);
 		pageCrearDocumento.CrearPlantillaPdf(cp);
 		pageDatosDocumento.btnRevisaryContinuarPdf(cp);
 		pageDatosDocumento.btnContinuar(cp);
-		
+		pageDatosFirmante.datosFirmanteArchivo(cp, datos[11]);
 		String email = driver.findElement(By.name("email_0")).getText();
-		if(email.contains("@a****ta.com")) {//DAR OTRA VUELTA COMO VALIDAR QUE EL MAIL CORRESPONDE AL RUT
+		if(email.contains("@v****ty.cl")) {//DAR OTRA VUELTA COMO VALIDAR QUE EL MAIL CORRESPONDE AL RUT
 			System.out.println("OK");
 			}else {
 				System.out.println("NOK");
@@ -1560,7 +1295,6 @@ public class Test_CrearDocumento {
 		PageAcepta pageAcepta = new PageAcepta(driver);
 		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
 		PageDatosDocumento pageDatosDocumento = new PageDatosDocumento(driver);
-		PageAvanzarPagina pageAvanzarPagina = new PageAvanzarPagina(driver);
 		PageDatosFirmante pageDatosFirmante = new PageDatosFirmante(driver);
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
 		crearLogyDocumento.CrearEvidencias(cp);
@@ -1572,7 +1306,6 @@ public class Test_CrearDocumento {
 		pageDec5.OpcionUserName(cp);
 		pageAcepta.empresaAcepta(cp);
 		pageCrearDocumento.crearDocumento(cp);
-		pageAvanzarPagina.clickAvanzar(cp);
 		pageCrearDocumento.btnCrearPlantillaColaborativa(cp);
 		pageCrearDocumento.CrearPlantillaPdf(cp);
 		pageDatosDocumento.btnRevisaryContinuarPdf(cp);
@@ -1617,7 +1350,6 @@ public class Test_CrearDocumento {
 		PageAcepta pageAcepta = new PageAcepta(driver);
 		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
 		PageDatosDocumento pageDatosDocumento = new PageDatosDocumento(driver);
-		PageAvanzarPagina pageAvanzarPagina = new PageAvanzarPagina(driver);
 		PageDatosFirmante pageDatosFirmante = new PageDatosFirmante(driver);
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
 		crearLogyDocumento.CrearEvidencias(cp);
@@ -1629,7 +1361,6 @@ public class Test_CrearDocumento {
 		pageDec5.OpcionUserName(cp);
 		pageAcepta.empresaAcepta(cp);
 		pageCrearDocumento.crearDocumento(cp);
-		pageAvanzarPagina.clickAvanzar(cp);
 		pageCrearDocumento.btnCrearPlantillaColaborativa(cp);
 		pageCrearDocumento.CrearPlantillaPdf(cp);
 		pageDatosDocumento.btnRevisaryContinuarPdf(cp);
@@ -1643,7 +1374,7 @@ public class Test_CrearDocumento {
 			
 		String mensaje = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/h1")).getText();
 		String texto = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/h1")).getText();
-		if(mensaje.contains("El Documento 01Plantilla_colaborativa_prueba")) {
+		if(mensaje.contains("El Documento 0000000001_AutomatizacionzColaborativa")) {
 			crearLogyDocumento.AgregarRegistroLog(cp,"" + texto);
 			System.out.println(texto);
 			crearLogyDocumento.CasoOk(cp);
@@ -1684,7 +1415,6 @@ public class Test_CrearDocumento {
 		PageAcepta pageAcepta = new PageAcepta(driver);
 		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
 		PageDatosDocumento pageDatosDocumento = new PageDatosDocumento(driver);
-		PageAvanzarPagina pageAvanzarPagina = new PageAvanzarPagina(driver);
 		PageDatosFirmante pageDatosFirmante = new PageDatosFirmante(driver);
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
 		crearLogyDocumento.CrearEvidencias(cp);
@@ -1696,7 +1426,6 @@ public class Test_CrearDocumento {
 		pageDec5.OpcionUserName(cp);
 		pageAcepta.empresaAcepta(cp);
 		pageCrearDocumento.crearDocumento(cp);
-		pageAvanzarPagina.clickAvanzar(cp);
 		pageCrearDocumento.btnCrearPlantillaColaborativa(cp);
 		pageCrearDocumento.CrearPlantillaPdf(cp);
 		pageDatosDocumento.btnRevisaryContinuarPdf(cp);
@@ -1743,7 +1472,6 @@ public class Test_CrearDocumento {
 		PageAcepta pageAcepta = new PageAcepta(driver);
 		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
 		PageDatosDocumento pageDatosDocumento = new PageDatosDocumento(driver);
-		PageAvanzarPagina pageAvanzarPagina = new PageAvanzarPagina(driver);
 		PageDatosFirmante pageDatosFirmante = new PageDatosFirmante(driver);
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
 		crearLogyDocumento.CrearEvidencias(cp);
@@ -1755,7 +1483,6 @@ public class Test_CrearDocumento {
 		pageDec5.OpcionUserName(cp);
 		pageAcepta.empresaAcepta(cp);
 		pageCrearDocumento.crearDocumento(cp);
-		pageAvanzarPagina.clickAvanzar(cp);
 		pageCrearDocumento.btnCrearPlantillaColaborativa(cp);
 		pageCrearDocumento.CrearPlantillaPdf(cp);
 		pageDatosDocumento.btnRevisaryContinuarPdf(cp);
@@ -1793,7 +1520,6 @@ public class Test_CrearDocumento {
 		PageAcepta pageAcepta = new PageAcepta(driver);
 		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
-		PageAvanzarPagina pageAvanzarPagina = new PageAvanzarPagina(driver);
 		crearLogyDocumento.CrearEvidencias(cp);
 		
 		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
@@ -1803,7 +1529,6 @@ public class Test_CrearDocumento {
 		pageDec5.OpcionUserName(cp);
 		pageAcepta.empresaAcepta(cp);
 		pageCrearDocumento.crearDocumento(cp);
-		pageAvanzarPagina.clickAvanzar(cp);
 		pageCrearDocumento.btnCrearPlantillaColaborativa(cp);
 		pageCrearDocumento.CrearDocumentoLote(cp);
 		
@@ -1852,7 +1577,6 @@ public class Test_CrearDocumento {
 		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
 		PageSubirArchivos pageSubirArchivos = new PageSubirArchivos(driver);
-		PageAvanzarPagina pageAvanzarPagina = new PageAvanzarPagina(driver);
 		crearLogyDocumento.CrearEvidencias(cp);
 		
 		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
@@ -1862,7 +1586,6 @@ public class Test_CrearDocumento {
 		pageDec5.OpcionUserName(cp);
 		pageAcepta.empresaAcepta(cp);
 		pageCrearDocumento.crearDocumento(cp);
-		pageAvanzarPagina.clickAvanzar(cp);
 		pageCrearDocumento.btnCrearPlantillaColaborativa(cp);
 		pageCrearDocumento.CrearDocumentoLote(cp);
 		pageSubirArchivos.CargarArchivoPorLote(cp, "PlantillaExcel_002020560195310_26Apr21_10_39_31.xls");
@@ -1911,7 +1634,6 @@ public class Test_CrearDocumento {
 		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
 		PageSubirArchivos pageSubirArchivos = new PageSubirArchivos(driver);
-		PageAvanzarPagina pageAvanzarPagina = new PageAvanzarPagina(driver);
 		crearLogyDocumento.CrearEvidencias(cp);
 		
 		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
@@ -1921,7 +1643,6 @@ public class Test_CrearDocumento {
 		pageDec5.OpcionUserName(cp);
 		pageAcepta.empresaAcepta(cp);
 		pageCrearDocumento.crearDocumento(cp);
-		pageAvanzarPagina.clickAvanzar(cp);
 		pageCrearDocumento.btnCrearPlantillaColaborativa(cp);
 		pageCrearDocumento.CrearDocumentoLote(cp);
 		pageSubirArchivos.CargarArchivoPorLote(cp, "PlantillaExcel_002020560195310_26Apr21_10_39_31.xls");
@@ -1974,7 +1695,6 @@ public class Test_CrearDocumento {
 		PageCrearDocumento pageCrearDocumento = new PageCrearDocumento(driver);
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
 		PageSubirArchivos pageSubirArchivos = new PageSubirArchivos(driver);
-		PageAvanzarPagina pageAvanzarPagina = new PageAvanzarPagina(driver);
 		crearLogyDocumento.CrearEvidencias(cp);
 		
 		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
@@ -1984,7 +1704,6 @@ public class Test_CrearDocumento {
 		pageDec5.OpcionUserName(cp);
 		pageAcepta.empresaAcepta(cp);
 		pageCrearDocumento.crearDocumento(cp);
-		pageAvanzarPagina.clickAvanzar(cp);
 		pageCrearDocumento.btnCrearPlantillaColaborativa(cp);
 		pageCrearDocumento.CrearDocumentoLote(cp);
 		pageSubirArchivos.CargarArchivoPorLote(cp, "PlantillaExcel_002020560195310_26Apr21_10_39_31.xls");

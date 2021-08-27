@@ -1,0 +1,11 @@
+Log de Caso de Prueba DEC_1092
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Mis Documentos
+Selección documento
+Agregar a carpeta
+Seleccion Crear Carpeta
+Seleccion Crear
+Caso OK

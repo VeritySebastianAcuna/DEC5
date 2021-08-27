@@ -1,0 +1,9 @@
+Log de Caso de Prueba DEC_0914
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Firmado por Todos
+click Filtros Avanzados
+Seleccion Estado Filtros Avanzados
+click Filtrar
+Caso OK

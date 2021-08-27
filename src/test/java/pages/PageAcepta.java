@@ -385,12 +385,39 @@ import common.Log;
 			Thread.sleep(3000);
 		}
 		
+		
+		
 		public void btnCerrarEditorPlantilla(String caso) throws InterruptedException, IOException, InvalidFormatException {
 			int i=0;
 			int j=0;
 			do {
 				try {
 					driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div/div[3]/button[1]")).click();
+					String texto="Click en botón Cerrar"; 
+					log.modificarArchivoLog(caso, texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+					texto=texto.replace(" ", "_");
+					capturaPantalla.takeScreenShotTest(driver, texto, caso);
+					Thread.sleep(5000);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible dar click en botón cerrar");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
+		
+		public void btnCerrarEditorPlantilla2(String caso) throws InterruptedException, IOException, InvalidFormatException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div/div[1]/button")).click();
 					String texto="Click en botón Cerrar"; 
 					log.modificarArchivoLog(caso, texto);
 					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
@@ -462,6 +489,7 @@ import common.Log;
 			Thread.sleep(2000);
 		}
 		
+				
 		public void rolRut (String caso, String rolRut) throws InterruptedException {
 			int i=0;
 			int j=0;
@@ -628,7 +656,7 @@ import common.Log;
 				try {
 					
 					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[4]/div[3]/div[2]/div[6]/div/span[1]/span[1]/span/ul/li/input")).click();
-					Thread.sleep(1000);
+					Thread.sleep(1000);          
 					driver.findElement(By.xpath("//*[text()= '"+ especificacion + "']")).click();//para enviar un texto a un campo y lo puedan seleccionar
 					String texto ="Seleccion Especificación";
 					log.modificarArchivoLog(caso,texto);
@@ -653,8 +681,7 @@ import common.Log;
 			int j=0;
 			do {
 				try {
-					//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-					driver.findElement(By.id("crearBoton")).click();
+					driver.findElement(By.id("crearBoton")).sendKeys(Keys.ENTER);
 					String texto="Click botón Crear Tipo de Documento"; 
 					log.modificarArchivoLog(caso, texto);
 					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
@@ -693,6 +720,32 @@ import common.Log;
 					j++;
 					if(j==3) {
 						System.out.println("No fue posible dar click en botón Crear Tipo de Documento");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
+		
+		public void btnGuardarCambios(String caso) throws InterruptedException, IOException, InvalidFormatException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+					driver.findElement(By.id("crearBotonTemplate")).click();
+					String texto="Click botón Guardar Cambios"; 
+					log.modificarArchivoLog(caso, texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+					texto=texto.replace(" ", "_");
+					capturaPantalla.takeScreenShotTest(driver, texto, caso);
+					Thread.sleep(2000);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible dar click en botón Guardar Cambios");
 						i=1;
 					}
 				}
@@ -1048,6 +1101,94 @@ import common.Log;
 			}while(i==0);
 			Thread.sleep(3000);
 		}
+		public void btnAgregar4EtiquetasOpcional(String caso, String etiqueta) throws InterruptedException, IOException, InvalidFormatException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[2]/div/div/div[1]/button")).click();
+					Thread.sleep(1000);                   
+					driver.findElement(By.id("newTag")).sendKeys(etiqueta);
+					driver.findElement(By.id("newTag")).sendKeys(Keys.ENTER);
+					Actions actions = new Actions(driver);
+					String texto="Click botón Agregar Etiquetas (opcional)"; 
+					log.modificarArchivoLog(caso, texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+					texto=texto.replace(" ", "_");
+					capturaPantalla.takeScreenShotTest(driver, texto, caso);
+					Thread.sleep(2000);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible dar click en botón Agregar Etiquetas (opcional)");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
+		
+		public void btnAgregar5EtiquetasOpcional(String caso, String etiqueta) throws InterruptedException, IOException, InvalidFormatException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[2]/div/div/div[2]/button")).click();
+					Thread.sleep(1000);                   
+					driver.findElement(By.id("newTag")).sendKeys(etiqueta);
+					driver.findElement(By.id("newTag")).sendKeys(Keys.ENTER);
+					Actions actions = new Actions(driver);
+					String texto="Click botón Agregar Etiquetas (opcional)"; 
+					log.modificarArchivoLog(caso, texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+					texto=texto.replace(" ", "_");
+					capturaPantalla.takeScreenShotTest(driver, texto, caso);
+					Thread.sleep(2000);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible dar click en botón Agregar Etiquetas (opcional)");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
+		public void btnAgregar6EtiquetasOpcional(String caso, String etiqueta) throws InterruptedException, IOException, InvalidFormatException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[2]/div/div/div[3]/button")).click();
+					Thread.sleep(1000);                   
+					driver.findElement(By.id("newTag")).sendKeys(etiqueta);
+					driver.findElement(By.id("newTag")).sendKeys(Keys.ENTER);
+					Actions actions = new Actions(driver);
+					String texto="Click botón Agregar Etiquetas (opcional)"; 
+					log.modificarArchivoLog(caso, texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+					texto=texto.replace(" ", "_");
+					capturaPantalla.takeScreenShotTest(driver, texto, caso);
+					Thread.sleep(2000);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible dar click en botón Agregar Etiquetas (opcional)");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
 		
 		public void btnAgregarEtiquetaCampoValor(String caso) throws InterruptedException, IOException, InvalidFormatException {
 			int i=0;
@@ -1074,6 +1215,70 @@ import common.Log;
 			}while(i==0);
 			Thread.sleep(3000);
 		}
+		
+		public void btnAgregarEtiquetasCampoValor(String caso, String campo, String valor) throws InterruptedException, IOException, InvalidFormatException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[8]/div[2]/div/div[3]/button")).click();
+					Thread.sleep(1000);                   
+					driver.findElement(By.name("field_value_code_0")).sendKeys(campo);
+					driver.findElement(By.name("field_value_default_0")).sendKeys(valor);
+					//Actions actions = new Actions(driver);
+					String texto="Click botón Agregar Etiquetas (opcional)"; 
+					log.modificarArchivoLog(caso, texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+					texto=texto.replace(" ", "_");
+					capturaPantalla.takeScreenShotTest(driver, texto, caso);
+					Thread.sleep(2000);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible Agregar Etiquetas (opcional)");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
+		
+		/*
+		  //METODO COMENTADO CASO 371
+		  public void btnAgregarEtiquetaCampoValor2(String caso) throws InterruptedException, IOException, InvalidFormatException {
+		 
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[8]/div[2]/div/div[3]/button")).click();
+			   
+	            /*
+	            int i=0;
+	            int j=0;
+	            do {
+	                try {
+	                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	                    driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/form/div/div[1]/div[8]/div[2]/div/div[3]/button")).click();
+	                    String texto="Click botón Agregar Etiqueta Campo/Valor";
+	                    log.modificarArchivoLog(caso, texto);
+	                    crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+	                    texto=texto.replace(" ", "_");
+	                    capturaPantalla.takeScreenShotTest(driver, texto, caso);
+	                    Thread.sleep(2000);
+	                    i=1;
+	                }catch (Exception e) {
+	                    // TODO: handle exception
+	                    j++;
+	                    if(j==3) {
+	                        System.out.println("No fue posible dar click en botón Agregar Etiqueta Campo/Valor");
+	                        i=1;
+	                    }
+	                }
+	            }while(i==0);
+	            
+	            Thread.sleep(3000);
+	       
+		}*/
 		
 		public void btnAceptarListaValoresPopup(String caso) throws InterruptedException, IOException, InvalidFormatException {
 			int i=0;
@@ -1187,6 +1392,110 @@ import common.Log;
 					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[6]/div[2]/div/div/input[4]")).click();
 					String texto="Click opción:  Documento Público (Se accede mediante URL)."; 
+					log.modificarArchivoLog(caso, texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+					texto=texto.replace(" ", "_");
+					capturaPantalla.takeScreenShotTest(driver, texto, caso);
+					Thread.sleep(2000);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible dar click radio button");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
+		
+		public void typeRadioConfigurarSeguridad5 (String caso) throws InterruptedException, IOException, InvalidFormatException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[7]/div[2]/div/div/input[1]")).click();
+					String texto="Cualquiera puede compartir y descargar el documento."; 
+					log.modificarArchivoLog(caso, texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+					texto=texto.replace(" ", "_");
+					capturaPantalla.takeScreenShotTest(driver, texto, caso);
+					Thread.sleep(2000);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible dar click radio button");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
+		
+		public void typeRadioConfigurarSeguridad6 (String caso) throws InterruptedException, IOException, InvalidFormatException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[7]/div[2]/div/div/input[2]")).click();
+					String texto="Solo los firmantes pueden compartir y descargar el documento."; 
+					log.modificarArchivoLog(caso, texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+					texto=texto.replace(" ", "_");
+					capturaPantalla.takeScreenShotTest(driver, texto, caso);
+					Thread.sleep(2000);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible dar click radio button");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
+		
+		public void typeRadioConfigurarSeguridad7 (String caso) throws InterruptedException, IOException, InvalidFormatException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[7]/div[2]/div/div/input[3]")).click();
+					String texto="Nadie puede compartir ni descargar el documento."; 
+					log.modificarArchivoLog(caso, texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+					texto=texto.replace(" ", "_");
+					capturaPantalla.takeScreenShotTest(driver, texto, caso);
+					Thread.sleep(2000);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible dar click radio button");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
+		
+		public void typeRadioConfigurarSeguridad8 (String caso) throws InterruptedException, IOException, InvalidFormatException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[7]/div[2]/div/div/input[4]")).click();
+					String texto="Documento Público (Se accede mediante URL)."; 
 					log.modificarArchivoLog(caso, texto);
 					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
 					texto=texto.replace(" ", "_");
@@ -1356,20 +1665,14 @@ import common.Log;
 			Thread.sleep(8000);
 		}
 		
-		
-		// Ricardo
-		
-		public void btnAgregarEtiquetasCampoValor(String caso, String campo, String valor) throws InterruptedException, IOException, InvalidFormatException {
+		public void btnArchivoXSL(String caso) throws InterruptedException, IOException, InvalidFormatException {
 			int i=0;
 			int j=0;
 			do {
 				try {
-					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[8]/div[2]/div/div[3]/button")).click();
-					Thread.sleep(1000);                   
-					driver.findElement(By.name("field_value_code_0")).sendKeys(campo);
-					driver.findElement(By.name("field_value_default_0")).sendKeys(valor);
-					//Actions actions = new Actions(driver);
-					String texto="Click botón Agregar Etiquetas (opcional)"; 
+					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+					driver.findElement(By.id("xsl-upload-btn")).click();
+					String texto="Click botón Seleccionar archivo(XSL)";
 					log.modificarArchivoLog(caso, texto);
 					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
 					texto=texto.replace(" ", "_");
@@ -1380,7 +1683,7 @@ import common.Log;
 					// TODO: handle exception
 					j++;
 					if(j==3) {
-						System.out.println("No fue posible Agregar Etiquetas (opcional)");
+						System.out.println("No fue posible dar click en botón archivo(XSL)");
 						i=1;
 					}
 				}
@@ -1388,6 +1691,7 @@ import common.Log;
 			Thread.sleep(3000);
 		}
 		
+				
 		public void btnAdd(String caso) throws InterruptedException, IOException, InvalidFormatException {
 			int i=0;
 			int j=0;
@@ -1965,7 +2269,6 @@ import common.Log;
 			Thread.sleep(3000);
 		}
 		
-		
 		public void btnAgregarEtiquetaCampoValor_PlantillaPdf(String caso) throws InterruptedException, IOException, InvalidFormatException {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/form/div/div[1]/div[8]/div[2]/div/div[3]/button")).click();
@@ -2316,5 +2619,54 @@ import common.Log;
 		}
 		
 		
+		public void SeleccionarArchivoEditorPlantilla (String caso) throws InterruptedException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr[1]/td/div/div/div[1]/h2/a")).click();
+					Thread.sleep(1000);
+					String texto ="click Archivo 0000000001_automatizaciondec";
+					log.modificarArchivoLog(caso,texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+					texto=texto.replace(" ","_");
+					capturaPantalla.takeScreenShotTest(driver,texto, caso);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible seleccionar Archivo 0000000001_automatizaciondec");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
+
+		public void SeleccionarArchivoEditorPlantilla2 (String caso) throws InterruptedException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr[7]/td/div/div/div[1]/h2/a")).click();
+					Thread.sleep(1000);
+					String texto ="click Archivo 0000000002_automatizaciondec";
+					log.modificarArchivoLog(caso,texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+					texto=texto.replace(" ","_");
+					capturaPantalla.takeScreenShotTest(driver,texto, caso);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible seleccionar Archivo 0000000002_automatizaciondec");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
 	}
 

@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_0747
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click PENDIENTES
+Seleccion Primer Registro
+Vincular Documento
+Busqueda realizada
+Check para Vincular Documento
+Caso OK

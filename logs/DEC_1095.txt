@@ -1,0 +1,14 @@
+Log de Caso de Prueba DEC_1095
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Mis Documentos
+Selección documento
+Agregar Etiquetas
+Caso OK
+Agregar Etiquetas OK
+Caso OK
+OK
+Caso OK
+Caso OK

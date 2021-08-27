@@ -1,0 +1,12 @@
+Log de Caso de Prueba DEC_0363
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click Tipos de Documentos
+click Link Crear
+click Link Subir Archivo
+Ingreso nombre tipo de documento
+Seleccion Rol Creador
+Seleccion Rol Rut
+Seleccion Especificación
+Click botón Crear Tipo de Documento

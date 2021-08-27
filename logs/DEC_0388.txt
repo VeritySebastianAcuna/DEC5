@@ -5,4 +5,5 @@ Click a Configuraciones
 Click Tipos de Documentos
 click Link Crear
 click Link Plantilla PDF
+Ingreso archivo
 Caso OK

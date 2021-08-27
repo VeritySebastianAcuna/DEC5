@@ -1,0 +1,8 @@
+Log de Caso de Prueba DEC_0907
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Firmado por Todos
+click Carpetas
+click Link Agregar Carpeta
+Caso OK

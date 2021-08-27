@@ -1,0 +1,12 @@
+Log de Caso de Prueba DEC_1045
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Rechazados
+Seleccion Primer Registro
+Seleccionar Opcion Barra Herramientas
+Seleccion Tipo Persona
+Ingreso Rut
+Ingreso Mail
+click Boton Agregar
+Caso OK

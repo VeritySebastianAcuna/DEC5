@@ -1,1 +1,6 @@
 Log de Caso de Prueba DEC_0065
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Editar Cuenta
+Click Editar
+Caso OK

@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_0952
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Firmado por Todos
+Seleccion Primer Registro
+Seleccionar Opcion Barra Herramientas
+Cerrar Vincular Documento
+Cierre de PopUp OK
+Caso OK

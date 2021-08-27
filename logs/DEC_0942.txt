@@ -1,0 +1,15 @@
+Log de Caso de Prueba DEC_0942
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Firmado por Todos
+Seleccion Primer Registro
+Vincular Documento
+Busqueda realizada
+Check para Vincular Documento
+click Boton Vincular
+Desvincular Documento
+NO Desvincular Documento
+Caso OK
+Desvincular Documento
+SI Desvincular Documento

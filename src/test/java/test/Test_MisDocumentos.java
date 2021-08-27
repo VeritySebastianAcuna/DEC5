@@ -55,7 +55,7 @@ public class Test_MisDocumentos {
 		options.setExperimentalOption("prefs", chromePrefs);//Preferencias de chrome
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.navigate().to("https://5cap.dec.cl/portal");// Aquí se ingresa la URL para hacer las pruebas.
+		driver.navigate().to("https://5qa.dec.cl/portal");// Aquí se ingresa la URL para hacer las pruebas.
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 	}
@@ -817,7 +817,7 @@ public class Test_MisDocumentos {
 		Thread.sleep(2000);
 		
 		pageMisDocumentos.clickAgregarCarpeta(cp);
-		pageMisDocumentos.crearCarpeta(cp, "CARPETA PRUEBA");
+		pageMisDocumentos.crearCarpeta(cp, "CARPETA PRUEBA AUTOMA 05");
 		pageMisDocumentos.btnCrear(cp);
 		
 		if(driver.findElement(By.xpath("//*[@id=\"modal\"]/div/div/div[2]/div/form/div")).getText().length()>0) {
@@ -851,10 +851,7 @@ public class Test_MisDocumentos {
 		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.MisDocumentos(cp);
 		pageMisDocumentos.clickDocumento(cp);
-		
-//		PagePendientes pagePendientes = new PagePendientes(driver);
-//		pagePendientes.BarraHerramientas(cp,"Agregar a");
-		
+
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[2]/div/h3/span/a"));
 		builder.moveToElement(element).build().perform();
@@ -895,10 +892,7 @@ public class Test_MisDocumentos {
 		pageMisDocumentos.MisDocumentos(cp);
 		
 		pageMisDocumentos.clickDocumento(cp);
-		
-//		PagePendientes pagePendientes = new PagePendientes(driver);
-//		pagePendientes.BarraHerramientas(cp,"Etiquetar");
-		
+
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[2]/div/div[2]/a"));
 		builder.moveToElement(element).build().perform();
@@ -963,9 +957,6 @@ public class Test_MisDocumentos {
 		pageMisDocumentos.MisDocumentos(cp);
 		pageMisDocumentos.clickDocumento(cp);
 		
-//		PagePendientes pagePendientes = new PagePendientes(driver);
-//		pagePendientes.BarraHerramientas(cp,"Agregar a");
-//		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[2]/div/div[2]/a"));
 		builder.moveToElement(element).build().perform();
@@ -1007,8 +998,6 @@ public class Test_MisDocumentos {
 		
 		pageMisDocumentos.clickDocumento(cp);
 		
-//		PagePendientes pagePendientes = new PagePendientes(driver);
-//		pagePendientes.BarraHerramientas(cp,"Vincular");
 		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[7]/div/div/div/button"));
@@ -1196,7 +1185,7 @@ public class Test_MisDocumentos {
 		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.MisDocumentos(cp);
 		
-		pageMisDocumentos.clickDocumento(cp);
+		pageMisDocumentos.clickDocumento2(cp);
 		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a"));
@@ -1242,7 +1231,7 @@ public class Test_MisDocumentos {
 		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.MisDocumentos(cp);
 		
-		pageMisDocumentos.clickDocumento(cp);
+		pageMisDocumentos.clickDocumento2(cp);
 		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a"));
@@ -1285,7 +1274,7 @@ public class Test_MisDocumentos {
 		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.MisDocumentos(cp);
 		
-		pageMisDocumentos.clickDocumento(cp);
+		pageMisDocumentos.clickDocumento2(cp);
 		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a"));
@@ -2173,12 +2162,12 @@ public class Test_MisDocumentos {
 		pageMisDocumentos.MisDocumentos(cp);
 					
 		PagePendientes pagePendientes = new PagePendientes(driver);
-		pagePendientes.ClickPrimerRegistro(cp);
+		pagePendientes.ClickUltimoRegistro(cp);
 		pagePendientes.BarraHerramientas(cp, "Rechazar");
 		pagePendientes.RechazarDocumentoConClave(cp);	
 		
-		System.out.println(driver.findElement(By.xpath("//*[@id=\\\"root-content\\\"]/div")).isDisplayed());
-		if(driver.findElement(By.xpath("//*[@id=\"root-content\"]/div")).isDisplayed()) {
+		System.out.println(driver.findElement(By.xpath("/html/body/div/div")).isDisplayed());
+		if(driver.findElement(By.xpath("/html/body/div/div")).isDisplayed()) {
 			crearLogyDocumento.CasoOk(cp); 
 		}
 		else {
@@ -2210,7 +2199,7 @@ public class Test_MisDocumentos {
 		pageMisDocumentos.MisDocumentos(cp);
 					
 		PagePendientes pagePendientes = new PagePendientes(driver);
-		pagePendientes.ClickPrimerRegistro(cp);
+		pagePendientes.ClickUltimoRegistro(cp);
 		pagePendientes.BarraHerramientas(cp, "Rechazar");
 		pagePendientes.RechazarDocumentoConClave(cp);	
 		pagePendientes.BtnAutorizarIdentidadDigital(cp);
@@ -2259,7 +2248,7 @@ public class Test_MisDocumentos {
 		pageMisDocumentos.MisDocumentos(cp);
 					
 		PagePendientes pagePendientes = new PagePendientes(driver);
-		pagePendientes.ClickPrimerRegistro(cp);
+		pagePendientes.ClickUltimoRegistro(cp);
 		pagePendientes.BarraHerramientas(cp, "Rechazar");
 		pagePendientes.RechazarDocumentoConClave(cp);	
 		pagePendientes.BtnSalirIdentidadDigital(cp);
@@ -2296,7 +2285,7 @@ public class Test_MisDocumentos {
 		pageMisDocumentos.MisDocumentos(cp);
 					
 		PagePendientes pagePendientes = new PagePendientes(driver);
-		pagePendientes.ClickPrimerRegistro(cp);
+		pagePendientes.ClickUltimoRegistro(cp);
 		pagePendientes.BarraHerramientas(cp, "Rechazar");
 		
 		pagePendientes.RechazarDocumentoComentario(cp, "Rechazo QA");
@@ -2332,7 +2321,7 @@ public class Test_MisDocumentos {
 		pageMisDocumentos.MisDocumentos(cp);
 					
 		PagePendientes pagePendientes = new PagePendientes(driver);
-		pagePendientes.ClickPrimerRegistro(cp);
+		pagePendientes.ClickUltimoRegistro(cp);
 		pagePendientes.BarraHerramientas(cp, "Rechazar");
 		pagePendientes.RechazarDocumentoComentario(cp, "Rechazo QA");
 		pagePendientes.BtnRechazarDocumentoConClave(cp);
@@ -2348,85 +2337,6 @@ public class Test_MisDocumentos {
 		
 		System.out.println("FLUJO OK");
 		
-	}
-	@Test
-	public void Script_1156() throws InterruptedException, IOException, InvalidFormatException {
-		String cp = "DEC_1156";
-		System.out.println(cp);
-		
-		PageDec5 pageDec5 = new PageDec5(driver);
-		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
-		PageAcepta pageAcepta = new PageAcepta(driver);
-		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
-		crearLogyDocumento.CrearEvidencias(cp);
-		
-		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
-		
-		pageDec5.ClickIngresarLogin(cp);
-		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
-		pageDec5.OpcionUserName(cp);
-		pageAcepta.empresaAcepta(cp);
-		
-		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
-		pageMisDocumentos.MisDocumentos(cp);
-					
-		PagePendientes pagePendientes = new PagePendientes(driver);
-		pagePendientes.ClickPrimerRegistro(cp);
-		pagePendientes.BarraHerramientas(cp, "Firmar");
-		
-		pagePendientes.BtnFirmarIdentidadDigital(cp);
-		pagePendientes.BtnAutorizarIdentidadDigital(cp);
-		
-				
-		String msjExitoso = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/h1")).getText();
-		if(msjExitoso.equals("Documento firmado exitosamente")) {
-			System.out.println("OK");
-			crearLogyDocumento.AgregarRegistroLog(cp, msjExitoso );
-			crearLogyDocumento.CasoOk(cp);
-			String codDoc = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/ul/li")).getText();
-			System.out.println(codDoc);
-			}
-		else {
-			System.out.println("NOK");
-			crearLogyDocumento.CasoNok(cp);
-		}
-	}
-	
-	@Test
-	public void Script_1157() throws InterruptedException, IOException, InvalidFormatException {
-		String cp = "DEC_1157";
-		System.out.println(cp);
-		
-		PageDec5 pageDec5 = new PageDec5(driver);
-		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
-		PageAcepta pageAcepta = new PageAcepta(driver);
-		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
-		crearLogyDocumento.CrearEvidencias(cp);
-		
-		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
-		
-		pageDec5.ClickIngresarLogin(cp);
-		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
-		pageDec5.OpcionUserName(cp);
-		pageAcepta.empresaAcepta(cp);
-		
-		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
-		pageMisDocumentos.MisDocumentos(cp);
-					
-		PagePendientes pagePendientes = new PagePendientes(driver);
-		pagePendientes.ClickPrimerRegistro(cp);
-		pagePendientes.BarraHerramientas(cp, "Firmar");
-		pagePendientes.BtnFirmarIdentidadDigital(cp);
-		pagePendientes.BtnAutorizarIdentidadDigital(cp);
-		pagePendientes.linkVerPendientes(cp);
-				
-		System.out.println(driver.findElement(By.id("__tag_status")).isDisplayed());
-		if(driver.findElement(By.id("__tag_statusv")).isDisplayed()) {
-			crearLogyDocumento.CasoOk(cp);
-		}
-		else {
-			crearLogyDocumento.CasoNok(cp);
-		}
 	}
 	
 		

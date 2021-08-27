@@ -26,6 +26,7 @@ import evidence.CrearLogyDocumento;
 import pages.PageDec5;
 import pages.PageLoginAdm;
 import pages.PageMiPortal;
+import pages.PageMisDocumentos;
 import pages.PagePendientes;
 import pages.PageProcesoFirma;
 
@@ -917,7 +918,10 @@ public class Tests_MiPortal {
 		pageMiPortal.ClickPendientes(cp);
 		
 		PagePendientes pagePendientes = new PagePendientes(driver);
-		pagePendientes.ClickPrimerRegistro(cp);
+//		pagePendientes.ClickPrimerRegistro(cp);
+		
+		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
+		pageMisDocumentos.clickDocumento2(cp);
 		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[8]/div/div[2]/div/button"));
@@ -960,7 +964,10 @@ public class Tests_MiPortal {
 		pageMiPortal.ClickPendientes(cp);
 		
 		PagePendientes pagePendientes = new PagePendientes(driver);
-		pagePendientes.ClickPrimerRegistro(cp);
+//		pagePendientes.ClickPrimerRegistro(cp);
+		
+		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
+		pageMisDocumentos.clickDocumento2(cp);
 		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[8]/div/div[2]/div/button"));
@@ -1645,8 +1652,8 @@ public class Tests_MiPortal {
 		
 		System.out.println("FLUJO OK");
 	}
-	
-//	@Test
+	/*
+	@Test
 	public void Script_0797() throws InterruptedException, IOException, InvalidFormatException, AWTException {
 		String cp = "DEC_0797";
 		System.out.println(cp);
@@ -1758,8 +1765,9 @@ public class Tests_MiPortal {
 		
 		System.out.println("FLUJO OK");
 	}
+
 	
-//	@Test
+	@Test
 	public void Script_0805() throws InterruptedException, IOException, InvalidFormatException, AWTException {
 		String cp = "DEC_0805";
 		System.out.println(cp);
@@ -1803,6 +1811,7 @@ public class Tests_MiPortal {
 		
 		System.out.println("FLUJO OK");
 	}
+	*/
 	
 	@Test
 	public void Script_0819() throws InterruptedException, IOException, InvalidFormatException, AWTException {
@@ -2754,7 +2763,9 @@ public class Tests_MiPortal {
 		pageMiPortal.ClickEnProcesoDeFirma(cp);
 		
 		PageProcesoFirma pageProcesoFirma = new PageProcesoFirma(driver);
-		pageProcesoFirma.ClickPrimerRegistro(cp);
+//		pageProcesoFirma.ClickPrimerRegistro(cp);
+		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
+		pageMisDocumentos.clickDocumento2(cp);
 		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[8]/div/div[2]/div/button"));
@@ -2797,7 +2808,9 @@ public class Tests_MiPortal {
 		pageMiPortal.ClickEnProcesoDeFirma(cp);
 		
 		PageProcesoFirma pageProcesoFirma = new PageProcesoFirma(driver);
-		pageProcesoFirma.ClickPrimerRegistro(cp);
+		//pageProcesoFirma.ClickPrimerRegistro(cp);
+		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
+		pageMisDocumentos.clickDocumento2(cp);
 		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[8]/div/div[2]/div/button"));

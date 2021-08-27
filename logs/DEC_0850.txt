@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_0850
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Proceso De Firma
+Seleccion Primer Registro
+click Agregar Carpeta
+click Boton Crear Carpeta
+Cerrar Crear Mover Carpeta
+Caso OK

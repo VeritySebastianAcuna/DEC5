@@ -25,8 +25,8 @@ public class PageDatosFirmante {
 	
 	public void btnConfigurarFirmantes(String caso) throws InterruptedException, IOException, InvalidFormatException {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[1]/div[2]/div[6]/div[2]/div[2]/div/button")).click();
-		String texto="Click Botón Configurar Firmantes"; 
+		driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[1]/div[2]/div[6]/div[1]/div[2]/div/button")).click();
+		String texto="Click Botón Configurar Firmantes"; //*[@id="formUpload"]/div[1]/div[2]/div[6]/div[1]/div[2]/div/button
 		log.modificarArchivoLog(caso, texto);
 		crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
 		texto=texto.replace(" ", "_");
@@ -177,6 +177,17 @@ public class PageDatosFirmante {
 		crearDocEvidencia.modificarArchivoEvidencia(caso, "Datos de firmante");
 		capturaPantalla.takeScreenShotTest(driver, "Datos_Firmante_DEC",caso);
 	}
+	
+    public void datosRutFirmante1 (String caso, String rutFirmante, String ordenFirma) throws InterruptedException, FileNotFoundException, InvalidFormatException, IOException {
+		
+		driver.findElement(By.name("rut_institution_1")).sendKeys(rutFirmante);
+		Thread.sleep(2000);
+		driver.findElement(By.name("rut_institution_1")).sendKeys(Keys.TAB);
+		Thread.sleep(2000);
+		crearDocEvidencia.modificarArchivoEvidencia(caso, "Datos de firmante");
+		capturaPantalla.takeScreenShotTest(driver, "Datos_Firmante_DEC",caso);
+	}
+	
 	
 	public void datosFirmante (String caso, String rutFirmante, String ordenFirma) throws InterruptedException, FileNotFoundException, InvalidFormatException, IOException {
 		

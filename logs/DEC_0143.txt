@@ -4,4 +4,3 @@ Click al botón Autorizar
 Click a Usuarios
 Click Crear Rol
 Click Boton Asignar
-Caso OK

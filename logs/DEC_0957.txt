@@ -1,0 +1,9 @@
+Log de Caso de Prueba DEC_0957
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Firmado por Todos
+Seleccion Primer Registro
+Seleccionar Opcion Barra Herramientas
+Cerrar Mover A
+Caso OK

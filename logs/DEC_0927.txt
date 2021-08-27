@@ -1,0 +1,6 @@
+Log de Caso de Prueba DEC_0927
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Firmado por Todos
+Seleccion Primer Registro

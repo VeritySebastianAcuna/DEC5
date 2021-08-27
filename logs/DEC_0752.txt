@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_0752
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click PENDIENTES
+Selección documento
+Desvincular Documento
+SI Desvincular Documento
+Cerrar Desvincular Documento
+Caso OK

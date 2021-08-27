@@ -25,6 +25,7 @@ import pages.PageCrearDocumento;
 import pages.PageDec5;
 import pages.PageDescargarArchivos;
 import pages.PageLoginAdm;
+import pages.PageSubirArchivos;
 
 public class Test_TiposDocumentos {
 	private WebDriver driver;//Declaro el objeto webdriver
@@ -35,10 +36,9 @@ public class Test_TiposDocumentos {
 	public void setUp() throws FileNotFoundException, IOException {
 //		DesiredCapabilities caps = new DesiredCapabilities();
 		System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
-		
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.navigate().to("https://5qa.dec.cl/");// Aquí se ingresa la URL para hacer las pruebas. https://5cap.dec.cl/portal
+		driver.navigate().to("https://5qa.dec.cl/portal");// Aquí se ingresa la URL para hacer las pruebas. https://5cap.dec.cl/portal
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 						
 	}
@@ -320,7 +320,7 @@ public class Test_TiposDocumentos {
 				
 		System.out.println("FLUJO OK");
 	}
-	
+	/*
 	@Test
 	public void Script_0254() throws InterruptedException, IOException, InvalidFormatException {
 		String cp = "DEC_0254";
@@ -393,6 +393,7 @@ public class Test_TiposDocumentos {
 		
 		System.out.println("FLUJO OK");
 	}
+	*/
 	
 	@Test
 	public void Script_0256() throws InterruptedException, IOException, InvalidFormatException {
@@ -429,7 +430,7 @@ public class Test_TiposDocumentos {
 		
 		System.out.println("FLUJO OK");
 	}
-	
+	/*
 	@Test
 	public void Script_0257() throws InterruptedException, IOException, InvalidFormatException {
 		String cp = "DEC_0257";
@@ -3159,11 +3160,15 @@ public class Test_TiposDocumentos {
 		System.out.println("FLUJO OK");
 		
 	}
+	*/
 	
 	@Test
 	public void Script_0319() throws InterruptedException, IOException, InvalidFormatException {
 		String cp = "DEC_0319";
 		System.out.println(cp);
+		String tipoDoc = "Nombre Tipo Documento";
+		String resultado = null;
+		
 	
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
 		crearLogyDocumento.CrearEvidencias(cp);
@@ -3182,16 +3187,31 @@ public class Test_TiposDocumentos {
 		pageAcepta.OpcionTiposdeDocumentos(cp);
 		pageAcepta.LinkCrear(cp);
 		pageAcepta.LinkSubirArchivo(cp);
+		
+		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[1]/div/div/label")).getText().contains(tipoDoc)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("Tipo Doc OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("Tipo Doc NOOK");
+			resultado = "FLUJO NOOK";
+		}
+		
 		pageAcepta.nombreTipoDocumento(cp, datos[5]);
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.rolRut(cp, "Admin");
 		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");		
 		pageAcepta.btnCrearTipodeDocumento(cp);
 		
-		String nombre_Documento_Creado = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).getText();
-		System.out.println("Nombre tipo Documento: "+ nombre_Documento_Creado);
-		//Comparar nombre carpeta
-
+		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
 		
 		System.out.println("FLUJO OK");
 		
@@ -3202,7 +3222,9 @@ public class Test_TiposDocumentos {
 	public void Script_0320() throws InterruptedException, IOException, InvalidFormatException {
 		String cp = "DEC_0320";
 		System.out.println(cp);
-	
+		String Rol = "Rol Creador";
+		String resultado = null;
+		
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
 		crearLogyDocumento.CrearEvidencias(cp);
 		
@@ -3220,15 +3242,31 @@ public class Test_TiposDocumentos {
 		pageAcepta.OpcionTiposdeDocumentos(cp);
 		pageAcepta.LinkCrear(cp);
 		pageAcepta.LinkSubirArchivo(cp);
+		
+		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[1]/div/div/label")).getText().contains(Rol)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("Rol Creador OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("Rol Creado NOOK");
+			resultado = "FLUJO NOOK";
+		}
+		
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.nombreTipoDocumento(cp, datos[5]);
 		pageAcepta.rolRut(cp, "Admin");
 		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
 		pageAcepta.btnCrearTipodeDocumento(cp);
 		
-		String nombre_Documento_Creado = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).getText();
-		System.out.println("Nombre tipo Documento: "+ nombre_Documento_Creado);
-		//Comparar nombre carpeta
+		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
 		
 		System.out.println("FLUJO OK");
 		
@@ -5120,11 +5158,7 @@ public class Test_TiposDocumentos {
 		pageAcepta.LinkSubirArchivo(cp);
 		pageAcepta.nombreTipoDocumento(cp, datos[5]);
 		pageAcepta.rolCreador(cp, "Admin");
-		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
 		pageAcepta.rolRut(cp, "Admin");
-		pageAcepta.tipoFirma(cp, "ESPECIFICO");
-		pageAcepta.orden(cp, "1");
-		pageAcepta.tipoAccion(cp, "Firmar");
 		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
 		pageAcepta.tipoNotificacion(cp, "Pendiente de firma");
 		
@@ -5148,8 +5182,149 @@ public class Test_TiposDocumentos {
 	}
 	
 	@Test
-	public void Script_0360() throws InterruptedException, IOException, InvalidFormatException {
-		String cp = "DEC_0360";
+	public void Script_0361() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0361";
+		System.out.println(cp);
+		String etiqueta1 = "pruebaQA1";
+		String resultado = null;
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkSubirArchivo(cp);
+		pageAcepta.btnAgregar4EtiquetasOpcional(cp, etiqueta1);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
+			
+		pageAcepta.btnCrearTipodeDocumento(cp);
+				
+		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[2]/div/div/div[1]/button/span")).getText().contains(etiqueta1)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("FLUJO OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("FLUJO NOOK");
+			resultado = "FLUJO NOOK";
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0362() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0362";
+		System.out.println(cp);
+		String etiqueta1 = "pruebaQA2";
+		String resultado = null;
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkSubirArchivo(cp);
+		pageAcepta.btnAgregar5EtiquetasOpcional(cp, etiqueta1);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
+			
+		pageAcepta.btnCrearTipodeDocumento(cp);
+				
+		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[2]/div/div/div[2]/button/span")).getText().contains(etiqueta1)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("FLUJO OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("FLUJO NOOK");
+			resultado = "FLUJO NOOK";
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0363() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0363";
+		System.out.println(cp);
+		String etiqueta1 = "pruebaQA3";
+		String resultado = null;
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkSubirArchivo(cp);
+		pageAcepta.btnAgregar6EtiquetasOpcional(cp, etiqueta1);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
+			
+		pageAcepta.btnCrearTipodeDocumento(cp);
+				
+		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[2]/div/div/div[3]/button/span")).getText().contains(etiqueta1)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("FLUJO OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("FLUJO NOOK");
+			resultado = "FLUJO NOOK";
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0367() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0367";
 		System.out.println(cp);
 	
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
@@ -5169,34 +5344,443 @@ public class Test_TiposDocumentos {
 		pageAcepta.OpcionTiposdeDocumentos(cp);
 		pageAcepta.LinkCrear(cp);
 		pageAcepta.LinkSubirArchivo(cp);
-		
 		pageAcepta.nombreTipoDocumento(cp, datos[5]);
 		pageAcepta.rolCreador(cp, "Admin");
-		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
 		pageAcepta.rolRut(cp, "Admin");
-		pageAcepta.tipoFirma(cp, "ESPECIFICO");
-		pageAcepta.orden(cp, "1");
-		pageAcepta.tipoAccion(cp, "Firmar");
 		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
-		pageAcepta.tipoNotificacion(cp, "Pendiente de firma");
-		
-		//String nombre_Tipo_Documento = driver.findElement(By.name("name")).getText();//NO TOMA NOMBRE AL RESCATAR TEXTO EN VARIABLE
-		String nombre_Tipo_Documento = "Prueba Automatizada";
-		
+		pageAcepta.typeRadioConfigurarSeguridad5(cp);//Click opción Configurar Seguridad: Cualquiera puede compartir y descargar el documento.
 		pageAcepta.btnCrearTipodeDocumento(cp);
-		
-		String nombre_Documento_Creado = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div/div/div/h2/strong")).getText();
-		System.out.println("Nombre tipo Docuemnto: "+ nombre_Documento_Creado);
-
-		if(nombre_Tipo_Documento.equals(nombre_Documento_Creado)) {
-			crearLogyDocumento.CasoOk(cp);
+				
+		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
 		}
 		else {
 			crearLogyDocumento.CasoNok(cp);
 		}
 		
 		System.out.println("FLUJO OK");
-		Thread.sleep(3000);
+		
+	}
+	
+	@Test
+	public void Script_0368() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0368";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkSubirArchivo(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
+		pageAcepta.typeRadioConfigurarSeguridad6(cp);//Click opción Configurar Seguridad:  Solo los firmantes pueden compartir y descargar el documento.
+		pageAcepta.btnCrearTipodeDocumento(cp);
+				
+		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0369() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0369";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkSubirArchivo(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
+		pageAcepta.typeRadioConfigurarSeguridad7(cp);//Click opción Configurar Seguridad: Nadie puede compartir ni descargar el documento.
+		pageAcepta.btnCrearTipodeDocumento(cp);
+				
+		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	@Test
+	public void Script_0370() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0370";
+		System.out.println(cp);
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkSubirArchivo(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
+		pageAcepta.typeRadioConfigurarSeguridad8(cp);//Click opción Configurar Seguridad:  Documento Público (Se accede mediante URL).
+		pageAcepta.btnCrearTipodeDocumento(cp);
+				
+		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+		
+	}
+	
+	/*
+	//CASO 371 REPLICADO CON RICARDO EN CLASE TIPO DE DOCUMENTOS 2
+	@Test
+	public void Script_0371() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0371";
+		System.out.println(cp);
+		
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.LinkCrear(cp);
+		pageAcepta.LinkSubirArchivo(cp);
+		pageAcepta.nombreTipoDocumento(cp, datos[5]);
+		pageAcepta.rolCreador(cp, "Admin");
+		pageAcepta.rolRut(cp, "Admin");
+		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
+		pageAcepta.btnAgregarEtiquetaCampoValor2(cp);
+		
+		//Validación que se despliega Bloque Etiqueta
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[8]/div[3]/div")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[8]/div[3]/div")).isDisplayed()) {
+			crearLogyDocumento.CasoOk(cp +"Bloque Etiqueta OK");
+			System.out.println("Bloque Etiqueta OK");
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp +"Bloque Etiqueta NOK");
+			System.out.println("Bloque Etiqueta NOK");
+		}
+		
+		//Validación Campo
+		System.out.println(driver.findElement(By.name("field_value_code_0")).isDisplayed());
+		if(driver.findElement(By.name("field_value_code_0")).getAttribute("placeholder").contains("Campo")) {
+			crearLogyDocumento.CasoOk(cp +"Campo OK");
+			System.out.println("Bloque Campo OK");
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp +"Bloque Campo NOK");
+			System.out.println("Bloque Campo NOK");
+		}
+		
+		//Validación Campo Valor por Defecto
+		System.out.println(driver.findElement(By.name("field_value_default_0")).isDisplayed());
+		if(driver.findElement(By.name("field_value_default_0")).getAttribute("placeholder").contains("Valor por Defecto (opcional)")) {
+			crearLogyDocumento.CasoOk(cp +"Bloque Valor por Defecto OK");
+			System.out.println("Bloque Valor por Defecto OK");
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp +"Bloque  Valor por Defecto NOK");
+			System.out.println("Bloque Valor por Defecto NOK");
+		}
+		
+		//pageAcepta.btnCrearTipodeDocumento(cp);
+		
+	}
+	*/
+	
+	@Test
+	public void Script_0557() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0557";
+		System.out.println(cp);
+		String titulo = "Editor de Plantilla";
+		String subtitulo = "Selecciona el texto para activar el campo dinámico";
+		String btnContinuar = "Continuar";
+		String nombre = "nombre";
+		String fecha = "fecha";
+		String resultado = null;
+	
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.SeleccionarArchivoEditorPlantilla(cp);
+		//pageAcepta.btnContinuarEditorPlantilla(cp);
+		
+
+		
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div/div[1]/h1")).getText().contains(titulo)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("Titulo OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("Titulo NOOK");
+			resultado = "FLUJO NOOK";
+		}
+		
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/form/div/div[5]/div/div/div[2]/div/div[1]/label")).getText().contains(subtitulo)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("SubTitulo OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("SubTitulo NOOK");
+			resultado = "FLUJO NOOK";
+		}
+		
+		
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div/div[3]/button[2]")).getText().contains(btnContinuar)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("Btn Continuar OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("Btn Continuar  NOOK");
+			resultado = "FLUJO NOOK";
+		}
+		
+		if(driver.findElement(By.xpath("//*[@id=\"variableFields\"]/div[2]/div[1]/div[1]/label")).getText().contains(nombre)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("Campo Nombre OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("Campo Nombre NOOK");
+			resultado = "FLUJO NOOK";
+		}
+		
+		if(driver.findElement(By.xpath("//*[@id=\"variableFields\"]/div[4]/div[1]/div[1]/label")).getText().contains(fecha)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("Campo Fecha OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("Campo Fecha NOOK");
+			resultado = "FLUJO NOOK";
+		}
+
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0558() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0558";
+		System.out.println(cp);
+			
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.SeleccionarArchivoEditorPlantilla(cp);
+		pageAcepta.btnCerrarEditorPlantilla2(cp);
+		
+//		boolean popUp = driver.findElement(By.xpath("//*[@id=\\\"modal_template\\\"]/div/div/div[1]/h1")).isDisplayed();
+//		if(popUp) {                                  
+//			crearLogyDocumento.CasoNok(cp + "No se cierra PopUp");
+//		}
+//		else {
+//			crearLogyDocumento.CasoOk(cp + "Se cierra PopUp");
+//		}
+		
+		System.out.println(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div/div[1]/h1")).isDisplayed());
+		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div/div[1]/h1")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0559() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0559";
+		System.out.println(cp);
+		String msjExito = "se actualizó correctamente";
+		String resultado = null;
+			
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.SeleccionarArchivoEditorPlantilla2(cp);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.checkboxValidacionCorreoPersonal(cp);
+		pageAcepta.btnGuardarCambios(cp);
+		
+		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div/div/div/h2")).getText().contains(msjExito)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("CAMBIOS OK");
+			resultado = "CAMBIOS OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("CAMBIOS NOOK");
+			resultado = "CAMBIOS NOOK";
+		}
+		
+		System.out.println("FLUJO OK");
+	}
+	
+	@Test
+	public void Script_0560() throws InterruptedException, IOException, InvalidFormatException {
+		String cp = "DEC_0560";
+		System.out.println(cp);
+		String msjExito = "se actualizó correctamente";
+		String resultado = null;
+			
+		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
+		crearLogyDocumento.CrearEvidencias(cp);
+		
+		String[] datos = leerExcel.ObtenerDatosCP(datapool,cp);
+		
+		PageDec5 pageDec5 = new PageDec5(driver);
+		pageDec5.ClickIngresarLogin(cp);
+		
+		PageLoginAdm pageLoginAdm = new PageLoginAdm(driver);
+		pageLoginAdm.LoginIdentidadDigital(cp, datos[1], datos[2]);
+		
+		PageAcepta pageAcepta = new PageAcepta(driver);
+		pageDec5.CambiarEmpresa(cp);
+		pageAcepta.ClickRuedaConfiguracion(cp);
+		pageAcepta.OpcionTiposdeDocumentos(cp);
+		pageAcepta.SeleccionarArchivoEditorPlantilla2(cp);
+		pageAcepta.btnContinuarEditorPlantilla(cp);
+		pageAcepta.btnGuardarCambios(cp);
+		
+		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
+			crearLogyDocumento.CasoNok(cp); 
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+		}
+		
+		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div/div/div/h2")).getText().contains(msjExito)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("CAMBIOS OK");
+			resultado = "CAMBIOS OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("CAMBIOS NOOK");
+			resultado = "CAMBIOS NOOK";
+		}
+		
+		System.out.println("FLUJO OK");
 	}
 	
 	@AfterMethod

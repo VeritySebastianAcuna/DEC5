@@ -6,4 +6,4 @@ Seleccionar opción en Cubo
 Seleccion Reporte
 Ingreso Fecha Desde
 click Boton Buscar
-Caso OK
+Caso NOK

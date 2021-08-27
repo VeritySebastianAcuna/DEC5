@@ -1,0 +1,9 @@
+Log de Caso de Prueba DEC_0825
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Proceso De Firma
+click Carpetas
+Agregar Carpeta
+click Boton Cancelar
+Caso OK

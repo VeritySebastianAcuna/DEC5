@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_0730
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click PENDIENTES
+click Filtros Avanzados
+Ingreso Fecha Desde
+Ingreso Fecha Hasta
+Boton Filtrar
+Caso OK

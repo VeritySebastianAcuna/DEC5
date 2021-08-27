@@ -10,3 +10,5 @@ Seleccion Rol Creador
 Seleccion Institución
 Seleccion Rol Rut
 Ingreso orden de firma
+Seleccion Especificación
+Click botón Crear Tipo de Documento

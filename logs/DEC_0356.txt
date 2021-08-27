@@ -1,0 +1,2 @@
+Log de Caso de Prueba DEC_0356
+No fue posible el login

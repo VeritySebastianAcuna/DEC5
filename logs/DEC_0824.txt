@@ -1,0 +1,8 @@
+Log de Caso de Prueba DEC_0824
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Proceso De Firma
+click Carpetas
+Carpeta Existente
+Caso OK

@@ -1,0 +1,11 @@
+Log de Caso de Prueba DEC_1104
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Mis Documentos
+Selección documento
+Desvincular Documento
+Botón Si Desvincular
+Cerrar ventana Desvincular
+Caso OK

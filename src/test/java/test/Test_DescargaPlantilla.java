@@ -47,7 +47,7 @@ public class Test_DescargaPlantilla {
 		options.setExperimentalOption("prefs", chromePrefs);//Preferencias de chrome
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
-		driver.navigate().to("https://5cap.dec.cl/portal");// Aquí se ingresa la URL para hacer las pruebas.
+		driver.navigate().to("https://5qa.dec.cl/portal");// Aquí se ingresa la URL para hacer las pruebas.
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 						
 	}

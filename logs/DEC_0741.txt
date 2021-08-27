@@ -1,0 +1,9 @@
+Log de Caso de Prueba DEC_0741
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click PENDIENTES
+Seleccion Primer Registro
+click Agregar Carpeta
+Cerrar Crear Mover Carpeta
+Caso OK

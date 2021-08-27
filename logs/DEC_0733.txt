@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_0733
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click PENDIENTES
+click Filtros Avanzados
+Tipo Documento
+Boton Filtrar
+Mensaje Sin Resultados
+Caso NOK

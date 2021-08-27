@@ -1,0 +1,9 @@
+Log de Caso de Prueba DEC_0871
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Proceso De Firma
+Seleccion Primer Registro
+click Boton Vincular
+Busqueda realizada
+Busqueda OK

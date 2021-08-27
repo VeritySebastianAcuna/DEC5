@@ -6,5 +6,3 @@ Click En Rechazados
 click Filtros Avanzados
 Tipo Documento
 click Filtrar
-Mensaje Sin Resultados
-Caso NOK

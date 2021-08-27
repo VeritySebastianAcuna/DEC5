@@ -1,0 +1,2 @@
+Log de Caso de Prueba DEC_0345
+No fue posible el login

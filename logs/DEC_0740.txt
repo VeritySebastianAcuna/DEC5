@@ -1,0 +1,7 @@
+Log de Caso de Prueba DEC_0740
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click PENDIENTES
+Seleccion Primer Registro
+Caso OK

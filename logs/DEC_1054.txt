@@ -1,0 +1,13 @@
+Log de Caso de Prueba DEC_1054
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click En Rechazados
+Seleccion Primer Registro
+Seleccionar Opcion Barra Herramientas
+click Boton Mover
+Boton Mostrar Ocultos
+Seleccion Primer Registro
+Seleccionar Opcion Barra Herramientas
+click Boton Mover
+Caso OK

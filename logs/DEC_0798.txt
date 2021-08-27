@@ -1,0 +1,9 @@
+Log de Caso de Prueba DEC_0798
+Login por Identidad Digital
+Click al botón Autorizar
+Click MI PORTAL
+Click PENDIENTES
+Seleccion Primer Registro
+Seleccionar Opcion Barra Herramientas
+Ingreso de Comentario
+click Boton Rechazar con Clave
