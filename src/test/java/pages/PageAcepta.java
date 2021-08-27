@@ -600,7 +600,6 @@ import common.Log;
 			int j=0;
 			do {
 				try {
-					//Select rol = new Select (driver.findElement(By.cssSelector("select[name='tipoaccion_0']")));
 					Select rol = new Select (driver.findElement(By.name("tipoaccion_0")));
 					rol.selectByVisibleText(rolRut); 
 					String texto ="Seleccion Tipo de Accion";
@@ -2619,14 +2618,50 @@ import common.Log;
 		}
 		
 		
+<<<<<<< HEAD
 		public void SeleccionarArchivoEditorPlantilla (String caso) throws InterruptedException {
+=======
+		public void btnAgregarFirmante(String caso) throws InterruptedException, IOException, InvalidFormatException {
+>>>>>>> 8fe6daa0f55d9f04a2a696d57e9e93db0a70c646
 			int i=0;
 			int j=0;
 			do {
 				try {
+<<<<<<< HEAD
 					driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr[1]/td/div/div/div[1]/h2/a")).click();
 					Thread.sleep(1000);
 					String texto ="click Archivo 0000000001_automatizaciondec";
+=======
+					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[2]/div/div[10]/button")).click();
+					String texto="Click botón Agregar";
+					log.modificarArchivoLog(caso, texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
+					texto=texto.replace(" ", "_");
+					capturaPantalla.takeScreenShotTest(driver, texto, caso);
+					Thread.sleep(2000);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible dar click en botón Agregar");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(3000);
+		}
+		
+		public void rolRut2 (String caso, String rolRut) throws InterruptedException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					Select rol = new Select (driver.findElement(By.name("signer_role_1")));
+					rol.selectByVisibleText(rolRut); 
+					String texto ="Seleccion Rol Rut";
+>>>>>>> 8fe6daa0f55d9f04a2a696d57e9e93db0a70c646
 					log.modificarArchivoLog(caso,texto);
 					crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
 					texto=texto.replace(" ","_");
@@ -2636,22 +2671,41 @@ import common.Log;
 					// TODO: handle exception
 					j++;
 					if(j==3) {
+<<<<<<< HEAD
 						System.out.println("No fue posible seleccionar Archivo 0000000001_automatizaciondec");
+=======
+						System.out.println("No fue posible seleccionar Rol Rut");
+>>>>>>> 8fe6daa0f55d9f04a2a696d57e9e93db0a70c646
 						i=1;
 					}
 				}
 			}while(i==0);
+<<<<<<< HEAD
 			Thread.sleep(3000);
 		}
 
 		public void SeleccionarArchivoEditorPlantilla2 (String caso) throws InterruptedException {
+=======
+			Thread.sleep(1000);
+		}
+		
+		public void orden2 (String caso, String orden) throws InterruptedException {
+>>>>>>> 8fe6daa0f55d9f04a2a696d57e9e93db0a70c646
 			int i=0;
 			int j=0;
 			do {
 				try {
+<<<<<<< HEAD
 					driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr[7]/td/div/div/div[1]/h2/a")).click();
 					Thread.sleep(1000);
 					String texto ="click Archivo 0000000002_automatizaciondec";
+=======
+					//Thread.sleep(2000);
+					driver.findElement(By.name("order_1")).clear();
+					driver.findElement(By.name("order_1")).sendKeys(orden);
+					//Thread.sleep(2000);
+					String texto ="Ingreso orden de firma";
+>>>>>>> 8fe6daa0f55d9f04a2a696d57e9e93db0a70c646
 					log.modificarArchivoLog(caso,texto);
 					crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
 					texto=texto.replace(" ","_");
@@ -2661,12 +2715,77 @@ import common.Log;
 					// TODO: handle exception
 					j++;
 					if(j==3) {
+<<<<<<< HEAD
 						System.out.println("No fue posible seleccionar Archivo 0000000002_automatizaciondec");
+=======
+						System.out.println("No fue posible ingresar orden de firma");
+>>>>>>> 8fe6daa0f55d9f04a2a696d57e9e93db0a70c646
 						i=1;
 					}
 				}
 			}while(i==0);
+<<<<<<< HEAD
 			Thread.sleep(3000);
 		}
+=======
+			Thread.sleep(1000);
+		}
+		
+		
+		public void tipoAccion2 (String caso, String rolRut) throws InterruptedException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					Select rol = new Select (driver.findElement(By.name("tipoaccion_1")));
+					rol.selectByVisibleText(rolRut); 
+					String texto ="Seleccion Tipo de Accion";
+					log.modificarArchivoLog(caso,texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+					texto=texto.replace(" ","_");
+					capturaPantalla.takeScreenShotTest(driver,texto, caso);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible seleccionar Tipo de Accion");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(1000);
+		}
+		
+		
+		public void estadoEspecificacionPlantillaPdf2 (String caso, String especificacion) throws InterruptedException {
+			int i=0;
+			int j=0;
+			do {
+				try {
+					
+					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[3]/div[2]/div[6]/div/span/span[1]/span/ul/li/input")).click();
+					Thread.sleep(1000);          
+					driver.findElement(By.xpath("//*[text()= '"+ especificacion + "']")).click();//para enviar un texto a un campo y lo puedan seleccionar
+					Thread.sleep(1000); 
+					String texto ="Seleccion Especificación";
+					log.modificarArchivoLog(caso,texto);
+					crearDocEvidencia.modificarArchivoEvidencia(caso,texto);
+					texto=texto.replace(" ","_");
+					capturaPantalla.takeScreenShotTest(driver,texto, caso);
+					i=1;
+				}catch (Exception e) {
+					// TODO: handle exception
+					j++;
+					if(j==3) {
+						System.out.println("No fue posible ingresar estado Especificación");
+						i=1;
+					}
+				}
+			}while(i==0);
+			Thread.sleep(2000);
+		}
+		
+>>>>>>> 8fe6daa0f55d9f04a2a696d57e9e93db0a70c646
 	}
 

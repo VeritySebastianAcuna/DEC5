@@ -3,14 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.Test_TiposDocumentos2">
+      <class name="test.Test_Reporteria">
         <methods>
+<<<<<<< HEAD
           <include name="Script_0379"/>
           <include name="Script_0461"/>
+=======
+>>>>>>> 8fe6daa0f55d9f04a2a696d57e9e93db0a70c646
           <include name="FinEjecucion"/>
           <include name="setUp"/>
+          <include name="Script_01254"/>
         </methods>
-      </class> <!-- test.Test_TiposDocumentos2 -->
+      </class> <!-- test.Test_Reporteria -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
