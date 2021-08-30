@@ -10,5 +10,7 @@ Seleccion Rol Creador
 Seleccion Institución
 Seleccion Rol Rut
 Seleccion tipo de firma
+Caso OK
 Seleccion Especificación
 Click botón Crear Tipo de Documento
+Caso OK

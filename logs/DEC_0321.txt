@@ -6,8 +6,10 @@ Click Tipos de Documentos
 click Link Crear
 click Link Subir Archivo
 Ingreso nombre tipo de documento
+Caso OK
+CheckBox Permitir Agregar más Firmantes
 Seleccion Rol Creador
 Seleccion Rol Rut
 Seleccion Especificación
-CheckBox Permitir Agregar más Firmantes
 Click botón Crear Tipo de Documento
+Caso OK

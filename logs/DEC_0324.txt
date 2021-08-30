@@ -7,7 +7,9 @@ click Link Crear
 click Link Subir Archivo
 Ingreso nombre tipo de documento
 Seleccion Rol Creador
+Caso OK
 Seleccion Rol Rut
 CheckBox Visualización según Orden de Firma
 Seleccion Especificación
 Click botón Crear Tipo de Documento
+Caso OK

@@ -1,0 +1,10 @@
+Log de Caso de Prueba DEC_0565
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Configuraciones
+Click Tipos de Documentos
+Click en Opciones
+Click en Editar
+Click en Continuar
+Click botón Guardar Cambios
+Caso OK

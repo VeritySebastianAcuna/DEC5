@@ -5,8 +5,9 @@ Click a Configuraciones
 Click Tipos de Documentos
 click Link Crear
 click Link Subir Archivo
-Seleccion Institución
 Ingreso nombre tipo de documento
 Seleccion Rol Creador
+Seleccion Institución
 Seleccion Especificación
 Click botón Crear Tipo de Documento
+Caso OK

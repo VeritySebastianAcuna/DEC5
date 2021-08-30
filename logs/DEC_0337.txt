@@ -11,4 +11,12 @@ Seleccion Institución
 Seleccion Rol Rut
 Ingreso orden de firma
 Seleccion Tipo de Accion
+Seleccion Especificación
+Click botón Agregar
+Seleccion Rol Rut
+Ingreso orden de firma
+Seleccion Tipo de Accion
+Caso OK
+Seleccion Especificación
 Click botón Crear Tipo de Documento
+Caso OK

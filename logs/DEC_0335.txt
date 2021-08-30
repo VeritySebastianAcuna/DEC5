@@ -9,6 +9,8 @@ Ingreso nombre tipo de documento
 Seleccion Rol Creador
 Seleccion Institución
 Seleccion Rol Rut
+Caso OK
 Ingreso orden de firma
 Seleccion Especificación
 Click botón Crear Tipo de Documento
+Caso OK
