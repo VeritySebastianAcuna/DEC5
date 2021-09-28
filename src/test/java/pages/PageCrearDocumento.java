@@ -78,8 +78,8 @@ import common.Log;
 		do {
 			try {
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-				driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr[2]/td/div/div/div[4]/a")).click();
-				String texto="Click Botón Crear Plantilla Archivo";
+				driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr[3]/td/div/div/div[4]/a")).click();
+				String texto="Click Botón Crear Plantilla Archivo"; //*[@id="table-nuevo"]/tbody/tr[3]/td/div/div/div[4]/a
 				log.modificarArchivoLog(caso, texto);
 				crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
 				texto=texto.replace(" ", "_");
@@ -104,8 +104,8 @@ import common.Log;
 		do {
 			try {
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-				driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr[4]/td/div/div/div[4]/a")).click();
-				String texto="Click Botón Crear Plantilla PDF";
+				driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr[2]/td/div/div/div[4]/a")).click();
+				String texto="Click Botón Crear Plantilla PDF"; //*[@id="table-nuevo"]/tbody/tr[2]/td/div/div/div[4]/a
 				log.modificarArchivoLog(caso, texto);
 				crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
 				texto=texto.replace(" ", "_");
@@ -130,8 +130,8 @@ import common.Log;
 		do {
 			try {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr[1]/td/div/div/div[4]/a")).click();
-		String texto="Click Botón Crear Plantilla Colaborativa";
+		driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr[4]/td/div/div/div[4]/a")).click();
+		String texto="Click Botón Crear Plantilla Colaborativa"; //*[@id="table-nuevo"]/tbody/tr[4]/td/div/div/div[4]/a
 		log.modificarArchivoLog(caso, texto);
 		crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
 		texto=texto.replace(" ", "_");

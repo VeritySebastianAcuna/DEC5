@@ -5,8 +5,3 @@ Click a Nombre Usuario
 Click empresa ACEPTA
 Click Mis Documentos
 Selección documento
-Desvincular Documento
-Botón Si Desvincular
-Documento desvinculado con éxito OK
-Caso OK
-Cerrar ventana Desvincular

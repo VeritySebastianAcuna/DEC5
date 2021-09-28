@@ -3,6 +3,4 @@ Login por Identidad Digital
 Click al botón Autorizar
 Click a Configuraciones
 Click Tipos de Documentos
-Click en Opciones
-Click en Ocultar
 Caso OK

@@ -1,0 +1,12 @@
+Log de Caso de Prueba DEC_1123
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Mis Documentos
+Selección documento
+Seleccionar Opcion Barra Herramientas
+Cerrar Crear Mover Carpeta
+Cerrar Crear Mover Carpeta
+Cerrar Crear Mover Carpeta
+Caso NOK

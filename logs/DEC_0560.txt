@@ -1,3 +1,9 @@
 Log de Caso de Prueba DEC_0560
 Login por Identidad Digital
 Click al botón Autorizar
+Click a Configuraciones
+Click Tipos de Documentos
+click Archivo 0000000002_automatizaciondec
+Click en Continuar
+Click botón Guardar Cambios
+Caso OK

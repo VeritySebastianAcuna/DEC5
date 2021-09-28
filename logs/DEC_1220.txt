@@ -1,0 +1,12 @@
+Log de Caso de Prueba DEC_1220
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Crear Documento
+Click Botón Crear Plantilla Colaborativa
+Click Crear Documento por Lote
+Click Botón procesar
+Solicitud Documento procesado OK 'ruth.riquelme@verity.cl'
+Caso OK
+Click Botón Volver

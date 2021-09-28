@@ -1,0 +1,13 @@
+Log de Caso de Prueba DEC_1143
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Mis Documentos
+Seleccion Primer Registro
+Seleccionar Opcion Barra Herramientas
+click Boton Rechazar con Clave
+Click Boton Autorizar Identidad Digital
+Caso OK
+Documento rechazado exitosamente
+Caso OK

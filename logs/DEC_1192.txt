@@ -1,0 +1,16 @@
+Log de Caso de Prueba DEC_1192
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Crear Documento
+Click Botón Crear Plantilla PDF
+Click Crear Plantilla PDF
+Click Botón Revisar y Continuar documento PDF
+Click Botón Continuar
+Click Botón Configurar Firmantes
+Click Firmante
+Click Botón Asignar
+Click Botón Crear Documento
+Click Link Crear Nuevo Documento
+Caso OK

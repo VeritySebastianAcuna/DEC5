@@ -1,0 +1,12 @@
+Log de Caso de Prueba DEC_1128
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Mis Documentos
+Selección documento
+Seleccionar Opcion Barra Herramientas
+Seleccion Tipo Persona
+Ingreso Rut
+Ingreso Mail
+click Boton Agregar

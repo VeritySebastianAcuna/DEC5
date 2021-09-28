@@ -1,0 +1,11 @@
+Log de Caso de Prueba DEC_1136
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Mis Documentos
+Boton Mostrar Ocultos
+Seleccion Primer Registro
+Seleccionar Opcion Barra Herramientas
+click Boton Mover
+Caso OK

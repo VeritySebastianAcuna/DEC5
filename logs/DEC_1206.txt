@@ -1,0 +1,13 @@
+Log de Caso de Prueba DEC_1206
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Crear Documento
+Click Botón Crear Plantilla Archivo
+Click Botón Agregar
+Caso OK
+Click Botón Crear Documento
+Caso OK
+Documento Creado OK0000000001_AutomatizacionzArchivo (CA-8000-0002-E5DE-ACL2) CodDocumento = CA80000002E5DEACL2
+Caso OK

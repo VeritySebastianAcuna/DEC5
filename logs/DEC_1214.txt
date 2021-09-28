@@ -1,0 +1,17 @@
+Log de Caso de Prueba DEC_1214
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Crear Documento
+Click Botón Crear Plantilla Colaborativa
+Click Crear Plantilla PDF
+Click Botón Revisar y Continuar documento PDF
+Click Botón Continuar
+Click Botón Configurar Firmantes
+Click Firmante
+Click Botón Asignar
+Click Botón Crear Documento
+Link Crear Documento OK
+Caso OK
+Click Link Ir al Documento

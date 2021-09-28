@@ -1184,7 +1184,7 @@ import common.Log;
 				try {
 					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[2]/div/div/div[1]/button")).click();
-					Thread.sleep(1000);                   
+					Thread.sleep(1000);                  
 					driver.findElement(By.id("newTag")).sendKeys(etiqueta);
 					driver.findElement(By.id("newTag")).sendKeys(Keys.ENTER);
 					Actions actions = new Actions(driver);
@@ -1207,6 +1207,7 @@ import common.Log;
 			Thread.sleep(3000);
 		}
 		
+		
 		public void btnAgregar5EtiquetasOpcional(String caso, String etiqueta) throws InterruptedException, IOException, InvalidFormatException {
 			int i=0;
 			int j=0;
@@ -1214,36 +1215,7 @@ import common.Log;
 				try {
 					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[2]/div/div/div[2]/button")).click();
-					Thread.sleep(1000);                   
-					driver.findElement(By.id("newTag")).sendKeys(etiqueta);
-					driver.findElement(By.id("newTag")).sendKeys(Keys.ENTER);
-					Actions actions = new Actions(driver);
-					String texto="Click botón Agregar Etiquetas (opcional)"; 
-					log.modificarArchivoLog(caso, texto);
-					crearDocEvidencia.modificarArchivoEvidencia(caso, texto);
-					texto=texto.replace(" ", "_");
-					capturaPantalla.takeScreenShotTest(driver, texto, caso);
-					Thread.sleep(2000);
-					i=1;
-				}catch (Exception e) {
-					// TODO: handle exception
-					j++;
-					if(j==3) {
-						System.out.println("No fue posible dar click en botón Agregar Etiquetas (opcional)");
-						i=1;
-					}
-				}
-			}while(i==0);
-			Thread.sleep(3000);
-		}
-		public void btnAgregar6EtiquetasOpcional(String caso, String etiqueta) throws InterruptedException, IOException, InvalidFormatException {
-			int i=0;
-			int j=0;
-			do {
-				try {
-					driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-					driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[2]/div/div/div[3]/button")).click();
-					Thread.sleep(1000);                   
+					Thread.sleep(1000);                   //*[@id="primerPaso"]/div[5]/div[2]/div/div/div[2]/button
 					driver.findElement(By.id("newTag")).sendKeys(etiqueta);
 					driver.findElement(By.id("newTag")).sendKeys(Keys.ENTER);
 					Actions actions = new Actions(driver);
@@ -2725,8 +2697,8 @@ import common.Log;
 			int j=0;
 			do {
 				try {
-					driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr[7]/td/div/div/div[1]/h2/a")).click();
-					Thread.sleep(1000);
+					driver.findElement(By.xpath("//*[@id=\"table-nuevo\"]/tbody/tr[8]/td/div/div/div[1]/h2/a")).click();
+					Thread.sleep(1000); 
 					String texto ="click Archivo 0000000002_automatizaciondec";
 					log.modificarArchivoLog(caso,texto);
 					crearDocEvidencia.modificarArchivoEvidencia(caso,texto);

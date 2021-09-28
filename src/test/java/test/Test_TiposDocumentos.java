@@ -3244,8 +3244,8 @@ public class Test_TiposDocumentos {
 		pageAcepta.LinkCrear(cp);
 		pageAcepta.LinkSubirArchivo(cp);
 		
-		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[1]/div/div/label")).getText().contains(Rol)){
-			crearLogyDocumento.CasoOk(cp);
+		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[2]/div[2]/label")).getText().contains(Rol)){
+			crearLogyDocumento.CasoOk(cp); 
 			System.out.println("Rol Creador OK");
 			resultado = "FLUJO OK";
 		}
@@ -3261,15 +3261,6 @@ public class Test_TiposDocumentos {
 		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
 		pageAcepta.btnCrearTipodeDocumento(cp);
 		
-		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
-		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
-			crearLogyDocumento.CasoOk(cp); 
-		}
-		else {
-			crearLogyDocumento.CasoNok(cp);
-		}
-		
-		System.out.println("FLUJO OK");
 		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
 	}
 	
@@ -3688,30 +3679,30 @@ public class Test_TiposDocumentos {
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
 		
-//		if(driver.findElement(By.xpath("//*[@id=\"select2-signer_institution_0-q3-container\"]")).getText().contains(Institucion1)){
-//			crearLogyDocumento.CasoOk(cp);
-//			System.out.println("Empresa Acepta OK");
-//			resultado = "FLUJO OK";
-//		}
-//		else {
-//			crearLogyDocumento.CasoNok(cp);
-//			System.out.println("Empresa Acepta NOOK");
-//			resultado = "FLUJO NOOK";
-//		}
+		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[4]/div[3]/div/div[1]/div/span/span[1]/span")).getText().contains(Institucion1)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("Empresa Acepta OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("Empresa Acepta NOOK");
+			resultado = "FLUJO NOOK";
+		}
 				
 		pageAcepta.rolRut(cp, "Admin");
 		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
 		pageAcepta.btnCrearTipodeDocumento(cp);
 		
-		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
-		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
-			crearLogyDocumento.CasoOk(cp); 
-		}
-		else {
-			crearLogyDocumento.CasoNok(cp);
-		}
-		
-		System.out.println("FLUJO OK");
+//		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
+//		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
+//			crearLogyDocumento.CasoOk(cp); 
+//		}
+//		else {
+//			crearLogyDocumento.CasoNok(cp);
+//		}
+//		
+//		System.out.println("FLUJO OK");
 		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
 	}
 	
@@ -3744,30 +3735,30 @@ public class Test_TiposDocumentos {
 		
 		pageAcepta.seleccionInstitucion(cp, "PERSONAL");
 		
-//		if(driver.findElement(By.xpath("//*[@id=\"select2-signer_institution_0-w1-container\"]")).getText().contains(Institucion2)){
-//			crearLogyDocumento.CasoOk(cp);
-//			System.out.println("Empresa Personal OK");
-//			resultado = "FLUJO OK";
-//		}
-//		else {
-//			crearLogyDocumento.CasoNok(cp);
-//			System.out.println("Empresa Personal NOOK");
-//			resultado = "FLUJO NOOK";
-//		}
+		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[4]/div[3]/div/div[1]/div/span")).getText().contains(Institucion2)){
+			crearLogyDocumento.CasoOk(cp);
+			System.out.println("Empresa Personal OK");
+			resultado = "FLUJO OK";
+		}
+		else {
+			crearLogyDocumento.CasoNok(cp);
+			System.out.println("Empresa Personal NOOK");
+			resultado = "FLUJO NOOK";
+		}
 		
 		
 		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
 		pageAcepta.btnCrearTipodeDocumento(cp);
 		
-		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
-		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
-			crearLogyDocumento.CasoOk(cp); 
-		}
-		else {
-			crearLogyDocumento.CasoNok(cp);
-		}
-		
-		System.out.println("FLUJO OK");
+//		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
+//		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
+//			crearLogyDocumento.CasoOk(cp); 
+//		}
+//		else {
+//			crearLogyDocumento.CasoNok(cp);
+//		}
+//		
+//		System.out.println("FLUJO OK");
 		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
 	}
 	
@@ -3801,28 +3792,28 @@ public class Test_TiposDocumentos {
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.seleccionInstitucion(cp, "GRUPO PERSONAS");
 		
-//		if(driver.findElement(By.xpath("//*[@id="select2-signer_institution_0-k1-container"]")).getText().contains(Institucion3)){
-//		    crearLogyDocumento.CasoOk(cp);
-//		    System.out.println("Empresa Grupo Personas OK");
-//		    resultado = "FLUJO OK";
-//	    }
-//	    else {
-//	  	    crearLogyDocumento.CasoNok(cp);
-//		    System.out.println("Empresa Grupo Personas NOOK");
-//		    resultado = "FLUJO NOOK";
-//	    }
+		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[4]/div[3]/div/div[1]/div/span")).getText().contains(Institucion3)){
+		    crearLogyDocumento.CasoOk(cp);
+		    System.out.println("Empresa Grupo Personas OK");
+		    resultado = "FLUJO OK";
+	    }
+	    else {
+	  	    crearLogyDocumento.CasoNok(cp);
+		    System.out.println("Empresa Grupo Personas NOOK");
+		    resultado = "FLUJO NOOK";
+	    }
 		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
 		pageAcepta.btnCrearTipodeDocumento(cp);
 		
-		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
-		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
-			crearLogyDocumento.CasoOk(cp); 
-		}
-		else {
-			crearLogyDocumento.CasoNok(cp);
-		}
-		
-		System.out.println("FLUJO OK");
+//		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
+//		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
+//			crearLogyDocumento.CasoOk(cp); 
+//		}
+//		else {
+//			crearLogyDocumento.CasoNok(cp);
+//		}
+//		
+//		System.out.println("FLUJO OK");
 		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
 	}
 	
@@ -3856,30 +3847,30 @@ public class Test_TiposDocumentos {
 		
 		pageAcepta.seleccionInstitucion(cp, "000_VERITY_PRUEBA");//Otras instituciones
 		
-//		if(driver.findElement(By.xpath("//*[@id="select2-signer_institution_0-k1-container"]")).getText().contains(Institucion4)){
-//	        crearLogyDocumento.CasoOk(cp);
-//	        System.out.println("Empresa Otras Instituciones OK");
-//	        resultado = "FLUJO OK";
-//      }
-//      else {
-//  	    crearLogyDocumento.CasoNok(cp);
-//	        System.out.println("Empresa Otras Instituciones NOOK");
-//	        resultado = "FLUJO NOOK";
-//      }
+		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[4]/div[3]/div/div[1]/div/span")).getText().contains(Institucion4)){
+	        crearLogyDocumento.CasoOk(cp);
+	        System.out.println("Empresa Otras Instituciones OK");
+	        resultado = "FLUJO OK";
+      }
+      else {
+  	    crearLogyDocumento.CasoNok(cp);
+	        System.out.println("Empresa Otras Instituciones NOOK");
+	        resultado = "FLUJO NOOK";
+      }
 		pageAcepta.rolRut(cp, "Admin");
 		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
 		pageAcepta.btnCrearTipodeDocumento(cp);
 		pageAcepta.btnCrearTipoDocEnviar(cp);
 		
-		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
-		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
-			crearLogyDocumento.CasoOk(cp);
-		}
-		else {
-			crearLogyDocumento.CasoNok(cp);
-		}
-		
-		System.out.println("FLUJO OK");
+//		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
+//		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
+//			crearLogyDocumento.CasoOk(cp);
+//		}
+//		else {
+//			crearLogyDocumento.CasoNok(cp);
+//		}
+//		
+//		System.out.println("FLUJO OK");
 		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
 	}
 	@Test
@@ -4084,9 +4075,9 @@ public class Test_TiposDocumentos {
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.seleccionInstitucion(cp, "ACEPTA");
 		pageAcepta.rolRut(cp, "Admin");
-		pageAcepta.tipoFirma(cp, "ESPECIFICO");
+//		pageAcepta.tipoFirma(cp, "ESPECIFICO");
 		
-		if(driver.findElement(By.xpath("/html/body/div/div[2]/div/form/div/div[1]/div[4]/div[2]/div/div[5]")).getText().contains(orden) &&
+		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[4]/div[2]/div/div[5]/label")).getText().contains(orden) &&
 				driver.findElement(By.name("order_0")).isDisplayed()) {
 			crearLogyDocumento.CasoOk(cp);
 			System.out.println("Validación campo Orden OK");
@@ -4101,15 +4092,15 @@ public class Test_TiposDocumentos {
 		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
 		pageAcepta.btnCrearTipodeDocumento(cp);
 		
-		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
-		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
-			crearLogyDocumento.CasoOk(cp);
-		}
-		else {
-			crearLogyDocumento.CasoNok(cp);
-		}
-		
-		System.out.println("FLUJO OK");
+//		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
+//		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
+//			crearLogyDocumento.CasoOk(cp);
+//		}
+//		else {
+//			crearLogyDocumento.CasoNok(cp);
+//		}
+//		
+//		System.out.println("FLUJO OK");
 		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
 		
 	}
@@ -4497,7 +4488,7 @@ public class Test_TiposDocumentos {
 		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Token");
 		
 		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[4]/div[3]/div/div[6]/div/span/span[1]/span/ul/li[1]")).getText().contains(firma)){
-			crearLogyDocumento.CasoOk(cp);
+			crearLogyDocumento.CasoOk(cp); //*[@id="primerPaso"]/div[4]/div[3]/div/div[6]/div/span/span[1]/span/ul/li[1]
 			System.out.println("Validación Firmar solo con Token OK");
 			resultado = "FLUJO OK";
 		}
@@ -5550,7 +5541,6 @@ public class Test_TiposDocumentos {
 		pageAcepta.rolRut(cp, "Admin");
 		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
 			
-		pageAcepta.btnCrearTipodeDocumento(cp);
 				
 		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[2]/div/div/div[1]/button/span")).getText().contains(etiqueta1)){
 			crearLogyDocumento.CasoOk(cp);
@@ -5563,7 +5553,8 @@ public class Test_TiposDocumentos {
 			resultado = "FLUJO NOOK";
 		}
 		
-		System.out.println("FLUJO OK");
+//		pageAcepta.btnCrearTipodeDocumento(cp);
+		
 		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
 		
 	}
@@ -5592,15 +5583,14 @@ public class Test_TiposDocumentos {
 		pageAcepta.OpcionTiposdeDocumentos(cp);
 		pageAcepta.LinkCrear(cp);
 		pageAcepta.LinkSubirArchivo(cp);
-		pageAcepta.btnAgregar5EtiquetasOpcional(cp, etiqueta1);
+		pageAcepta.btnAgregar4EtiquetasOpcional(cp, etiqueta1);
 		pageAcepta.nombreTipoDocumento(cp, datos[5]);
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.rolRut(cp, "Admin");
 		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
-			
-		pageAcepta.btnCrearTipodeDocumento(cp);
+		
 				
-		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[2]/div/div/div[2]/button/span")).getText().contains(etiqueta1)){
+		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[2]/div/div/div[1]/button/span")).getText().contains(etiqueta1)){
 			crearLogyDocumento.CasoOk(cp);
 			System.out.println("FLUJO OK");
 			resultado = "FLUJO OK";
@@ -5611,7 +5601,8 @@ public class Test_TiposDocumentos {
 			resultado = "FLUJO NOOK";
 		}
 		
-		System.out.println("FLUJO OK");
+		pageAcepta.btnCrearTipodeDocumento(cp);
+		
 		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
 		
 	}
@@ -5621,6 +5612,7 @@ public class Test_TiposDocumentos {
 		String cp = "DEC_0363";
 		System.out.println(cp);
 		String etiqueta1 = "pruebaQA3";
+		String etiqueta2 = "pruebaQA4";
 		String resultado = null;
 	
 		CrearLogyDocumento crearLogyDocumento = new CrearLogyDocumento(driver);
@@ -5640,15 +5632,14 @@ public class Test_TiposDocumentos {
 		pageAcepta.OpcionTiposdeDocumentos(cp);
 		pageAcepta.LinkCrear(cp);
 		pageAcepta.LinkSubirArchivo(cp);
-		pageAcepta.btnAgregar6EtiquetasOpcional(cp, etiqueta1);
 		pageAcepta.nombreTipoDocumento(cp, datos[5]);
 		pageAcepta.rolCreador(cp, "Admin");
 		pageAcepta.rolRut(cp, "Admin");
 		pageAcepta.estadoEspecificacion(cp, "Firmar solo con Pin");
-			
-		pageAcepta.btnCrearTipodeDocumento(cp);
+		pageAcepta.btnAgregar4EtiquetasOpcional(cp, etiqueta1);
+		pageAcepta.btnAgregar5EtiquetasOpcional(cp, etiqueta2);
 				
-		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[2]/div/div/div[3]/button/span")).getText().contains(etiqueta1)){
+		if(driver.findElement(By.xpath("//*[@id=\"primerPaso\"]/div[5]/div[2]/div/div/div[2]/button/span")).getText().contains(etiqueta2)){
 			crearLogyDocumento.CasoOk(cp);
 			System.out.println("FLUJO OK");
 			resultado = "FLUJO OK";
@@ -5658,8 +5649,8 @@ public class Test_TiposDocumentos {
 			System.out.println("FLUJO NOOK");
 			resultado = "FLUJO NOOK";
 		}
+		pageAcepta.btnCrearTipodeDocumento(cp);
 		
-		System.out.println("FLUJO OK");
 		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
 		
 	}
@@ -5925,8 +5916,6 @@ public class Test_TiposDocumentos {
 		pageAcepta.SeleccionarArchivoEditorPlantilla(cp);
 		//pageAcepta.btnContinuarEditorPlantilla(cp);
 		
-
-		
 		if(driver.findElement(By.xpath("//*[@id=\"modal_template\"]/div/div/div[1]/h1")).getText().contains(titulo)){
 			crearLogyDocumento.CasoOk(cp);
 			System.out.println("Titulo OK");
@@ -6053,17 +6042,10 @@ public class Test_TiposDocumentos {
 		pageAcepta.OpcionTiposdeDocumentos(cp);
 		pageAcepta.SeleccionarArchivoEditorPlantilla2(cp);
 		pageAcepta.btnContinuarEditorPlantilla(cp);
-		pageAcepta.checkboxValidacionCorreoPersonal(cp);
+		pageAcepta.checkboxValidacionCorreoPersonal(cp);//Cambio que se aplica
 		pageAcepta.btnGuardarCambios(cp);
 		
-		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
-		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
-			crearLogyDocumento.CasoNok(cp); 
-		}
-		else {
-			crearLogyDocumento.CasoNok(cp);
-		}
-		
+			
 		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div/div/div/h2")).getText().contains(msjExito)){
 			crearLogyDocumento.CasoOk(cp);
 			System.out.println("CAMBIOS OK");
@@ -6075,8 +6057,7 @@ public class Test_TiposDocumentos {
 			resultado = "CAMBIOS NOOK";
 		}
 		
-		System.out.println("FLUJO OK");
-		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
+		assertEquals(resultado, "CAMBIOS OK", "Se verifica resultado del test "+cp);
 	}
 	
 	@Test
@@ -6105,14 +6086,7 @@ public class Test_TiposDocumentos {
 		pageAcepta.btnContinuarEditorPlantilla(cp);
 		pageAcepta.btnGuardarCambios(cp);
 		
-		System.out.println(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed());
-		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div")).isDisplayed()) {
-			crearLogyDocumento.CasoNok(cp); 
-		}
-		else {
-			crearLogyDocumento.CasoNok(cp);
-		}
-		
+				
 		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div/div/div/h2")).getText().contains(msjExito)){
 			crearLogyDocumento.CasoOk(cp);
 			System.out.println("CAMBIOS OK");
@@ -6125,7 +6099,7 @@ public class Test_TiposDocumentos {
 		}
 		
 		System.out.println("FLUJO OK");
-		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
+		assertEquals(resultado, "CAMBIOS OK", "Se verifica resultado del test "+cp);
 	}
 	
 	@Test
@@ -6165,7 +6139,6 @@ public class Test_TiposDocumentos {
 		}
 		
 		
-		System.out.println("FLUJO OK");
 		assertEquals(resultado, "FLUJO OK", "Se verifica resultado del test "+cp);
 	}
 	

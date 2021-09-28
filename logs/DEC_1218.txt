@@ -1,0 +1,12 @@
+Log de Caso de Prueba DEC_1218
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Crear Documento
+Click Botón Crear Plantilla Colaborativa
+Click Crear Documento por Lote
+Carga Archivo OK
+Caso OK
+Botón Procesar Existe
+Caso OK

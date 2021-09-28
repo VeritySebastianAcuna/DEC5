@@ -7,4 +7,4 @@ Click Crear Documento
 Click Botón Crear Plantilla DEC
 Click Crear Documento por Lote
 Caso OK
-Caso OK
+Caso NOK
