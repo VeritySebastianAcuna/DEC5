@@ -1,2 +1,11 @@
 Log de Caso de Prueba DEC_1099
-No fue posible el login
+Login por Identidad Digital
+Click al botón Autorizar
+Click a Nombre Usuario
+Click empresa ACEPTA
+Click Mis Documentos
+Selección documento
+Vincular Documento
+Busqueda realizada
+Selección Check Vincular
+Caso OK

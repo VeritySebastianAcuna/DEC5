@@ -5,4 +5,7 @@ Click a Nombre Usuario
 Click empresa ACEPTA
 Click Mis Documentos
 Seleccion Primer Registro
+click Crear comentario
+Ingreso de comentario
+click Comentar
 Caso OK

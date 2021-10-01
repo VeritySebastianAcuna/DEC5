@@ -5,3 +5,7 @@ Click a Nombre Usuario
 Click empresa ACEPTA
 Click Mis Documentos
 Selección documento
+Vincular Documento
+Busqueda realizada
+Caso OK
+Caso OK

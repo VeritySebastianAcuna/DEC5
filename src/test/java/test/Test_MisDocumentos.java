@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -764,6 +765,10 @@ public class Test_MisDocumentos {
 		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.MisDocumentos(cp);
 		pageMisDocumentos.clickDocumento(cp);
+		Thread.sleep(2000);
+		//Método Mouse Scroll down
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, 500);"); 
 		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[2]/div/h3/span/a"));
@@ -807,6 +812,9 @@ public class Test_MisDocumentos {
 		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.MisDocumentos(cp);
 		pageMisDocumentos.clickDocumento(cp);
+		//Método Mouse Scroll down
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, 500);");
 		
 //		PagePendientes pagePendientes = new PagePendientes(driver);
 //		pagePendientes.BarraHerramientas(cp,"Agregar a");
@@ -851,6 +859,10 @@ public class Test_MisDocumentos {
 		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.MisDocumentos(cp);
 		pageMisDocumentos.clickDocumento(cp);
+		
+		//Método Mouse Scroll down
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, 500);");
 
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[2]/div/h3/span/a"));
@@ -890,8 +902,11 @@ public class Test_MisDocumentos {
 		
 		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.MisDocumentos(cp);
-		
 		pageMisDocumentos.clickDocumento(cp);
+		
+		//Método Mouse Scroll down
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, 500);");
 
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[2]/div/div[2]/a"));
@@ -957,6 +972,10 @@ public class Test_MisDocumentos {
 		pageMisDocumentos.MisDocumentos(cp);
 		pageMisDocumentos.clickDocumento(cp);
 		
+		//Método Mouse Scroll down
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, 500);");
+		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[2]/div/div[2]/a"));
 		builder.moveToElement(element).build().perform();
@@ -995,9 +1014,11 @@ public class Test_MisDocumentos {
 		
 		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.MisDocumentos(cp);
-		
 		pageMisDocumentos.clickDocumento(cp);
 		
+		//Método Mouse Scroll down
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, 1000);");
 		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[7]/div/div/div/button"));
@@ -1039,8 +1060,11 @@ public class Test_MisDocumentos {
 		
 		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.MisDocumentos(cp);
-		
 		pageMisDocumentos.clickDocumento(cp);
+		
+		//Método Mouse Scroll down
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, 1000);");
 		
 //		PagePendientes pagePendientes = new PagePendientes(driver);
 //		pagePendientes.BarraHerramientas(cp,"Vincular");
@@ -1085,9 +1109,11 @@ public class Test_MisDocumentos {
 		
 		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.MisDocumentos(cp);
-		
 		pageMisDocumentos.clickDocumento(cp);
 		
+		//Método Mouse Scroll down
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, 1000);");
 //		PagePendientes pagePendientes = new PagePendientes(driver);
 //		pagePendientes.BarraHerramientas(cp,"Vincular");	
 		
@@ -1140,8 +1166,11 @@ public class Test_MisDocumentos {
 		
 		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.MisDocumentos(cp);
-		
 		pageMisDocumentos.clickDocumento(cp);
+		
+		//Método Mouse Scroll down
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, 1000);");
 		
 		PagePendientes pagePendientes = new PagePendientes(driver);
 //		pagePendientes.BarraHerramientas(cp,"Vincular");
@@ -1184,8 +1213,11 @@ public class Test_MisDocumentos {
 		
 		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.MisDocumentos(cp);
-		
 		pageMisDocumentos.clickDocumento2(cp);
+		
+		//Método Mouse Scroll down
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, 1000);");
 		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a"));
@@ -1230,8 +1262,11 @@ public class Test_MisDocumentos {
 		
 		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.MisDocumentos(cp);
-		
 		pageMisDocumentos.clickDocumento2(cp);
+		
+		//Método Mouse Scroll down
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, 1000);");
 		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a"));
@@ -1273,8 +1308,11 @@ public class Test_MisDocumentos {
 		
 		PageMisDocumentos pageMisDocumentos = new PageMisDocumentos(driver);
 		pageMisDocumentos.MisDocumentos(cp);
-		
 		pageMisDocumentos.clickDocumento2(cp);
+		
+		//Método Mouse Scroll down
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, 1000);");
 		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[6]/div/table/tbody/tr/td[4]/a"));
@@ -1319,6 +1357,10 @@ public class Test_MisDocumentos {
 		PagePendientes pagePendientes = new PagePendientes(driver);
 		pagePendientes.ClickPrimerRegistro(cp);
 		
+		//Método Mouse Scroll down
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, 1000);");
+		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[8]/div/div[2]/div/button"));
 		builder.moveToElement(element).perform();
@@ -1358,6 +1400,11 @@ public class Test_MisDocumentos {
 		
 		PagePendientes pagePendientes = new PagePendientes(driver);
 		pagePendientes.ClickPrimerRegistro(cp);
+		
+		
+		//Método Mouse Scroll down
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("scroll(0, 1000);");
 		
 		Actions builder = new Actions(driver);
 		WebElement element = driver.findElement(By.xpath("//*[@id=\"details-doc\"]/div/div[8]/div/div[2]/div/button"));

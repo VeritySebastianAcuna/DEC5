@@ -5,3 +5,5 @@ Click a Nombre Usuario
 Click empresa ACEPTA
 Click Mis Documentos
 Selección documento
+Agregar a carpeta
+click Boton Mover

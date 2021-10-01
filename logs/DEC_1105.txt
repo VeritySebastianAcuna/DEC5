@@ -5,3 +5,6 @@ Click a Nombre Usuario
 Click empresa ACEPTA
 Click Mis Documentos
 Selección documento
+Desvincular Documento
+Botón No Desvincular
+Caso OK
