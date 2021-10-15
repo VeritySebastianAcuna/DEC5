@@ -6,8 +6,3 @@ Click empresa ACEPTA
 Click Crear Documento
 Click Botón Crear Plantilla Colaborativa
 Click Crear Documento por Lote
-Click Botón procesar
-Solicitud Documento procesado OK 'ruth.riquelme@verity.cl'
-Caso OK
-Botón Volver Existe
-Caso OK

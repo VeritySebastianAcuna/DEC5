@@ -111,7 +111,7 @@ public class Test_CrearDocumento {
 		pageDatosDocumento.datosDocumento("PRUEBA AUTOMATIZADA", cp);
 		pageDatosDocumento.btnRevisaryContinuar(cp);
 		pageDatosDocumento.btnContinuar(cp);
-		pageDatosFirmante.datosRutFirmante1(cp, datos[11], datos[12]);
+		pageDatosFirmante.datosRutFirmante0(cp, datos[11], datos[12]);
 		pageDatosFirmante.btnAgregar(cp);
 		
 		System.out.println(driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[1]/div[2]/div[6]/div[4]")).isDisplayed());
@@ -159,11 +159,11 @@ public class Test_CrearDocumento {
 //				pageDatosFirmante.buscarPersonasAdmin("RIQUELME SANDO",cp);
 //				pageDatosFirmante.seleccionFirmantes(cp);
 //				pageDatosFirmante.btnAsignar(cp);
-				pageDatosFirmante.datosRutFirmante1(cp, datos[11], datos[12]);
+				pageDatosFirmante.datosRutFirmante0(cp, datos[11], datos[12]);
 				pageDatosFirmante.btnAgregar(cp);
 				
 				
-				if(driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[1]/div[2]/div[6]/div[2]/div[2]/div/span")).getText().equals("RUT no válido")){
+				if(driver.findElement(By.xpath("//*[@id=\"formUpload\"]/div[1]/div[2]/div[6]/div[1]/div[2]/div/span")).getText().equals("RUT no válido")){
 					crearLogyDocumento.AgregarRegistroLog(cp, "Mensaje Rut Inválido OK");
 					crearLogyDocumento.CasoOk(cp);
 					System.out.println("FLUJO OK");
@@ -203,7 +203,7 @@ public class Test_CrearDocumento {
 		pageDatosDocumento.datosDocumento("PRUEBA AUTOMATIZADA", cp);
 		pageDatosDocumento.btnRevisaryContinuar(cp);
 		pageDatosDocumento.btnContinuar(cp);
-		pageDatosFirmante.datosRutFirmante1(cp, datos[11], datos[12]);
+		pageDatosFirmante.datosRutFirmante0(cp, datos[11], datos[12]);
 		pageCrearDocumento.btnCrear(cp);
 		
 		if(driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div/div/h1")).getText().contains("0000000001_AutomatizacionDec") &&
@@ -247,7 +247,7 @@ public class Test_CrearDocumento {
 		pageDatosDocumento.datosDocumento("PRUEBA AUTOMATIZADA", cp);
 		pageDatosDocumento.btnRevisaryContinuar(cp);
 		pageDatosDocumento.btnContinuar(cp);
-		pageDatosFirmante.datosRutFirmante1(cp, datos[11], datos[12]);
+		pageDatosFirmante.datosRutFirmante0(cp, datos[11], datos[12]);
 		pageCrearDocumento.btnCrear(cp);
 		pageCrearDocumento.linkCrearNuevoDoc(cp);
 		
@@ -1644,7 +1644,7 @@ public class Test_CrearDocumento {
 		pageCrearDocumento.crearDocumento(cp);
 		pageCrearDocumento.btnCrearPlantillaColaborativa(cp);
 		pageCrearDocumento.CrearDocumentoLote(cp);
-		pageSubirArchivos.CargarArchivoPorLote(cp, "PlantillaExcel_002020560195310_26Apr21_10_39_31.xls");
+		pageSubirArchivos.CargarArchivoPorLote(cp, "PlantillaExcel_002020560195310_14Apr21_10_39_31.xls");
 		
 		try{
 			WebElement mensaje = driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/div/span"));
@@ -1653,6 +1653,15 @@ public class Test_CrearDocumento {
 			System.out.println("Tipo Archivo permitido NOK");
 		}catch (Exception e) {
 			System.out.println("Tipo Archivo permitido OK");
+		}
+		
+		try{
+			WebElement mensaje = driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/div/span"));
+			if(mensaje.equals("El nombre de archivo que has proporcionado ya existe en el servidor.")) {
+		}
+			System.out.println("Archivo ya existe en el servidor NOK");
+		}catch (Exception e) {
+			System.out.println("Archivo OK");
 		}
 		
 		pageCrearDocumento.btnProcesar(cp);
@@ -1705,7 +1714,7 @@ public class Test_CrearDocumento {
 		pageCrearDocumento.crearDocumento(cp);
 		pageCrearDocumento.btnCrearPlantillaColaborativa(cp);
 		pageCrearDocumento.CrearDocumentoLote(cp);
-		pageSubirArchivos.CargarArchivoPorLote(cp, "PlantillaExcel_002020560195310_26Apr21_10_39_31.xls");
+		pageSubirArchivos.CargarArchivoPorLote(cp, "PlantillaExcel_002020560195310_14Apr21_10_39_31.xls");
 		
 		try{
 			WebElement mensaje = driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/div/span"));
@@ -1714,6 +1723,15 @@ public class Test_CrearDocumento {
 			System.out.println("Tipo Archivo permitido NOK");
 		}catch (Exception e) {
 			System.out.println("Tipo Archivo permitido OK");
+		}
+		
+		try{
+			WebElement mensaje = driver.findElement(By.xpath("//*[@id=\"formTemplate\"]/div[1]/div/div/div[1]/div/div/div/span"));
+			if(mensaje.equals("El nombre de archivo que has proporcionado ya existe en el servidor.")) {
+		}
+			System.out.println("Archivo ya existe en el servidor NOK");
+		}catch (Exception e) {
+			System.out.println("Archivo OK");
 		}
 		
 		pageCrearDocumento.btnProcesar(cp);
@@ -1736,10 +1754,10 @@ public class Test_CrearDocumento {
 	}
 	
 	
-	@AfterMethod
-	public void FinEjecucion() {
-		driver.manage().deleteAllCookies();
-		driver.close();
-	}
+//	@AfterMethod
+//	public void FinEjecucion() {
+//		driver.manage().deleteAllCookies();
+//		driver.close();
+//	}
 
 }

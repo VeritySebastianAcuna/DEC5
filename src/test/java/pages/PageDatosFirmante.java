@@ -177,7 +177,7 @@ public class PageDatosFirmante {
 		crearDocEvidencia.modificarArchivoEvidencia(caso, "Datos de firmante");
 		capturaPantalla.takeScreenShotTest(driver, "Datos_Firmante_DEC",caso);
 	}
-	
+		
     public void datosRutFirmante1 (String caso, String rutFirmante, String ordenFirma) throws InterruptedException, FileNotFoundException, InvalidFormatException, IOException {
 		
 		driver.findElement(By.name("rut_institution_1")).sendKeys(rutFirmante);

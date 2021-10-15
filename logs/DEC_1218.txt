@@ -6,7 +6,6 @@ Click empresa ACEPTA
 Click Crear Documento
 Click Botón Crear Plantilla Colaborativa
 Click Crear Documento por Lote
-Carga Archivo OK
-Caso OK
+Caso NOK
 Botón Procesar Existe
 Caso OK
